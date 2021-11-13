@@ -1,4 +1,4 @@
 import React from 'react'
 
-const Body = ({ subAgent }) => <>{subAgent}</>
+const Body = ({ children }) => <>{children}</>
 export default Body
