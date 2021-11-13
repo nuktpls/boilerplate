@@ -2,11 +2,11 @@
 	"folders": [
 		{
 			"name": "Elements Structures",
-			"path": "./src/components"
+			"path": "./src/nu_modules/layout/components"
 		},
 		{
 			"name": "Elements Logics",
-			"path": "./src/containers"
+			"path": "./src/nu_modules/layout/containers"
 		},
 		{
 			"name": "Elements Styles",
@@ -14,11 +14,11 @@
 		},
 		{
 			"name": "Configs",
-			"path": "./src/configs"
+			"path": "./src/nu_modules/layout/configs"
 		},
 		{
 			"name": "Persistents Vars",
-			"path": "./src/services"
+			"path": "./src/nu_modules/layout/services"
 		},
 		{
 			"name": "Tools",

@@ -5,7 +5,7 @@ import HeaderContainer from './HeaderContainer'
 import FooterContainer from './FooterContainer'
 import RowContainer from './RowContainer'
 
-const AgentResolver = ({ type, opt, logo, subAgent }) => {
+const AgentResolver = ({ type, opt, subAgent }) => {
 	function renderComponent(renderThis) {
 		switch (renderThis) {
 			case 'BODY':
