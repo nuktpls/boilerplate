@@ -1,8 +1,8 @@
-import { React, useRef } from '../dependencies'
-import useListenOutsideEvents from '../../../tools/useListenOutsideEvents'
+import React, { useRef } from 'react'
+import useListenOutsideEvents from '../tools/useListenOutsideEvents'
 
 import MainMenu from '../components/MainMenu'
-import arrayMenus from '../configs/main-menu-config.json'
+import arrayMenus from '../configs/main-menu-config.js'
 
 const FooterMainMenuContainer = ({ refState, handleRefState }) => {
 	const wrapperRef = useRef(null)

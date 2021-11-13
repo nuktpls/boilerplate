@@ -13,8 +13,16 @@
 			"path": "./scss"
 		},
 		{
+			"name": "Configs",
+			"path": "./configs"
+		},
+		{
 			"name": "Persistents Vars",
 			"path": "./services"
+		},
+		{
+			"name": "Tools",
+			"path": "./tools"
 		},
 		{
 			"name": "Root Folder",

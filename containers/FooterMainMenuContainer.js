@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import useListenOutsideEvents from '../../../tools/useListenOutsideEvents'
+import useListenOutsideEvents from '../tools/useListenOutsideEvents'
 import { mainMenuEventsSettings } from '../config/'
 
 import FooterMainMenu from '../components/FooterMainMenu'

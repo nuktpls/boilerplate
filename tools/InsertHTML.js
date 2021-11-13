@@ -1,4 +1,4 @@
-import { React } from './dependencies'
+import React from 'react'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import slugify from './slugify'
