@@ -1,5 +1,5 @@
 import React from 'react'
-import InsertHTML from '../tools/InsertHTML'
+import InsertHTML from '../../../tools/InsertHTML'
 const Row = ({ subAgent, params, opt, bgOpt, bgImg }) => (
 	<InsertHTML
 		type="row"
