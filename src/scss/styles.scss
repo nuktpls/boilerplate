@@ -15,8 +15,9 @@ Description: Gatsby Layout Builder is the platform web creators
 						 modals and much more.
 ----------------------------------------------------------------
 ----------------------------------------------------------------
-Plugin URI: https://edu4.dev
-Version: 0.1.0
+Plugin URI: https://www.npmjs.com/package/gatsby-layout-builder
+Plugin Install: ```npm i gatsby-layout-builder```
+Version: 0.2.0
 Year: 2021
 -----------------------------------------------------------<<<*/
 
@@ -36,3 +37,14 @@ Year: 2021
 --------------------------------------------------------------*/
 
 @import 'global/generic';
+@import 'global/base';
+
+/*--------------------------------------------------------------
+3.1 Modules / Layout
+--------------------------------------------------------------*/
+
+@import 'nu_modules/layout/menus';
+@import 'nu_modules/layout/header';
+@import 'nu_modules/layout/footer';
+@import 'nu_modules/layout/row';
+@import 'nu_modules/layout/row-bgColors';

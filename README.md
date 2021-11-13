@@ -1,103 +1,137 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  The Business Log - gatsby-plugin
-</h1>
+- **`[v.0.2.x:next]`**: Code instantly persistent dark mode, remove menus and styles fixes.
+- **`[v.0.x.0:warning]`**: The first grand finale release will be publish at v1.0.0.
+- **`[v.0.2.0:update]`**: Very first release atempt; package core system stable.
 
-Require business data written on gatsby-config.js
+---
+
+---
+
+# Gatsby Layout Builder
+
+#### LAYOUT BUILDER _by [Edu4Dev](https://edu4.dev)_
+
+---
+
+**Engine Agent:** Gatsby - Javascript Framework
+**Engine SubAgent:** Gatsby Plugin
+**Gatsby Plugin Name:** Gatsby Layout Builder
+
+---
+
+**Author:** Edu4Dev - Milton Bolonha
+**Description:** Gatsby Layout Builder is the platform
+web creators choose to build professional GatsbyJS HTML,
+plus SCSS basic structure, such as rows, number of columns,
+background color, header, responsive main menu,
+modals and simple stuffs.
+
+\*_Keep in mind these bundle aren't a block builder._
+
+---
+
+**Plugin URI:** https://www.npmjs.com/package/gatsby-layout-builder
+**Plugin Install:** `npm i gatsby-layout-builder`
+**Version:** 0.2.0
+**Year:** 2021
+
+---
+
+Invoke:
+
+```js
+<Layout
+	type="ROW"
+	opt={{
+		bgColor: '#fff',
+		isBoxed: true,
+		alignTo: 'center',
+		numColumns: 3,
+		// bgImg: {};
+	}}
+>
+	// Your content goes here
+</Layout>
+```
 
 ## 🚀 Quick start
 
-To get started to log data on your build, you can follow these steps:
+To get started to invoke rows, columns, modals, header and footer wrapper
+standard structure on your theme, you can follow these steps:
 
-1. Install The Business Log - gatsby-plugin with:
+1. Install Gatsby Layout Builder plugin with:
 
 ```shell
-npm i gatsby-business-in-build
+npm i gatsby-layout-builder
 ```
 
-If you already have customize your gatsby-config.js, you can use it. Otherwise, you can [create a new gatsby-config.js file](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) to setting your plugin.
+If you already have customize your gatsby-config.js, you can use it.
+Otherwise, you should [create a new gatsby-config.js file](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/) to setting your plugin.
 
-The prlgin directory structure looks like this:
+2. Add the Gatsby Layout plugin to the build. In your gatsby-config.js insert the code:
 
-```text
-/your-gatsby-site
-├── gatsby-config.js
+```javascript
+module.exports = {
+	plugins: [`gatsby-layout-builder`],
+	// if you just have the plugins array
+	// you may need to place the plugin string name
+	// between the right objects and arrays
+	//
+}
+```
+
+The Gatsby Layout Builder can you be used in your normal Gatsby ambient.
+Something like this:
+
+```
+/in-your-gatsby-website
+├── ./src/components
+├──── ComponentX.js
+├── ./src/pages
+├──── index.js
+└── Gatsby-config.js
 
 /gatsby-business-in-build
 ├── index.js
 ├── package.json
 └── README.md
+
 ```
 
-With `my-gatsby-site` being your Gatsby site, and `my-plugin` being your plugin. You could also include the plugin in your [site's `plugins` folder](https://www.gatsbyjs.com/docs/loading-plugins-from-your-local-plugins-folder/).
+3. Add the plugin correctly
 
-2. Include the plugin in a Gatsby site
+The plugin will be added by the starter implements
+of a <\Body \/> tag.React.Element.
 
-Inside of the `gatsby-config.js` file of your site (in this case, `my-gatsby-site`), include the plugin in the `plugins` array:
+You can verify Layout library to added to your site in next:
 
 ```javascript
-module.exports = {
-	plugins: [
-		// other gatsby plugins
-		// ...
-		require.resolve(`../my-plugin`),
-	],
-}
+<BodyContainer subAgent={subAgent} opt={opt} />
+<FooterContainer subAgent={subAgent} opt={opt} />
+<HeaderContainer opt={opt} />
+<RowContainer opt={opt} subAgent={subAgent} />
 ```
 
-The line `require.resolve('../my-plugin')` is what accesses the plugin based on its filepath on your computer, and adds it as a plugin when Gatsby runs.
+4. Dependencies
 
-_You can use this method to test and develop your plugin before you publish it to a package registry like npm. Once published, you would instead install it and [add the plugin name to the array](https://www.gatsbyjs.com/docs/using-a-plugin-in-your-site/). You can read about other ways to connect your plugin to your site including using `npm link` or `yarn workspaces` in the [doc on creating local plugins](https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project)._
-
-3. Verify the plugin was added correctly
-
-The plugin added by the starter implements a single Gatsby API in the `gatsby-node` that logs a message to the console. When you run `gatsby develop` or `gatsby build` in the site that implements your plugin, you should see this message.
-
-You can verify your plugin was added to your site correctly by running `gatsby develop` for the site.
-
-You should now see a message logged to the console in the preinit phase of the Gatsby build process:
-
-```shell
-$ gatsby develop
-success open and validate gatsby-configs - 0.033s
-success load plugins - 0.074s
-Loaded gatsby-starter-plugin
-success onPreInit - 0.016s
-...
-```
-
-4. Rename the plugin in the `package.json`
-
-When you clone the site, the information in the `package.json` will need to be updated. Name your plugin based off of [Gatsby's conventions for naming plugins](https://www.gatsbyjs.com/docs/naming-a-plugin/).
+xxx [xxx](https://www.x/).
 
 ## 🧐 What's inside?
 
 This starter generates the [files Gatsby looks for in plugins](https://www.gatsbyjs.com/docs/files-gatsby-looks-for-in-a-plugin/).
 
 ```text
-/my-plugin
-├── .gitignore
-├── gatsby-browser.js
-├── gatsby-node.js
-├── gatsby-ssr.js
-├── index.js
-├── LICENSE
-├── package.json
+/nu-module
+├── element_structure
+├── element_logics
+├── element_styles
+├── configs
+├── persistent_vars
+├── tools
+├── root_files
+├── wrapper_gatsby
+├── room.code-workspace
 └── README.md
 ```
-
-- **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-- **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.com/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-- **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.com/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-- **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-- **`index.js`**: A file that will be loaded by default when the plugin is [required by another application](https://docs.npmjs.com/creating-node-js-modules#create-the-file-that-will-be-loaded-when-your-module-is-required-by-another-application0). You can adjust what file is used by updating the `main` field of the `package.json`.
-- **`LICENSE`**: This plugin starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
-- **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the plugin's name, author, etc). This manifest is how npm knows which packages to install for your project.
-- **`README.md`**: A text file containing useful reference information about your plugin.
 
 ## 🎓 Learning Gatsby
 
