@@ -2,27 +2,27 @@
 	"folders": [
 		{
 			"name": "Elements Structures",
-			"path": "./components"
+			"path": "./src/components"
 		},
 		{
 			"name": "Elements Logics",
-			"path": "./containers"
+			"path": "./src/containers"
 		},
 		{
 			"name": "Elements Styles",
-			"path": "./scss"
+			"path": "./src/scss"
 		},
 		{
 			"name": "Configs",
-			"path": "./configs"
+			"path": "./src/configs"
 		},
 		{
 			"name": "Persistents Vars",
-			"path": "./services"
+			"path": "./src/services"
 		},
 		{
 			"name": "Tools",
-			"path": "./tools"
+			"path": "./src/tools"
 		},
 		{
 			"name": "Root Folder",
