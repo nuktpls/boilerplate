@@ -1,0 +1,20 @@
+node_modules/
+.cache/
+public
+
+*.env
+*.env.*
+!*.env.example
+
+# Local Netlify folder
+# .netlify
+# !/.netlify/functions/
+.DS_Store
+.htmlhintrc
+.stylelintrc
+.eslintrc.json
+.vscode/
+!.vscode/extensions/vscode-edu4dev-theme-color
+.prettierignore
+.prettierrc
+.gitattributes

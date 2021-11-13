@@ -1,0 +1,36 @@
+.row {
+	&.white {
+		background-color: white;
+	}
+	&.brow {
+		background-color: burlywood;
+	}
+	&.red {
+		background-color: red;
+	}
+	&.blue {
+		background-color: #0059ff;
+	}
+	&.jum {
+		background-color: #62ffa3;
+	}
+}
+body.dark {
+	.row {
+		&.white {
+			background-color: $black__color;
+		}
+		&.brow {
+			background-color: brown;
+		}
+		&.red {
+			background-color: #500505;
+		}
+		&.blue {
+			background-color: #010753;
+		}
+		&.jum {
+			background-color: #0c502e;
+		}
+	}
+}

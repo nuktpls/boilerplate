@@ -1,0 +1,77 @@
+{
+	"folders": [
+		{
+			"name": "Elements Structures",
+			"path": "./components"
+		},
+		{
+			"name": "Elements Logics",
+			"path": "./containers"
+		},
+		{
+			"name": "Elements Styles",
+			"path": "./scss"
+		},
+		{
+			"name": "Persistents Vars",
+			"path": "./services"
+		},
+		{
+			"name": "Root Folder",
+			"path": "./"
+		}
+	],
+	"settings": {
+		"editor.fontFamily": "VCR OSD Mono",
+		"editor.fontLigatures": true,
+		"editor.fontSize": 14,
+		"workbench.iconTheme": "material-icon-theme",
+		"editor.rulers": [80, 120],
+		"editor.formatOnSave": true,
+		"eslint.validate": ["javascript", "javascriptreact"],
+		"editor.renderLineHighlight": "gutter",
+		"editor.tabSize": 2,
+		"terminal.integrated.fontSize": 14,
+		"emmet.includeLanguages": {
+			"javascript": "javascriptreact"
+		},
+		"emmet.syntaxProfiles": {
+			"javascript": "jsx"
+		},
+		"javascript.updateImportsOnFileMove.enabled": "never",
+		"editor.parameterHints.enabled": false,
+		"breadcrumbs.enabled": false,
+		"javascript.suggest.autoImports": false,
+		"explorer.confirmDragAndDrop": false,
+		"editor.codeActionsOnSave": {
+			"source.fixAll.eslint": true
+		},
+		"workbench.statusBar.visible": false,
+		"workbench.activityBar.visible": false,
+		"editor.minimap.enabled": false,
+		"[json]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"diffEditor.renderSideBySide": true,
+		"workbench.sideBar.location": "right",
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"prettier.jsxSingleQuote": true,
+		"prettier.arrowParens": "avoid",
+		"window.zoomLevel": 1,
+		"workbench.colorTheme": "Edu4Dev Dark"
+	}
+}
+
+// 🎨 Codando no meu próprio tema do VScode 🎨
+// Experimente também abrindo o painel de extensões e buscando por "edu4dev".
+// Mais no site da Microsoft: https://marketplace.visualstudio.com/items?itemName=Edu4Dev.vscode-edu4dev-color-theme
+// Na tela estou usando o Edu4Dev RÖÖM - VScode Workspace,
+// que você pode utilizar também baixando aqui: https://gist.github.com/nuktpls/df3d70869b8c307926087b2f0aa6626c
+// Dependencias:
+// * font[VCR OSD Mono];
+// * iconTheme[material-icon-theme];
+// * defaultFormatter[prettier]
+// Texto Alternativo: Tela com códigos de computador da linguagem javascript em cores especialmente colhidas da marca Edu4Dev - Educação para Desenvolvedores
+// #edu4dev #vscode #themes
