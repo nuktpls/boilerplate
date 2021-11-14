@@ -1,47 +1,47 @@
 const arrayMenus = [
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br',
+		linkUrl: 'https://something.com',
 		text: 'Ir Para <br className="desktop-only" />o Site',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/quem-somos/',
+		linkUrl: 'https://something.com/quem-somos/',
 		text: 'Quem Somos',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/viver-bem/',
+		linkUrl: 'https://something.com/viver-bem/',
 		text: 'Viver Bem',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/fique-ligado/',
+		linkUrl: 'https://something.com/fique-ligado/',
 		text: 'Fique Ligado',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/profissional-e-gestor-de-saude/',
+		linkUrl: 'https://something.com/profissional-e-gestor-de-saude/',
 		text: 'Profissional e Gestor',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/faca-parte/',
+		linkUrl: 'https://something.com/faca-parte/',
 		text: 'Faça Parte',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/em-dia/',
+		linkUrl: 'https://something.com/em-dia/',
 		text: 'Em Dia',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/faca-sua-doacao/',
+		linkUrl: 'https://something.com/faca-sua-doacao/',
 		text: 'Doações',
 	},
 	{
 		position: 'main-menu',
-		linkUrl: 'https://adj.org.br/contatos/',
+		linkUrl: 'https://something.com/contatos/',
 		text: 'Contatos',
 	},
 ]

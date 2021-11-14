@@ -1,6 +1,6 @@
 {
   "name": "gatsby-layout-builder",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "src/index.js",
   "description": "Gatsby Layout Builder is the platform web creators choose to build professional GatsbyJS HTML, plus CSS basic structure, such as rows, number of columns, background color, header, responsive main menu, modals and much more.",
   "author": "Milton Bolonha <miltonbolonha@gmail.com>",
@@ -14,11 +14,17 @@
     "builder"
   ],
 	"dependencies":{
+		"gatsby": "^4.1.0",
+		"react": "^17.0.2",
+    "react-dom": "^17.0.2",
 		"react-icons": "^4.3.1",
 		"sass": "^1.43.4",
 		"react-helmet": "^6.1.0",
 		"react-helmet-async": "^1.1.2"
 	},
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo \"No build script setup\""

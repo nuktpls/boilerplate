@@ -13,12 +13,15 @@
 ---
 
 **Engine Agent:** Gatsby - Javascript Framework
+
 **Engine SubAgent:** Gatsby Plugin
+
 **Gatsby Plugin Name:** Gatsby Layout Builder
 
 ---
 
 **Author:** Edu4Dev - Milton Bolonha
+
 **Description:** Gatsby Layout Builder is the platform
 web creators choose to build professional GatsbyJS HTML,
 plus SCSS basic structure, such as rows, number of columns,
@@ -30,8 +33,11 @@ modals and simple stuffs.
 ---
 
 **Plugin URI:** https://www.npmjs.com/package/gatsby-layout-builder
+
 **Plugin Install:** `npm i gatsby-layout-builder`
+
 **Version:** 0.2.0
+
 **Year:** 2021
 
 ---
@@ -100,24 +106,42 @@ Something like this:
 3. Add the plugin correctly
 
 The plugin will be added by the starter implements
-of a <\Body \/> tag.React.Element.
+of a <Layout type="COMPONENT" /> tag.React.Element.
 
-You can verify Layout library to added to your site in next:
+You can verify Layout component library to added to your site in next:
 
 ```javascript
+// BODY type
 <BodyContainer subAgent={subAgent} opt={opt} />
+// FOOTER type
 <FooterContainer subAgent={subAgent} opt={opt} />
+// HEADER type
 <HeaderContainer opt={opt} />
+// ROW type
 <RowContainer opt={opt} subAgent={subAgent} />
 ```
 
+Those types who accept subAgent parameter may be used as wrapper of some children element.
+
 4. Dependencies
 
-xxx [xxx](https://www.x/).
+```json
+	{
+		"dependencies":{
+			"gatsby": "^4.1.0",
+			"react": "^17.0.2",
+			"react-dom": "^17.0.2",
+			"react-icons": "^4.3.1",
+			"sass": "^1.43.4",
+			"react-helmet": "^6.1.0",
+			"react-helmet-async": "^1.1.2"
+	},
+  	"devDependencies": {
+    	"prettier": "^2.4.1"
+  }}
+	```
 
 ## 🧐 What's inside?
-
-This starter generates the [files Gatsby looks for in plugins](https://www.gatsbyjs.com/docs/files-gatsby-looks-for-in-a-plugin/).
 
 ```text
 /nu-module
