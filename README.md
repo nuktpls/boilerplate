@@ -32,9 +32,9 @@ modals and simple stuffs.
 
 ---
 
-**Plugin URI:** https://www.npmjs.com/package/gatsby-layout-builder
+**Plugin URI:** https://www.npmjs.com/package/gatsby-atomic-block
 
-**Plugin Install:** `npm i gatsby-layout-builder`
+**Plugin Install:** `npm i gatsby-atomic-block`
 
 **Version:** 0.2.0
 
@@ -67,7 +67,7 @@ standard structure on your theme, you can follow these steps:
 1. Install Gatsby Layout Builder plugin with:
 
 ```shell
-npm i gatsby-layout-builder
+npm i gatsby-atomic-block
 ```
 
 If you already have customize your gatsby-config.js, you can use it.
@@ -77,7 +77,7 @@ Otherwise, you should [create a new gatsby-config.js file](https://www.gatsbyjs.
 
 ```javascript
 module.exports = {
-	plugins: [`gatsby-layout-builder`],
+	plugins: [`gatsby-atomic-block`],
 	// if you just have the plugins array
 	// you may need to place the plugin string name
 	// between the right objects and arrays
