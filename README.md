@@ -157,6 +157,15 @@ Those types who accept subAgent parameter may be used as wrapper of some childre
 └── README.md
 ```
 
+## Keep in touch
+
+Don't keep in touch yet. Unless your want to made some kind of friendship.
+
+Poupa Luz <poupaluz@edu4.dev>
+
+Milton Bolonha <miltonbolonha@gmail.com>
+
+
 ## 🎓 Learning Gatsby
 
 If you're looking for more guidance on plugins, how they work, or what their role is in the Gatsby ecosystem, check out some of these resources:
