@@ -46,16 +46,16 @@ Invoke:
 
 ```js
 <Layout
-	type="ROW"
-	opt={{
-		bgColor: '#fff',
-		isBoxed: true,
-		alignTo: 'center',
-		numColumns: 3,
-		// bgImg: {};
-	}}
+  type="ROW"
+  opt={{
+    bgColor: '#fff',
+    isBoxed: true,
+    alignTo: 'center',
+    numColumns: 3,
+    // bgImg: {};
+  }}
 >
-	// Your content goes here
+  // Your content goes here
 </Layout>
 ```
 
@@ -77,11 +77,11 @@ Otherwise, you should [create a new gatsby-config.js file](https://www.gatsbyjs.
 
 ```javascript
 module.exports = {
-	plugins: [`gatsby-atomic-block`],
-	// if you just have the plugins array
-	// you may need to place the plugin string name
-	// between the right objects and arrays
-	//
+  plugins: [`gatsby-atomic-block`],
+  // if you just have the plugins array
+  // you may need to place the plugin string name
+  // between the right objects and arrays
+  //
 }
 ```
 
@@ -96,7 +96,7 @@ Something like this:
 ├──── index.js
 └── Gatsby-config.js
 
-/gatsby-business-in-build
+/gatsby-layout-builder
 ├── index.js
 ├── package.json
 └── README.md
@@ -119,13 +119,17 @@ You can verify Layout component library to added to your site in next:
 <HeaderContainer opt={opt} />
 // ROW type
 <RowContainer opt={opt} subAgent={subAgent} />
+// SIDEBAR type
+<SidebarContainer opt={opt} subAgent={subAgent} />
+// MAIN type
+<MainContainer opt={opt} subAgent={subAgent} />
 ```
 
 Those types who accept subAgent parameter may be used as wrapper of some children element.
 
 4. Dependencies
 
-```json
+````json
 	{
 		"dependencies":{
 			"gatsby": "^4.1.0",
@@ -155,16 +159,15 @@ Those types who accept subAgent parameter may be used as wrapper of some childre
 ├── wrapper_gatsby
 ├── room.code-workspace
 └── README.md
-```
+````
 
 ## Keep in touch
 
-Don't keep in touch yet. Unless your want to made some kind of friendship.
+Don't mail me yet. Unless you want to do some kind of friendship.
 
 Poupa Luz <poupaluz@edu4.dev>
 
 Milton Bolonha <miltonbolonha@gmail.com>
-
 
 ## 🎓 Learning Gatsby
 
