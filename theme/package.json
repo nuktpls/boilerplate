@@ -1,0 +1,15 @@
+{
+  "name": "theme",
+  "version": "1.0.0",
+  "main": "gatsby-config.js",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby-atomic-block": "^0.2.5",
+    "gatsby-layout-builder": "^0.2.6"
+  },
+  "peerDependencies": {
+    "gatsby": "^4.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

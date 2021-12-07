@@ -1,0 +1,16 @@
+{
+  "name": "boilerplate4dev",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "repository": "https://github.com/yarnpkg/example-yarn-package",
+  "scripts": {
+    "build": "yarn workspace website develop"
+  },
+  "workspaces": [
+    "theme",
+    "website",
+    "wp-backend"
+  ]
+}

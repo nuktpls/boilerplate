@@ -1,0 +1,10 @@
+{
+  "name": "wp-backend",
+  "appLogic": "WordPress Headless CMS",
+  "version": "0.0.0",
+  "decription": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Joe Bloggs <joe.bloggs@gmail.com> (joebloggs.com)",
+  "license": "ISC"
+}
