@@ -13,5 +13,3 @@ public
 .stylelintrc
 .eslintrc.json
 .idea
-.vscode
-!.vscode/extensions/vscode-edu4dev-theme-color
