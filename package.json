@@ -9,6 +9,7 @@
     "build": "yarn workspace website develop"
   },
   "workspaces": [
+    "content",
     "theme",
     "website",
     "wp-backend"
