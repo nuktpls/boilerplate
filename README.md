@@ -1,3 +1,90 @@
+# boilerplate
+
+Edu4Dev boilerplate
+
+Para rodar o website junto com o tema, agora o comando da CLI do Gatsbyjs muda para algo como:
+
+npm run develop -w website
+
+Na flag -w indico o nome do workspace que coincide com as estruturas de pastas que estou montando.
+E por meio do npm run develop faço a construção do ambiente de desenvolvimento, equivalente ao código gatsby develop.
+
+## Exemplo de código
+
+Abaixo descrevo que dentro do meu diretório de pastas e arquivos, onde vou começar a trabalhar, existe uma arquitetura contendo três pastas, a saber:
+theme, website e wp-backend.
+
+Na raiz do projeto o package.json indico a estrutura:
+
+{
+"name": "myworkspace",
+"private": true,
+"version": "1.0.0",
+"main": "index.js",
+"license": "MIT",
+"repository": {
+"url": "https://github.com/nuktpls/not-yet",
+"type": "git"
+},
+"scripts": {
+"build": "yarn workspace website develop"
+},
+"workspaces": [
+"theme",
+"website",
+"wp-backend"
+]
+}
+
+Dentro de website, em um package.json fica a minha instalação das engines do gatsby, do react e dependências que não são do tema em si.
+
+{
+"name": "website",
+"version": "1.0.0",
+"main": "index.js",
+"license": "MIT",
+"scripts": {
+"develop": "gatsby develop",
+"build": "gatsby build"
+},
+"dependencies": {
+"gatsby": "^4.3.0",
+"react": "^17.0.2",
+"react-dom": "^17.0.2",
+"theme": "1.0.0"
+}
+}
+
+No diretório da engine do website a chamada do tema é feita por meio de um arquivo de configurações na seção de plugins. O arquivo é o gatsby-config.js:
+
+module.exports = {
+plugins: ["theme"],
+};
+
+A pasta theme leva também um package.json dessa maneira:
+
+{
+"name": "theme",
+"version": "1.0.0",
+"main": "gatsby-config.js",
+"license": "MIT",
+"dependencies": {
+"gatsby-atomic-block": "^0.2.5",
+"gatsby-layout-builder": "^0.2.6"
+},
+"peerDependencies": {
+"gatsby": "^4.3.0",
+"react": "^17.0.2",
+"react-dom": "^17.0.2"
+}
+}
+
+Note as dependências chamadas peer, o tema usará as dependências centralizadas e não criará multiplos diretórios de módulos nodes.
+
+Ferramentas como gatsby-atomic-block, gatsby-layout-builder, que servem para você moldar o seu tema, podem ser instaladas dentro do workspace do tema com o seguinte comando:
+
+npm i gatsby-atomic-block -w theme
+
 # Boilerplate 4 Dev
 
 ## 🚀 Para iniciar localmente
@@ -107,151 +194,3 @@
     ├──── 📂/pages
     ├──── 📂/tools
     └──📂/static
-
-4.  **Servidor Serverless Meli**
-
-    Sabe o [Netlify](https://netlify.com/)? Então...
-    Sugerimos que use um servidor baseado em Caddy, que é o [Meli.sh](http://meli.sh/).
-    É baseado no Netlify.
-
-    ![Meli Logotipo](https://docs.meli.sh/img/logo.svg)
-
-    Requisitos:
-
-    - um VPS (Virtual Private Server) / Servidor Virtual Privado
-
-    - Docker e Docker Compose ([ver aqui como instalar no Ubuntu](https://docs.docker.com/engine/install/ubuntu/#install-docker-engine))
-
-    ## 1. Configure DNS
-
-    Configure os registros DNS para apontar para seu VPS. Você deve configurar os domínios principal e o curinga. Supondo que o IP do seu VPS seja 1.2.3.4:
-
-        ```shell
-        	meli.dominio.com IN A 1.2.3.4
-        	*.meli.dominio.com IN A 1.2.3.4
-        ```
-
-    Eu uso assim:
-
-        ```shell
-        	poupaluz.meudominio.dev IN A 1.2.3.4
-        	*.poupaluz.meudominio.dev IN A 1.2.3.4
-        ```
-
-    ## 2. Deploy do Meli na VPS pelo Docker
-
-    Crie um arquivo com o nome docker-compose.yml em algum lugar:
-
-    ```shell
-        version: "3"
-            services:
-                meli:
-                    image: getmeli/meli:beta
-                    ports:
-                        - 80:80 # sequestrando portas principais
-                        - 443:443 # sequestrando portas principais
-                    environment:
-                        # no trailing slash !
-                        MELI_URL: https://poupaluz.meudominio.dev
-                        MELI_MONGO_URI: mongodb://mongo:27017/meli
-                        # openssl rand -hex 32
-                        MELI_JWT_SECRET: senhazinhaAQUI
-                        # https://docs.meli.sh/authentication
-                        MELI_USER: olhaoSEUuserAqui
-                        MELI_PASSWORD: senhazinhaAQUI
-                            # Máximo de sites por usuário
-                            # Padrão: um site por usuário
-                            # Zero: desativa a opção e torna ilimitado
-                            # MELI_MAX_ORGS=0
-                    volumes:
-                        - ./data/sites:/sites
-                        - ./data/files:/files
-                        - ./data/caddy/data:/data
-                        - ./data/caddy/config:/config
-                    depends_on:
-                        - mongo
-
-    			mongo:
-                    image: mongo:4.2-bionic
-                    restart: unless-stopped
-                    volumes:
-                        - ./data/mongo:/data/db
-    ```
-
-    ## 3. Compondo o Docker
-
-    ```shell
-
-     # Vai dar certo de primeira
-     # digite o código
-       docker-compose up -d
-    ```
-
-    ## 4. Acessando o Poupa Luz
-
-    Acesse poupaluz.meudominio.dev e coloque suas credenciais na página de login
-
-    ## 5. Criando um website e fazendo o deploy manual
-
-    Para fazer o deploy manual você deve criar um site e depois gerar um token no seu Poupa Luz.
-
-    Depois de tê-lo feito rode os seguintes comandos:
-
-    ```shell
-
-       # Faça o build do seu app/site em Gatsby
-       # digite o comando
-          gatsby build
-
-       # Envie o seu site para o seu servidor Poupa Luz
-       # digite o comando
-       # AVISO: este comando está fazendo deploy  da branch master
-       # AVISO: somente a pasta public será enviada
-       # AVISO: ela contém uma SPA Single Page App
-       # AVISO: você deve configurar a esteira de deploy
-          npx -p "@getmeli/cli" meli upload \
-          /home/SEUUSERAQUI/SUAPASTA/PASTADOPROJETOEMGASTBY/public \
-          --url https://poupaluz.seudominio.dev \
-          --site xxxxxxxxxxxxxxx \
-          --token xxxxxxxxxxxxxx \
-          --branch "master"
-    ```
-
-    ## 6. Definindo variáveis e Habilitando SPA
-
-    Você deve:
-
-    - Definir a sua branch (que irá buildar)
-    - Habiltar a função Single page application (SPA) mode
-    - Inserir o domínio final
-    - Deixar acionado Automatic SSL (ACME)
-
-    ## 7. Deploy automático
-
-    Deploy automático com gitea: [aqui](https://docs.meli.sh/get-started/pr-previews?highlight=deplo#gitea)
-
-    ## Bibliografia
-
-    Testando o Gatsby zerado: [aqui](https://www.gatsbyjs.com/docs/quick-start/)
-
-    Gatsby Oficial Cloud: [aqui](https://www.gatsbyjs.com/products/cloud/)
-
-    Curso de Gatsby: [aqui](https://www.udemy.com/course/gatsby-crie-um-site-pwa-com-react-graphql-e-netlify-cms/) ou [aqui](http://bj-share.info/)
-
-    Instalação do Meli: [aqui](https://docs.meli.sh/get-started/installation)
-
-    Documentação do Meli: [aqui](https://docs.meli.sh/)
-
-    Proxy Reverse do Meli: [aqui](https://docs.meli.sh/configuration/reverse-proxy?highlight=proxy#nginx)
-
-    Let's Encrypt instruções: [aqui](https://docs.meli.sh/configuration/reverse-proxy?highlight=proxy#wildcard-certificates-from-lets-encrypt)
-
-    ## Direitos Autorais
-
-    As únicas entidades a terem o direito sobre o mesmo é o autor e a beneficiada direta (Edu4Dev e seus clientes), sendo vedado o uso sobre qualquer maneira do mesmo por terceiros.
-
-    É expressamente proibido divulgar este código em repositório público.
-
-    É expressamente proibido usar este código para fins didáticos pedagógicos.
-
-    É expressamente bem-vindo todo e qualquer contato de interesse ou esclarecimentos.
