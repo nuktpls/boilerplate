@@ -23,7 +23,7 @@
     - reactjs;
     - sass;
     - wordpress;
-    - sage;
+    - sager;
 
     Tecnologias opcionais:
 
@@ -33,9 +33,9 @@
     - meli/caddy;
     - gitea;
 
-1.  **Crie um site em Gatsby usando o git da Studio Visual.**
+1.  **Crie um site em Gatsby usando o git da Edu4Dev.**
 
-    Use a CLI do Gatsby para gerar um novo site/jogo da memória.
+    Use a CLI do Gatsby para gerar um novo site/
 
     ```shell
     # certifique-se de ter o Gatsby instalado e atualizado
@@ -44,7 +44,7 @@
 
     # neste ponto você está apto a baixar o projeto localmente
     # digite o comando
-    	gatsby new jogo-da-memoria https://github.com/studiovisual/jogo-da-memoria
+    	gatsby new boilerplate https://github.com/nuktpls/boilerplate
 
     # você vai precisar das credenciais corretas para baixar
     # uma vez que é um repositório privado
@@ -56,14 +56,14 @@
     Para acessar o diretório e rodar o projeto.
 
     ```shell
-    # acesse os arquivos que estão no diretório /jogo-da-memoria/
+    # acesse os arquivos que estão no diretório /boilerplate/
     # digite o comando
-        cd jogo-da-memoria/
+        cd boilerplate/
 
     # adicione o repo nas configs do git
-        git remote add origin https://github.com/studiovisual/jogo-da-memoria.git
+        git remote add origin https://github.com/nuktpls/boilerplate.git
 
-    # atualize o seu repo local de acordo com o do github/studiovisual
+    # atualize o seu repo local de acordo com o do github/nuktpls
     # você irá precisar das credenciais aqui
         git fetch origin
 
@@ -90,9 +90,9 @@
 
     Edite o arquivo `src/pages/index.js` e veja o site sendo atualizado em tempo real.
 
-## Organização das Pastas
+## Organização do Tema
 
-    ./jogo-da-memoria
+    ./theme
     ├── 📂/src
     ├──── 📂/scss
     ├─────── style.scss
@@ -248,7 +248,7 @@
 
     ## Direitos Autorais
 
-    As únicas entidades a terem o direito sobre o mesmo é o autor e a beneficiada direta (Studio Visual e seus clientes), sendo vedado o uso sobre qualquer maneira do mesmo por terceiros.
+    As únicas entidades a terem o direito sobre o mesmo é o autor e a beneficiada direta (Edu4Dev e seus clientes), sendo vedado o uso sobre qualquer maneira do mesmo por terceiros.
 
     É expressamente proibido divulgar este código em repositório público.
 

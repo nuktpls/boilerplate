@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "repository": "https://github.com/yarnpkg/example-yarn-package",
+  "repository": "https://github.com/nuktpls/boilerplate",
   "scripts": {
     "build": "yarn workspace website develop"
   },
@@ -12,6 +12,10 @@
     "content",
     "theme",
     "website",
-    "wp-backend"
+    "wp-backend",
+    "bot",
+    "diagram",
+    "nuktpls",
+    "brand"
   ]
 }

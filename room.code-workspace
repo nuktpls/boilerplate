@@ -1,20 +1,32 @@
 {
 	"folders": [
 		{
+			"name": "Inteligência Artificial",
+      "path": "./bot"
+    },
+		{
+			"name": "A Marca",
+      "path": "./brand"
+    },
+		{
+			"name": "RÖÖM Maker (diagrama)",
+      "path": "./diagram"
+    },
+		{
+			"name": "WordPress",
+      "path": "./wp-backend"
+    },
+		{
+			"name": "Website",
+      "path": "./website"
+    },
+		{
 			"name": "Content i18n",
       "path": "./content"
     },
 		{
 			"name": "Theme",
       "path": "./theme"
-    },
-		{
-			"name": "Website",
-      "path": "./theme"
-    },
-		{
-			"name": "WordPress",
-      "path": "./wp-backend"
     },
 		{
 			"name": "Root",

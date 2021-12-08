@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: mariadb:latest
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpressdatabase
+      MYSQL_USER: bolonhauser
+      MYSQL_PASSWORD: bolonhapass
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    ports:
+      - "3000:80"
+    restart: always
+    volumes:
+      - ./wp-config.php:/var/www/html/wp-config.php
+      # - ./.htaccess:/var/www/html/.htaccess
+      - ./docker-ini.ini:/usr/local/etc/php/conf.d/docker-ini.ini
+      - ./wp-content:/var/www/html/wp-content
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: bolonhauser
+      WORDPRESS_DB_PASSWORD: bolonhapass
+      WORDPRESS_DB_NAME: wordpressdatabase
