@@ -2,6 +2,8 @@
 
 Edu4Dev boilerplate
 
+![room boilerplate](https://i.imgur.com/nSdXirg.png)
+
 Para rodar o website junto com o tema, agora o comando da CLI do Gatsbyjs muda para algo como:
 
 npm run develop -w website
