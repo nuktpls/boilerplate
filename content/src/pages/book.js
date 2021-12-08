@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react'
 
-export default function ThemePage(props) {
-  return <h1>Hello, from the theme!</h1>;
+export default function BookPage(props) {
+	return <h1>Hello, from the book!</h1>
 }
