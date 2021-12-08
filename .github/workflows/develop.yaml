@@ -1,0 +1,61 @@
+# name:
+# on:
+#   push:
+#     branches:
+#       - develop
+# env:
+#   REGISTRY:
+#   IMAGE_NAME:
+
+# jobs:
+#   build:
+#     name:
+#     runs-on:
+#     steps:
+#       - name:
+#         uses:
+
+#       - name:
+#         id:
+#         run:
+
+#       - name:
+#         run:
+
+#       - name:
+#         run:
+
+#       - name:
+#         uses:
+#         with:
+#           token:
+
+#       - name:
+#         run:
+
+#       - name:
+#         run:
+
+#   release:
+#     name:
+#     needs:
+#     runs-on:
+#     steps:
+#       - name:
+#         uses:
+
+#       - name:
+#         id:
+#         run:
+
+#       - name:
+#         run:
+
+#       - name:
+#         uses:
+#         with:
+#           host:
+#           username:
+#           key:
+#           port:
+#           script:

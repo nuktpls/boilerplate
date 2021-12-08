@@ -13,14 +13,3 @@ public
 .stylelintrc
 .eslintrc.json
 .idea
-
-### VisualStudioCode ###
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-!.vscode/extensions/vscode-edu4dev-color-theme/
-
-# Support for Project snippet scope
-!.vscode/*.code-snippets
