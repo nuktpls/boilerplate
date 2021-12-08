@@ -1,23 +1,23 @@
 {
 	"folders": [
 		{
-			"name": "Inteligência Artificial",
+			"name": "Artificial Intelligence",
       "path": "./bot"
     },
 		{
-			"name": "A Marca",
+			"name": "Brand",
       "path": "./brand"
     },
 		{
-			"name": "RÖÖM Maker (diagrama)",
+			"name": "RÖÖM Maker (diagram)",
       "path": "./diagram"
     },
 		{
-			"name": "WordPress",
+			"name": "WordPress Sage/Timber + ACF",
       "path": "./wp-backend"
     },
 		{
-			"name": "Website",
+			"name": "Website Engine",
       "path": "./website"
     },
 		{
