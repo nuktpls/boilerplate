@@ -16,5 +16,5 @@ public
 !.vscode/*
 !*.code-workspace
 
-wp-backend/wp-content/plugins
-wp-backend/wp-content/uploads
+wp-backend/wp-content/plugins/*
+wp-backend/wp-content/uploads/*
