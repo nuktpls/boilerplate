@@ -137,7 +137,7 @@
 			/*! no static exports found */
 			/***/ function (module, exports) {
 				throw new Error(
-					"Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/var/www/html/wp-content/themes/tema-de-integracao/resources/assets/scripts/general-animations.js'"
+					"Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/general-animations.js'"
 				)
 
 				/***/
@@ -150,7 +150,7 @@
 			/*! no static exports found */
 			/***/ function (module, exports, __webpack_require__) {
 				module.exports = __webpack_require__(
-					/*! /var/www/html/wp-content/themes/tema-de-integracao/resources/assets/scripts/general-animations.js */ './resources/assets/scripts/general-animations.js'
+					/*! /var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/general-animations.js */ './resources/assets/scripts/general-animations.js'
 				)
 
 				/***/

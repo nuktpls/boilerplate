@@ -190,7 +190,7 @@ $signup_request = (function(){
     <p>Mensagem: <strong>$mensagemEmpresa</strong></p>
     EOT;
     $headers = array('Content-Type: text/html; charset=UTF-8');
-    $headers[] = "From: Teste <mbolonha@studiovisual.com.br>";
+    $headers[] = "From: Teste <mbolonha@deletar.com.br>";
     $headers[] = "Cc: The Bolonha <miltonbolonha@gmail.com>";
     $response['to'] = $to;
     $response['subject'] = $subject;

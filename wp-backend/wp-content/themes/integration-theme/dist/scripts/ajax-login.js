@@ -137,7 +137,7 @@
 			/*! no static exports found */
 			/***/ function (module, exports) {
 				throw new Error(
-					"Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/var/www/html/wp-content/themes/tema-de-integracao/resources/assets/scripts/ajax-login.js'"
+					"Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/ajax-login.js'"
 				)
 
 				/***/
@@ -150,7 +150,7 @@
 			/*! no static exports found */
 			/***/ function (module, exports, __webpack_require__) {
 				module.exports = __webpack_require__(
-					/*! /var/www/html/wp-content/themes/tema-de-integracao/resources/assets/scripts/ajax-login.js */ './resources/assets/scripts/ajax-login.js'
+					/*! /var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/ajax-login.js */ './resources/assets/scripts/ajax-login.js'
 				)
 
 				/***/

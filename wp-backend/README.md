@@ -48,7 +48,7 @@ Após ter instalado todas as dependências globais em sua máquina, já podemos 
         docker-compose up
 
 3.  Importe o dump do banco de dados executando o comando:
-    cat dump.sql | docker exec -i tema-de-integracao_db mysql -u root --password=INTegrapassword321 tema-de-integracao
+    cat dump.sql | docker exec -i integration-theme_db mysql -u root --password=INTegrapassword321 integration-theme
 
 ## Acessos
 
@@ -67,7 +67,7 @@ Após ter instalado todas as dependências globais em sua máquina, já podemos 
 Para importar o banco de dados utilize o comando a seguir na raiz do projeto já com todos os containers rodando:
 
 ```sh
-cat dump.sql | docker exec -i tema-de-integracao_db mysql -u root --password=INTegrapassword321 tema-de-integracao
+cat dump.sql | docker exec -i integration-theme_db mysql -u root --password=INTegrapassword321 integration-theme
 ```
 
 ## Exportando banco de dados
@@ -75,5 +75,5 @@ cat dump.sql | docker exec -i tema-de-integracao_db mysql -u root --password=INT
 Caso queira exportar o banco de dados no repositório como `dump.sql`, utilize o comando abaixo na raiz do projeto que o arquivo de backup será atualizado:
 
 ```sh
-docker exec tema-de-integracao_db mysqldump -u root --password=INTegrapassword321 tema-de-integracao > dump.sql
+docker exec integration-theme_db mysqldump -u root --password=INTegrapassword321 integration-theme > dump.sql
 ```

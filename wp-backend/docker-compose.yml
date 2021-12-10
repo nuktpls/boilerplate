@@ -23,7 +23,7 @@ services:
     # image: wordpress:latest
     image: 'wpdiaries/wordpress-xdebug:5.8.0-php7.4-apache'
     ports:
-      - "3000:80"
+      - "7080:80"
     environment:
       WORDPRESS_DB_HOST: '${DB_HOST}'
       WORDPRESS_DB_USER: '${DB_USER}'
@@ -36,7 +36,7 @@ services:
       - './vendor:/var/www/html/vendor'
       - './.env:/var/www/html/.env'
       - './wp-config.php:/var/www/html/wp-config.php'
-      - './wp-content/themes/tema-de-integracao:/var/www/html/wp-content/themes/tema-de-integracao'
+      - './wp-content/themes/integration-theme:/var/www/html/wp-content/themes/integration-theme'
       - './wp-content/plugins:/var/www/html/wp-content/plugins'
       - './wp-content/uploads:/var/www/html/wp-content/uploads'
     depends_on:
@@ -47,7 +47,7 @@ services:
     image: composer
     volumes_from:
       - wordpress
-    working_dir: /var/www/html/wp-content/themes/tema-de-integracao
+    working_dir: /var/www/html/wp-content/themes/integration-theme
     command: composer install --ignore-platform-reqs
     depends_on:
       - wordpress
@@ -59,11 +59,11 @@ services:
       - themebackend
       - plugins
       - wordpress
-    working_dir: /var/www/html/wp-content/themes/tema-de-integracao
+    working_dir: /var/www/html/wp-content/themes/integration-theme
     command: bash -c "yarn && yarn start"
     ports:
-      - '4000:4000'
-      - '4001:4001'
+      - '3000:3000'
+      - '3001:3001'
     volumes_from:
       - wordpress
   phpmyadmin:

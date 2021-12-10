@@ -30,7 +30,7 @@
     - meli/caddy;
     - gitea;
 
-1.  **Crie um site em Gatsby usando o git da Studio Visual.**
+1.  **Crie um site em Gatsby usando o git da Deletar.**
 
     Use a CLI do Gatsby para gerar um novo site/tema.
 
@@ -245,7 +245,7 @@
 
     ## Direitos Autorais
 
-    As únicas entidades a terem o direito sobre o mesmo é o autor e a beneficiada direta (Studio Visual e seus clientes), sendo vedado o uso sobre qualquer maneira do mesmo por terceiros.
+    As únicas entidades a terem o direito sobre o mesmo é o autor e a beneficiada direta (Deletar e seus clientes), sendo vedado o uso sobre qualquer maneira do mesmo por terceiros.
 
     É expressamente proibido divulgar este código em repositório público.
 
