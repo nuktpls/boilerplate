@@ -13,3 +13,5 @@ public
 .stylelintrc
 .eslintrc.json
 .idea
+!.vscode/*
+!*.code-workspace

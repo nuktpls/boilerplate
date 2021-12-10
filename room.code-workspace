@@ -9,8 +9,12 @@
       "path": "brand"
     },
     {
-      "name": "WordPress Sage/Timber + ACF",
-      "path": "wp-backend"
+      "name": "WP Integration",
+      "path": "wp-backend/wp-content/themes/integration-theme"
+    },
+    {
+      "name": "WP Plugin",
+      "path": "wp-backend/wp-content/plugins"
     },
     {
       "name": "Website Engine",
