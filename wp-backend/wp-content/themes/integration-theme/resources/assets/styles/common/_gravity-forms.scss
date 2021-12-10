@@ -20,17 +20,6 @@
       &_complex {
         @extend .row;
       }
-
-      &_preview {
-        align-items: center;
-        display: flex;
-        font-size: rem-calc(14);
-        margin-bottom: rem-calc(8);
-
-        strong {
-          @include text-crop;
-        }
-      }
     }
 
     .gsection {
@@ -51,7 +40,7 @@
       }
     }
 
-    .validation_message {
+    .validation_message  {
       @extend .invalid-feedback;
 
       display: block;
@@ -102,14 +91,10 @@
   }
 
   &_delete_file {
-    @extend .btn;
-    @extend .btn-danger;
-
     background-image: url("../images/trash-alt.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 20px;
-    margin-right: rem-calc(8);
   }
 
   &_confirmation_message {
@@ -134,20 +119,11 @@
         @include text-crop;
       }
     }
-
-    p {
-      margin-bottom: 0;
-    }
   }
 
   &_button {
     @include media-breakpoint-down(md) {
       width: 100%;
     }
-  }
-
-  &_button_select_files {
-    padding-bottom: rem-calc(10.5);
-    padding-top: rem-calc(10.5);
   }
 }

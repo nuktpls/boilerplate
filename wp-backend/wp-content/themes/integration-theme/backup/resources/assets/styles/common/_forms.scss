@@ -1,0 +1,39 @@
+.form-control:not(textarea) {
+  height: 54px !important; // Compatibilidade Firefox
+  line-height: normal !important; // Compatibilidade Safari 13.4
+
+  &::file-selector-button {
+    border: none;
+    border-radius: 2px;
+    font-weight: 800;
+    height: 85%;
+    margin: 0;
+    padding: 0 1rem;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.form-check-input {
+  margin-right: rem-calc(10);
+}
+
+.form-check-inline {
+  align-items: center;
+  display: inline-flex;
+
+  @include media-breakpoint-down(md) {
+    display: flex;
+
+    +.form-check-inline {
+      margin-top: rem-calc(24);
+    }
+  }
+}
+
+textarea {
+  height: rem-calc(156);
+  resize: none;
+}

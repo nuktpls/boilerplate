@@ -1,0 +1,45 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "line-height": (
+      property: line-height,
+      class: lh,
+      values: (
+        base: $line-height-base,
+        1: 1,
+        20: 1.25rem,
+        22: 1.375rem,
+        32: 2rem,
+      )
+    ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "object-fit": (
+      property: object-fit,
+      class: of,
+      values: cover contain,
+    )
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-weight": map-merge(
+      map-get($utilities, "font-weight"),
+      (
+        values: map-merge(
+          map-get(map-get($utilities, "font-weight"), "values"),
+          (semi-bold: 800),
+        ),
+      ),
+    ),
+  )
+);

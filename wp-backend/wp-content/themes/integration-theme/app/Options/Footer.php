@@ -19,7 +19,7 @@ class Footer extends Options {
             Tab::make( '<span class="dashicons dashicons-welcome-write-blog"></span> Sobre', 'tab_content_footer' )
                 ->placement('top'),
             Group::make( 'Sobre', 'content_footer' )
-                ->instructions( 'Informações sobre a Tema Integração' )
+                ->instructions( 'Informações sobre a N1 Seguros' )
                 ->fields([
                     Text::make( 'Título', 'title' )
                         ->required(),
@@ -32,7 +32,7 @@ class Footer extends Options {
             Tab::make( '<span class="dashicons dashicons-format-chat"></span> Contatos', 'tab_contact_footer' )
                 ->placement('left'),
             Group::make( 'Contatos', 'contact_footer' )
-                ->instructions( 'Informações para contato com a Tema Integração' )
+                ->instructions( 'Informações para contato com a N1 Seguros' )
                 ->fields([
                     Text::make( 'Titulo', 'title' )
                         ->required(),
@@ -46,7 +46,7 @@ class Footer extends Options {
             Tab::make( '<span class="dashicons dashicons-rss"></span> Social', 'tab_social_footer' )
                 ->placement('left'),
             Group::make( 'Social', 'social_footer' )
-                ->instructions( 'Redes Sociais da Tema Integração' )
+                ->instructions( 'Redes Sociais da N1 Seguros' )
                 ->fields([
                     Text::make( 'Título', 'title' )
                         ->required(),

@@ -1,0 +1,13 @@
+.fw-semibolder {
+  font-weight: 800 !important;
+}
+
+.color-inherit,
+.color-inherit:hover,
+.color-inherit:active {
+  color: inherit;
+}
+
+.transition-base {
+  transition: $transition-base;
+}

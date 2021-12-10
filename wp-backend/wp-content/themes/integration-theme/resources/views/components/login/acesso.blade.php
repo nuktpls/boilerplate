@@ -13,22 +13,20 @@
   para acessar a plataforma.
 </p> {{-- Descrição --}}
 
-<form class="login__access-form modal-content border-0" action="/action_page.php" method="post">
-  <div class="form-group position-relative mb-4">
-    <i class="login__access-form-icons position-absolute text-primary uil uil-at"></i>
-    <input class="form-control border-0 border-bottom rounded-0" type="text" placeholder="Digite seu e-mail" name="email" required>
-  </div>
-  <div class="form-group position-relative mb-4">
-    <i class="login__access-form-icons position-absolute text-primary uil uil-lock"></i>
-    <input class="form-control border-0 border-bottom rounded-0" type="password" placeholder="Digite sua senha" name="password" required>
-  </div>
-  <div class="d-grid gap-2">
-    <button class="btn btn-primary btn-lg fs-4" type="submit">Acessar</button>
-  </div>
+<form id="login-form-ajax" class="login__access-form modal-content border-0" method="post">
+  @include( 'components.login.form' )
 </form> {{-- Formulário --}}
+<div id="message-error" class="alert alert-danger" role="alert" style="display:none">
+  This is a danger alert—check it out!
+</div>
+<div id="message-success" class="alert alert-success" role="alert" style="display:none">
+  This is a success alert—check it out!
+</div>
 
 <p class="login__access-alert border-bottom fw-bold fs-4 mb-3 pb-4">
-  Esqueceu sua senha?
+  <a href="<?php echo esc_url( wp_lostpassword_url() ); ?>" alt="Esqueceu sua senha?">
+    Esqueceu sua senha?
+  </a>
 </p> {{-- Esqueceu senha --}}
 
 <a class="login__access-registration border-bottom d-block fw-bolder fs-4 mb-4 pb-3" role="button" data-bs-toggle="modal" data-bs-target="#cadastro-modal">
@@ -36,5 +34,18 @@
 </a> {{-- Cadastro --}}
 
 <p class="login__access-talk fs-4 mx-auto">
-  Problemas com seu acesso? <i class="uil uil-whatsapp text-primary"></i><a class="fw-bolder text-decoration-underline" target="_blank" href="https://api.whatsapp.com/send?phone=5511950515111&text=ol%C3%A1%2C%20eu%20tenho%20uma%20duvida">Fale conosco</a>.
+  Problemas com seu acesso? <i class="uil uil-whatsapp text-primary"></i>
+  <a  class="fw-bolder text-decoration-underline"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://web.whatsapp.com/send?phone={{
+        $content_login_contact['login-contact-number'] {{-- Whatsapp number --}}
+      }}&text={{
+        $content_login_contact['login-contact-text'] {{-- Whatsapp text --}}
+      }}"
+    >Fale conosco</a>.
 </p> {{-- Fale conosco --}}
+
+
+
+

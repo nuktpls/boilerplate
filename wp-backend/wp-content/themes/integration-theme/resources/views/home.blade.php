@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  @includeIf('partials.pages.dashboard.intro')
+  @includeIf('partials.dashboard.intro')
 
   <div class="container">
     @notempty($services['description'])
@@ -12,7 +12,7 @@
       <section class="dashboard-cards row row-cols-1 row-cols-lg-3 g-4">
         @foreach ($services['services'] as $id)
           <div class="col">
-            @includeIf('partials.pages.dashboard.card ', ['id' => $id])
+            @includeIf('partials.dashboard.card', ['id' => $id])
           </div>
         @endforeach
       </section>

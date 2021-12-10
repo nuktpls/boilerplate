@@ -1,0 +1,7 @@
+.template-service-channel {
+  .gform_title {
+    color: $gray-900;
+    font-size: rem-calc(16) !important; // Optei pela propriedade, @extend aumentava muito o line-height
+    line-height: rem-calc(24) !important; // Optei pela propriedade, @extend aumentava muito o line-height
+  }
+}

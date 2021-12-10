@@ -7,6 +7,7 @@
         @include( 'components.login.acesso' ) {{-- Formulário de acesso --}}
         @include( 'components.login.termos' ) {{-- Termos de Consentimento --}}
         @include( 'components.login.cadastro-cliente' ) {{-- Formulário de Cadastro (Modal) --}}
-      </section>
+        @include( 'components.login.termos-consentimento' ) {{-- Termos de Consentimento (Modal) --}}
+      </section> 
   </div>
 </div>

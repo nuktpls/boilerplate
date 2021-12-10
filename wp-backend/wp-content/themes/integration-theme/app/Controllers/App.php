@@ -4,13 +4,15 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-use App\Controllers\Traits\Terms;
 use App\Controllers\Traits\Footer;
+use App\Controllers\Traits\Terms;
+use App\Controllers\Traits\LoginContact;
 
 class App extends Controller {
 
-    use Terms;
     use Footer;
+    use Terms;
+    use LoginContact;
 
     public function siteName()
     {

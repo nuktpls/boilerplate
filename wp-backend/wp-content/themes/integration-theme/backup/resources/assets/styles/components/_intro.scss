@@ -1,0 +1,11 @@
+.intro {
+  margin-bottom: rem-calc(32);
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: rem-calc(40);
+  }
+
+  &__overlay {
+    background: linear-gradient(88.69deg, rgba($black, 0.8) 0%, rgba($black, 0) 100%);
+  }
+}

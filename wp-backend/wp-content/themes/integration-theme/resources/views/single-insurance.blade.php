@@ -19,18 +19,14 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-12 d-lg-none mb-5">
-        <a class="btn btn-primary w-100" href="#order-form" role="button">Solicitar pedido</a>
-      </div>
-
-      <section class="single-insurance__content col-12 col-lg-5 d-flex flex-column mb-4">
+      <section class="single-insurance__content col-12 col-lg-5 d-flex flex-column">
         @content
       </section>
 
-      @if(function_exists('gravity_form') && !empty($form))
-        <section id="order-form" class="single-insurance__form-container align-self-start col-12 col-lg-6 offset-lg-1 mb-5 pb-3">
+      @if(function_exists('gravity_form'))
+        <section class="single-insurance__form-container align-self-start col-12 col-lg-6 offset-lg-1">
           <div class="single-insurance__form bg-white rounded shadow-lg">
-            {!! gravity_form($form) !!}
+            {!! gravity_form('Solicitar seguro') !!}
           </div>
         </section>
       @endif

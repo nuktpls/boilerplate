@@ -1,6 +1,6 @@
 
 {{--
-  Template Name: Order
+  Template Name: Insurance
 --}}
 
 @extends('layouts.app')
@@ -18,7 +18,7 @@
     <div class="row">
       @foreach($segments as $segment)
         <div class="col-12 col-md-4">
-          @includeIf('partials.pages.order.list-segment ', ['segment' => $segment])
+          @includeIf('partials.insurance.list-segment', ['segment' => $segment])
         </div>
       @endforeach
     </div>

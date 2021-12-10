@@ -149,30 +149,52 @@ add_action('after_setup_theme', function () {
 
 add_action('init', function() {
     define('ICONS_COLOR', '#EBBA1F');
-
-    new \App\PostTypes\Order;
-    new \App\PostTypes\Policy;
-    new \App\Taxonomies\Segment;
 });
 
-add_action('after_setup_theme', function() {
-    new \App\Admin\Menus;
-    new \App\Admin\Page;
-    new \App\Admin\PageServiceChannel;
-    new \App\Admin\PostOrder;
-    new \App\Admin\PostPolicy;
-    new \App\Admin\TaxonomySegment;
-    new \App\Admin\User;
+/**
+ * Register post type and taxonomy
+ */
+add_action('init', function() {
+    register_extended_post_type(
+        'insurance',
+        [
+            'show_in_rest' => true,
+            'menu_icon'    => 'dashicons-shield-alt',
+            'labels'       => [
+                'add_new_item'  => __('Adicionar novo seguro'),
+                'add_new'       => __('Adicionar novo'),
+                'all_items'     => __('Todos os seguros'),
+                'not_found'     => __('Nenhum seguro encontrado'),
+                'view_item'     => __('Ver seguro'),
+            ]
+        ],
+        [
+            'singular' => 'Seguro',
+            'plural'   => 'Seguros',
+            'slug'     => 'seguro'
+        ]
+    );
 
-    new \App\GravityForms\Markup;
-    new \App\GravityForms\FormHandler;
-    if(class_exists('GF_Fields'))
-        \GF_Fields::register(new \App\GravityForms\DownloadsField);
-
-    new \App\Options\General;
-    new \App\Options\Dashboard;
-    new \App\Options\Home;
-    new \App\Options\Footer;
+    register_extended_taxonomy(
+        'segment',
+        'insurance',
+        [
+            'show_in_rest' => true,
+            'labels'       => [
+                'add_new_item'  => __('Adicionar novo segmento'),
+                'new_item_name' => __('Nome do segmento'),
+                'parent_item'   => __('Segmento pai'),
+                'edit_item'     => __('Editar segmento'),
+                'update_item'   => __('Atualizar segmento'),
+                'not_found'     => __('Nenhum segmento encontrado'),
+            ]
+        ],
+        [
+            'singular' => 'Segmento',
+            'plural'   => 'Segmentos',
+            'slug'     => 'segmento'
+        ]
+    );
 });
 
 /**
