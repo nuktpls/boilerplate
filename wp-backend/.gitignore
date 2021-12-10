@@ -2,8 +2,8 @@ vendor/
 composer.lock
 yarn.lock
 wp-includes
-wp-content/plugins
-wp-content/uploads
+wp-content/plugins/*
+wp-content/uploads/*
 .idea
 .cache-loader
 dist
