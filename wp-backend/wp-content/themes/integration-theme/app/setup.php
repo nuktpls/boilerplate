@@ -156,45 +156,45 @@ add_action('init', function() {
  */
 add_action('init', function() {
     register_extended_post_type(
-        'insurance',
+        'order',
         [
             'show_in_rest' => true,
             'menu_icon'    => 'dashicons-shield-alt',
             'labels'       => [
-                'add_new_item'  => __('Adicionar novo seguro'),
+                'add_new_item'  => __('Adicionar novo pedido'),
                 'add_new'       => __('Adicionar novo'),
-                'all_items'     => __('Todos os seguros'),
-                'not_found'     => __('Nenhum seguro encontrado'),
-                'view_item'     => __('Ver seguro'),
+                'all_items'     => __('Todos os pedidos'),
+                'not_found'     => __('Nenhum pedido encontrado'),
+                'view_item'     => __('Ver pedido'),
             ]
         ],
         [
-            'singular' => 'Seguro',
-            'plural'   => 'Seguros',
-            'slug'     => 'seguro'
+            'singular' => 'Pedido',
+            'plural'   => 'Pedidos',
+            'slug'     => 'request'
         ]
     );
 
-    register_extended_taxonomy(
-        'segment',
-        'insurance',
-        [
-            'show_in_rest' => true,
-            'labels'       => [
-                'add_new_item'  => __('Adicionar novo segmento'),
-                'new_item_name' => __('Nome do segmento'),
-                'parent_item'   => __('Segmento pai'),
-                'edit_item'     => __('Editar segmento'),
-                'update_item'   => __('Atualizar segmento'),
-                'not_found'     => __('Nenhum segmento encontrado'),
-            ]
-        ],
-        [
-            'singular' => 'Segmento',
-            'plural'   => 'Segmentos',
-            'slug'     => 'segmento'
-        ]
-    );
+    // register_extended_taxonomy(
+    //     'segment',
+    //     'order',
+    //     [
+    //         'show_in_rest' => true,
+    //         'labels'       => [
+    //             'add_new_item'  => __('Adicionar novo segmento'),
+    //             'new_item_name' => __('Nome do segmento'),
+    //             'parent_item'   => __('Segmento pai'),
+    //             'edit_item'     => __('Editar segmento'),
+    //             'update_item'   => __('Atualizar segmento'),
+    //             'not_found'     => __('Nenhum segmento encontrado'),
+    //         ]
+    //     ],
+    //     [
+    //         'singular' => 'Segmento',
+    //         'plural'   => 'Segmentos',
+    //         'slug'     => 'segmento'
+    //     ]
+    // );
 });
 
 /**

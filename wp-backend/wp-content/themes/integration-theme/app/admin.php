@@ -47,7 +47,7 @@ add_filter('display_post_states', function($post_states, $post) {
     if(!empty($profile_page) && $profile_page === $post->ID)
         $post_states['profile-page'] = 'Perfil de usuário';
     if(!empty($request_order_page) && $request_order_page === $post->ID)
-        $post_states['request-order-page'] = 'Solicitação de seguro';
+        $post_states['request-order-page'] = 'Solicitação de pedido';
 
     return $post_states;
 }, 10, 2);
