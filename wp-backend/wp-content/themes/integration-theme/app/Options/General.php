@@ -18,7 +18,7 @@ class General extends Options {
                 ->wrapper([
                     'width' => 50,
                 ]),
-            PostObject::make('Página solicitação de seguro', 'request_insurance_page')
+            PostObject::make('Página solicitação de seguro', 'request_order_page')
                 ->instructions('Defina a página que será usada para exibição de seguros')
                 ->postTypes(['page'])
                 ->returnFormat('id')

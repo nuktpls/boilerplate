@@ -2,18 +2,18 @@
 
 namespace App\PostTypes;
 
-class Policy extends PostTypes {
+class Response extends PostTypes {
 
-    protected $postType = 'policy';
+    protected $postType = 'response';
 
     public function __construct() {
         parent::__construct();
 
         add_filter('wp_insert_post_data', [$this, 'updateHandler']);
         add_action('admin_head', [$this, 'removeFields']);
-        add_filter('manage_policy_posts_columns', [$this, 'manageColumns']);
-        add_action('manage_policy_posts_custom_column', [$this, 'manageColumnContent'], 10, 2);
-        add_filter('manage_edit-policy_sortable_columns', [$this, 'manageSortableColumns'], 10, 2);
+        add_filter('manage_response_posts_columns', [$this, 'manageColumns']);
+        add_action('manage_response_posts_custom_column', [$this, 'manageColumnContent'], 10, 2);
+        add_filter('manage_edit-response_sortable_columns', [$this, 'manageSortableColumns'], 10, 2);
         add_action('pre_get_posts', [$this, 'manageSortableQuery'], 10, 2);
         add_action('admin_init', [$this, 'disableRevisions']);
         add_action('wp', [$this, 'checkAccess']);
@@ -50,13 +50,13 @@ class Policy extends PostTypes {
     }
 
     /**
-     * Check on insert/update policy
+     * Check on insert/update response
      *
      * @param  array $data Data to save
      * @return array Modified data
      */
     function updateHandler(array $data): array {
-        if($data['post_type'] !== 'policy')
+        if($data['post_type'] !== 'response')
             return $data;
 
         // Prevent post save other status
@@ -67,7 +67,7 @@ class Policy extends PostTypes {
     }
 
     /**
-     * Remove fields to prevent edit policy info.
+     * Remove fields to prevent edit response info.
      * Unfortunately there is no other way to do this than javascript :(
      *
      * @return void
@@ -75,7 +75,7 @@ class Policy extends PostTypes {
     function removeFields(): void {
         global $current_screen;
 
-        if($current_screen->post_type !== 'policy')
+        if($current_screen->post_type !== 'response')
             return;
 
         echo '<style>
@@ -167,7 +167,7 @@ class Policy extends PostTypes {
      * @return void
      */
     function disableRevisions(): void{
-        remove_post_type_support('policy', 'revisions');
+        remove_post_type_support('response', 'revisions');
     }
 
     /**
@@ -179,7 +179,7 @@ class Policy extends PostTypes {
         global $post;
         global $wp_query;
 
-        if(!is_singular('policy'))
+        if(!is_singular('response'))
             return;
         if($post->post_author == get_current_user_id() || current_user_can('edit_posts'))
             return;

@@ -8563,48 +8563,48 @@ a:focus-visible {
     font-size: 2.5rem;
   }
 }
-.single-insurance__content h1, .single-insurance__content .h1,
-.single-insurance__content h2,
-.single-insurance__content .h2,
-.single-insurance__content h3,
-.single-insurance__content .h3,
-.single-insurance__content h4,
-.single-insurance__content .h4,
-.single-insurance__content h5,
-.single-insurance__content .h5,
-.single-insurance__content h6,
-.single-insurance__content .h6 {
+.single-order__content h1, .single-order__content .h1,
+.single-order__content h2,
+.single-order__content .h2,
+.single-order__content h3,
+.single-order__content .h3,
+.single-order__content h4,
+.single-order__content .h4,
+.single-order__content h5,
+.single-order__content .h5,
+.single-order__content h6,
+.single-order__content .h6 {
   color: #2c3f4e;
   font-weight: 800;
   margin-bottom: 0.25rem;
 }
-.single-insurance__content p {
+.single-order__content p {
   font-size: 0.875rem;
   line-height: 1.375rem;
   margin-bottom: 1rem;
 }
-.single-insurance__content a {
+.single-order__content a {
   color: #252525;
 }
 @media (min-width: 1024px) {
-  .single-insurance__form-container {
+  .single-order__form-container {
     margin-top: -6.5rem;
     z-index: 1;
   }
 }
-.single-insurance__form {
+.single-order__form {
   padding: 1.5rem 1.5625rem 2rem 1.5625rem;
 }
 @media (min-width: 1024px) {
-  .single-insurance__form {
+  .single-order__form {
     padding: 2.5rem 1.75rem;
   }
 }
-.single-insurance__form-paragraph {
+.single-order__form-paragraph {
   margin-bottom: 0.75rem;
 }
 @media (max-width: 767.98px) {
-  .single-insurance__form-paragraph {
+  .single-order__form-paragraph {
     margin-bottom: 0.5rem;
   }
 }
