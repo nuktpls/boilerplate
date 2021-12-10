@@ -5,7 +5,7 @@ namespace App\Taxonomies;
 class Segment extends Taxonomies {
 
     protected $taxonomy = 'segment';
-    protected $objectType = 'insurance';
+    protected $objectType = 'order';
 
     protected function setArgs(): array {
         return [

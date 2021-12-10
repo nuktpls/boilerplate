@@ -24,12 +24,12 @@ class Policy extends PostTypes {
             'show_in_rest' => false,
             'menu_icon'    => 'dashicons-id-alt',
             'labels'       => [
-                'add_new_item' => __('Adicionar nova apólice'),
+                'add_new_item' => __('Adicionar nova resposta'),
                 'add_new'      => __('Adicionar nova'),
-                'all_items'    => __('Todas as apólices'),
-                'not_found'    => __('Nenhuma apólice encontrada'),
-                'view_item'    => __('Ver apólice'),
-                'edit_item'    => __('Editar apólice'),
+                'all_items'    => __('Todas as respostas'),
+                'not_found'    => __('Nenhuma resposta encontrada'),
+                'view_item'    => __('Ver resposta'),
+                'edit_item'    => __('Editar resposta'),
             ],
             'supports'     => false,
             'capabilities' => [
@@ -43,9 +43,9 @@ class Policy extends PostTypes {
 
     protected function setNames(): array {
         return [
-            'singular' => 'Apólice',
-            'plural'   => 'Apólices',
-            'slug'     => 'apolice'
+            'singular' => 'Resposta',
+            'plural'   => 'Respostas',
+            'slug'     => 'response'
         ];
     }
 
@@ -100,7 +100,7 @@ class Policy extends PostTypes {
      * @return array Modified columns
      */
     function manageColumns(array $columns): array {
-        return array_merge($columns, ['insurance' => __('Solicitação')]);
+        return array_merge($columns, ['order' => __('Solicitação')]);
     }
 
     /**
@@ -111,11 +111,11 @@ class Policy extends PostTypes {
      * @return void
      */
     function manageColumnContent(string $columnKey, int $postID): void {
-        if($columnKey != 'insurance')
+        if($columnKey != 'order')
             return;
 
-        if(!empty($insurance = get_post_meta($postID, 'insurance', true)))
-            echo wp_strip_all_tags(get_the_title($insurance));
+        if(!empty($order = get_post_meta($postID, 'order', true)))
+            echo wp_strip_all_tags(get_the_title($order));
     }
 
     /**
@@ -125,7 +125,7 @@ class Policy extends PostTypes {
      * @return array Modified sortable columns
      */
     function manageSortableColumns(array $columns): array {
-        $columns['insurance'] = 'insurance';
+        $columns['order'] = 'order';
 
         return $columns;
     }
@@ -142,18 +142,18 @@ class Policy extends PostTypes {
 
         $orderby = $query->get('orderby');
 
-        if($orderby == 'insurance'):
+        if($orderby == 'order'):
             $query->set('orderby', 'meta_value');
             $query->set(
                 'meta_query',
                 [
                     'relation' => 'OR',
                     [
-                        'key'     => 'insurance',
+                        'key'     => 'order',
                         'compare' => 'NOT EXISTS'
                     ],
                     [
-                        'key'     => 'insurance',
+                        'key'     => 'order',
                         'compare' => 'EXISTS'
                     ]
                 ]

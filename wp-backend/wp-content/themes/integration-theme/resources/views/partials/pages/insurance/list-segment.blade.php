@@ -1,4 +1,4 @@
-@notempty($segment['insurances'])
+@notempty($segment['orders'])
   <div class="list-segment mb-3 pb-3">
     <div class="list-segment__header position-relative w-100 rounded-top overflow-hidden">
       @notempty($segment['thumbnail'])
@@ -14,12 +14,12 @@
     </div>
 
     <div class="list-group">
-      @foreach($segment['insurances'] as $insurance)
+      @foreach($segment['orders'] as $order)
         <a
           class="list-group-item list-group-item-action text-decoration-none d-flex justify-content-between align-items-center fw-semi-bold fs-4 transition-base border-start-0 border-end-0 border-top-0"
-          href="{{ $insurance['permalink'] }}"
+          href="{{ $order['permalink'] }}"
         >
-          <span class="fs-4">{!! $insurance['name'] !!}</span>
+          <span class="fs-4">{!! $order['name'] !!}</span>
 
           @include('icon::arrow-right', ['width' => 13, 'fill' => '#252525'])
         </a>
@@ -30,12 +30,12 @@
       <h4 class="list-segment__title border-bottom text-uppercase fw-bolder pt-4 pb-3 m-0 h5">Outras soluções</h4>
 
       <div class="list-group">
-        @foreach($segment['more_insurances'] as $insurance)
+        @foreach($segment['more_insurances'] as $order)
           <a
             class="list-group-item list-group-item-action text-decoration-none d-flex justify-content-between align-items-center fw-semi-bold fs-4 transition-base border-start-0 border-end-0 border-top-0"
-            href="{{ $insurance['permalink'] }}"
+            href="{{ $order['permalink'] }}"
           >
-            <span class="fs-4">{!! $insurance['name'] !!}</span>
+            <span class="fs-4">{!! $order['name'] !!}</span>
 
             @include('icon::arrow-right', ['width' => 13, 'fill' => '#252525'])
           </a>

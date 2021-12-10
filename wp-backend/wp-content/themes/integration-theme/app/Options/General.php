@@ -23,14 +23,14 @@ class General extends Options {
                 ->wrapper([
                     'width' => 50,
                 ]),
-            PostObject::make('Página solicitação de requisição de pedido', 'request_insurance_page')
+            PostObject::make('Página solicitação de requisição de pedido', 'request_order_page')
                 ->instructions('Defina a página que será usada para exibição de requisição')
                 ->postTypes(['page'])
                 ->returnFormat('id')
                 ->wrapper([
                     'width' => 50,
                 ]),
-            PostObject::make('Página de apólices', 'policies_page')
+            PostObject::make('Página de respostas', 'policies_page')
                 ->instructions('Defina a página que será usada para exibição de requisição do cliente')
                 ->postTypes(['page'])
                 ->returnFormat('id')
@@ -41,7 +41,7 @@ class General extends Options {
             Tab::make('<span class="dashicons dashicons-forms"></span> Formulários', 'tab_forms')
                 ->placement('top'),
 
-            Forms::make('Formulário para solicitação de requisição de pedido', 'form_request_insurance')
+            Forms::make('Formulário para solicitação de requisição de pedido', 'form_request_order')
                 ->instructions('Defina o formulário que será exibido nas páginas de requisição')
                 ->returnFormat('id'),
         ];

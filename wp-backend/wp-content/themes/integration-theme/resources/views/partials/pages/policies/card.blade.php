@@ -3,14 +3,14 @@
     <div class="row">
       <div class="col">
         <div class="card-body p-0">
-          @notempty($data['insurance'])
+          @notempty($data['order'])
             <h3 class="card-title fs-4 lh-22 text-primary fw-bolder mb-2 pb-1">
-              <a class="text-decoration-none stretched-link" href="{{ $data['permalink'] }}">{{ $data['insurance'] }}</a>
+              <a class="text-decoration-none stretched-link" href="{{ $data['permalink'] }}">{{ $data['order'] }}</a>
             </h3>
           @endnotempty
 
-          @notempty($data['insurance'])
-            <p class="card-text fw-bold mb-0 text-secondary text-uppercase fs-5 lh-20">sua apólice</p>
+          @notempty($data['order'])
+            <p class="card-text fw-bold mb-0 text-secondary text-uppercase fs-5 lh-20">sua resposta</p>
 
             <p class="card-text fs-3 fw-bold text-dark">{{ $data['policy_id'] }}</p>
           @endnotempty

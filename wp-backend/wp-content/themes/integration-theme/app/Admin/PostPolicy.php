@@ -77,7 +77,7 @@ class PostPolicy {
     function createPolicyDownloadSettings(): void {
         register_extended_field_group([
             'key'      => 'download_policy',
-            'title'    => 'Apólice',
+            'title'    => 'Resposta',
             'fields'   => $this->createPolicyDownloadFields(),
             'style'    => 'default',
             'position' => 'side',

@@ -8539,27 +8539,27 @@ a:focus-visible {
   color: #7b7474;
 }
 
-.single-insurance .intro__breadcrumb {
+.single-order .intro__breadcrumb {
   margin-bottom: 8.875rem !important;
 }
 @media (min-width: 1024px) {
-  .single-insurance .intro__breadcrumb {
+  .single-order .intro__breadcrumb {
     margin-bottom: 13.25rem !important;
   }
 }
-.single-insurance .intro__icon {
+.single-order .intro__icon {
   width: 26px;
 }
 @media (min-width: 1024px) {
-  .single-insurance .intro__icon {
+  .single-order .intro__icon {
     width: 30px;
   }
 }
-.single-insurance .intro__title {
+.single-order .intro__title {
   font-size: 2rem;
 }
 @media (min-width: 1024px) {
-  .single-insurance .intro__title {
+  .single-order .intro__title {
     font-size: 2.5rem;
   }
 }
@@ -8608,11 +8608,11 @@ a:focus-visible {
     margin-bottom: 0.5rem;
   }
 }
-.single-insurance .gform_confirmation_wrapper {
+.single-order .gform_confirmation_wrapper {
   padding: 0.5rem 0rem 1rem 0rem;
 }
 @media (min-width: 768px) {
-  .single-insurance .gform_confirmation_wrapper {
+  .single-order .gform_confirmation_wrapper {
     padding: 0.5rem 3.375rem 2.125rem 3.375rem;
   }
 }
@@ -8625,7 +8625,7 @@ a:focus-visible {
     margin-bottom: 2.5rem !important;
   }
 }
-.single-policy .apolice-cards__finance h2, .single-policy .apolice-cards__finance .h2, .single-policy .apolice-cards__documents h2, .single-policy .apolice-cards__documents .h2 {
+.single-policy .resposta-cards__finance h2, .single-policy .resposta-cards__finance .h2, .single-policy .resposta-cards__documents h2, .single-policy .resposta-cards__documents .h2 {
   color: #2c3f4e;
 }
 .single-policy .modal-alteracao-documento .modal-body .btn-close,

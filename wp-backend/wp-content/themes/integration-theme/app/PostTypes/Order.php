@@ -2,9 +2,9 @@
 
 namespace App\PostTypes;
 
-class Insurance extends PostTypes {
+class Order extends PostTypes {
 
-    protected $postType = 'insurance';
+    protected $postType = 'order';
 
     protected function setArgs(): array {
         return [

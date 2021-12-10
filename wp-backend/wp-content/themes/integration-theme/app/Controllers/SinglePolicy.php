@@ -36,7 +36,7 @@ class SinglePolicy extends Controller {
             return;
 
         $data = [
-            'title' => __('Download da Apólice: ') . get_the_title(),
+            'title' => __('Download da Resposta: ') . get_the_title(),
             'date'  => get_field('policy_date'),
             'file'  => $file,
         ];

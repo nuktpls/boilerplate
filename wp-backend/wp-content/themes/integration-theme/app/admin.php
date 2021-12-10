@@ -35,7 +35,7 @@ add_filter('display_post_states', function($post_states, $post) {
     elseif(!empty($request_order_page) && $request_order_page === $post->ID)
         $post_states['request-order-page'] = 'Listagem de requisições';
     elseif(!empty($policies_page) && $policies_page === $post->ID)
-        $post_states['policies-page'] = 'Listagem de apólices';
+        $post_states['policies-page'] = 'Listagem de respostas';
 
     return $post_states;
 }, 10, 2);
