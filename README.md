@@ -20,42 +20,40 @@ Na raiz do projeto o package.json indico a estrutura:
 
 ```json
 {
-"name": "myworkspace",
-"private": true,
-"version": "1.0.0",
-"main": "index.js",
-"license": "MIT",
-"repository": {
-"url": "https://github.com/nuktpls/not-yet",
-"type": "git"
-},
-"scripts": {
-"build": "yarn workspace website develop"
-},
-"workspaces": [
-"theme",
-"website",
-"wp-backend"
-]
+	"name": "myworkspace",
+	"private": true,
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/nuktpls/not-yet",
+		"type": "git"
+	},
+	"scripts": {
+		"build": "yarn workspace website develop"
+	},
+	"workspaces": ["theme", "website", "wp-backend"]
 }
+```
 
 Dentro de website, em um package.json fica a minha instalação das engines do gatsby, do react e dependências que não são do tema em si.
 
+```json
 {
-"name": "website",
-"version": "1.0.0",
-"main": "index.js",
-"license": "MIT",
-"scripts": {
-"develop": "gatsby develop",
-"build": "gatsby build"
-},
-"dependencies": {
-"gatsby": "^4.3.0",
-"react": "^17.0.2",
-"react-dom": "^17.0.2",
-"theme": "1.0.0"
-}
+	"name": "website",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"develop": "gatsby develop",
+		"build": "gatsby build"
+	},
+	"dependencies": {
+		"gatsby": "^4.3.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"theme": "1.0.0"
+	}
 }
 ```
 
