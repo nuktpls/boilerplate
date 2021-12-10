@@ -1,0 +1,83 @@
+.login {
+  &__image {
+    &-temaintegracao {
+      object-fit: cover;
+    }
+
+    &-temaintegracao-logo {
+      top: rem-calc(32);
+      left: rem-calc(32);
+    }
+  }
+
+  &__access {
+    @include media-breakpoint-down(xl) {
+      margin-bottom: rem-calc(80);
+      padding-top: rem-calc(56);
+    }
+
+    &-title {
+      line-height: rem-calc(32);
+
+      @include media-breakpoint-down(xl) {
+        margin-top: rem-calc(35);
+      }
+    }
+
+    &-description {
+      line-height: rem-calc(22);
+      margin-bottom: rem-calc(40);
+    }
+
+    &-form {
+      margin-bottom: rem-calc(40);
+
+      input {
+        padding-left: rem-calc(44);
+
+        &:focus-visible {
+          border-color: $primary !important;
+          outline: none;
+        }
+      }
+
+      &-icons {
+        font-size: rem-calc(18);
+        left: rem-calc(16);
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+      }
+
+      button {
+        line-height: rem-calc(22);
+      }
+    }
+
+    &-talk {
+      .uil {
+        &::before {
+          font-size: rem-calc(18);
+          margin-right: 2px;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        line-height: 1.7 !important;
+        max-width: 200px;
+      }
+    }
+
+    .cadastro-modal {
+      &__footer {
+        padding: rem-calc(32);
+
+        button {
+          @include media-breakpoint-down(md) {
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}

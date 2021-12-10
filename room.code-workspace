@@ -1,46 +1,52 @@
 {
-	"folders": [
-		{
-			"name": "Artificial Intelligence",
-      "path": "./bot"
+  "folders": [
+    {
+      "name": "Artificial Intelligence",
+      "path": "bot"
     },
-		{
-			"name": "Brand",
-      "path": "./brand"
+    {
+      "name": "Brand",
+      "path": "brand"
     },
-		{
-			"name": "RÖÖM Maker (diagram)",
-      "path": "./diagram"
+    {
+      "name": "WordPress Sage/Timber + ACF",
+      "path": "wp-backend"
     },
-		{
-			"name": "WordPress Sage/Timber + ACF",
-      "path": "./wp-backend"
+    {
+      "name": "Website Engine",
+      "path": "website"
     },
-		{
-			"name": "Website Engine",
-      "path": "./website"
+    {
+      "name": "RÖÖM Maker (diagram)",
+      "path": "diagram"
     },
-		{
-			"name": "Content i18n",
-      "path": "./content"
+    {
+      "name": "Content i18n",
+      "path": "content"
     },
-		{
-			"name": "Theme",
-      "path": "./theme"
+    {
+      "name": "Theme",
+      "path": "theme"
     },
-		{
-			"name": "Root",
-      "path": "./"
+    {
+      "name": "Root",
+      "path": "."
     }
-	],
-	"settings": {
-		"editor.fontFamily": "VCR OSD Mono",
+  ],
+  "settings": {
+    "editor.fontFamily": "VCR OSD Mono",
     "editor.fontLigatures": true,
     "editor.fontSize": 10,
     "workbench.iconTheme": "material-icon-theme",
-    "editor.rulers": [80, 120],
+    "editor.rulers": [
+      80,
+      120
+    ],
     "editor.formatOnSave": true,
-    "eslint.validate": ["javascript", "javascriptreact"],
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact"
+    ],
     "editor.renderLineHighlight": "gutter",
     "editor.tabSize": 2,
     "terminal.integrated.fontSize": 8,
@@ -73,5 +79,5 @@
     "prettier.arrowParens": "avoid",
     "window.zoomLevel": 4,
     "workbench.colorTheme": "Edu4Dev Dark"
-	}
+  }
 }

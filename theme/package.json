@@ -1,15 +1,70 @@
 {
-  "name": "theme",
-  "version": "1.0.0",
-  "main": "gatsby-config.js",
-  "license": "MIT",
-  "dependencies": {
-    "gatsby-atomic-block": "^0.2.5",
-    "gatsby-layout-builder": "^0.2.6"
-  },
-  "peerDependencies": {
-    "gatsby": "^4.3.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  }
+	"name": "theme",
+	"version": "1.0.0",
+	"main": "gatsby-config.js",
+	"license": "MIT",
+	"description": "O Jogo da Memória é um app desenvolvido pela ADJ - ASSOCIAÇÃO DE DIABETES JUVENIL.",
+	"author": {
+		"name": "miltonbolonha",
+		"email": "mbolonha@nuktpls.com.br"
+	},
+	"coauthor": {
+		"name": "Studio Visual",
+		"email": "contato@nuktpls.com.br"
+	},
+	"coauthordesc": "Agência Especializada em WordPress. Especialista em WordPress, Projetos Digitais, Soluções Web, Marketing Digital e Consultoria Digital.",
+	"repository": "https://github.com/nuktpls/diabetes-brasil-jogo-da-memoria",
+	"urlPrefix": "/jogodamemoria",
+	"appName": "Jogo da Memória - ADJ - ASSOCIAÇÃO DE DIABETES JUVENIL",
+	"appLogic": "Jogo da Memória",
+	"siteUrl": "https://adj.org.br/jogodamemoria",
+	"clientOrg": "ADJ - ASSOCIAÇÃO DE DIABETES JUVENIL",
+	"clientShortName": "ADJ - Diabetes Brasil",
+	"clientSite": "https://adj.org.br/",
+	"clientSocial": {
+		"instagram": "https://www.instagram.com/adjdiabetesbrasil/",
+		"facebook": "https://www.facebook.com/ADJDiabetesBrasil/",
+		"twitter": "https://twitter.com/ADJ_Diabetes_BR",
+		"youtube": "https://www.youtube.com/channel/UCj5rxMlBYLDiRSVdy2FprMA"
+	},
+	"themeColor": "#eb412c",
+	"backgroundColor": "#fff",
+	"displayManifest": "fullscreen",
+	"iconManifest": "diabetes-brasil-favicon.svg",
+	"importFont": {
+		"font01": "Mulish",
+		"font02": "Alegreya Sans:300,400,500,700,800,900",
+		"font03": "Roboto"
+	},
+	"dependencies": {
+		"gatsby-atomic-block": "^0.2.5",
+		"gatsby-business-in-build": "^0.1.2",
+		"gatsby-plugin-catch-links": "^4.3.0",
+		"gatsby-plugin-react-svg": "^3.1.0",
+		"gatsby-plugin-sass": "^5.3.0"
+	},
+	"peerDependencies": {
+		"dotenv": "^10.0.0",
+		"gatsby": "^4.3.0",
+		"gatsby-plugin-alias-imports": "^1.0.5",
+		"gatsby-plugin-google-fonts": "^1.0.1",
+		"gatsby-plugin-image": "^2.3.0",
+		"gatsby-plugin-manifest": "^4.3.0",
+		"gatsby-plugin-offline": "^5.3.0",
+		"gatsby-plugin-react-helmet": "^5.3.0",
+		"gatsby-plugin-sharp": "^4.3.0",
+		"gatsby-remark-images": "^6.3.0",
+		"gatsby-remark-lazy-load": "^1.0.2",
+		"gatsby-remark-relative-images": "^2.0.2",
+		"gatsby-source-filesystem": "^4.3.0",
+		"gatsby-transformer-remark": "^5.3.0",
+		"gatsby-transformer-sharp": "^4.3.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-helmet": "^6.1.0",
+		"react-helmet-async": "^1.2.2",
+		"react-icons": "^4.3.1",
+		"sass": "^1.44.0",
+		"svg-react-loader": "^0.4.6"
+	}
 }

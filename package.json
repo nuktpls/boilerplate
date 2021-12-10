@@ -5,8 +5,25 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "https://github.com/nuktpls/boilerplate",
-  "scripts": {
-    "build": "yarn workspace website develop"
+  "keywords": [
+		    "nüktpls",
+		    "instituto organizacionista",
+		    "organizacionismo",
+		    "edu4dev",
+		    "javascript",
+		    "gatsby",
+		    "gatsby-plugin",
+		    "gatsbyjs",
+		    "reactjs",
+		    "nuktpls",
+		    "nuktpls-cli",
+		    "milton bolonha",
+		    "edu4dev",
+		    "the-offspring"
+		  ],
+	"scripts": {
+    "develop": "npm run develop -w website",
+    "build": "npm run build -w website"
   },
   "workspaces": [
     "content",
@@ -15,7 +32,7 @@
     "wp-backend",
     "bot",
     "diagram",
-    "nuktpls",
+    "nuktpls-cli",
     "brand"
   ]
 }

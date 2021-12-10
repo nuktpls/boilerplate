@@ -1,31 +1,77 @@
 version: "3.9"
-
 services:
   db:
+    container_name: tema_de_integracao_db
     image: mariadb:latest
+    ports:
+      - '3306:3306'
     volumes:
       - /data/mysql:/var/lib/mysql
-    restart: always
+    # restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: wordpressdatabase
-      MYSQL_USER: bolonhauser
-      MYSQL_PASSWORD: bolonhapass
-
+      MYSQL_ROOT_USER: '${DB_USER}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_NAME}'
+  plugins:
+    container_name: tema_de_integracao_plugins
+    image: 'composer:2.1.5'
+    volumes:
+      - './:/app'
+    command: composer install --ignore-platform-reqs
   wordpress:
-    depends_on:
-      - db
-    image: wordpress:latest
+    container_name: tema_de_integracao_wordpress
+    # image: wordpress:latest
+    image: 'wpdiaries/wordpress-xdebug:5.8.0-php7.4-apache'
     ports:
       - "3000:80"
-    restart: always
-    volumes:
-      - ./wp-config.php:/var/www/html/wp-config.php
-      # - ./.htaccess:/var/www/html/.htaccess
-      - ./docker-ini.ini:/usr/local/etc/php/conf.d/docker-ini.ini
-      - ./wp-content:/var/www/html/wp-content
     environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: bolonhauser
-      WORDPRESS_DB_PASSWORD: bolonhapass
-      WORDPRESS_DB_NAME: wordpressdatabase
+      WORDPRESS_DB_HOST: '${DB_HOST}'
+      WORDPRESS_DB_USER: '${DB_USER}'
+      WORDPRESS_DB_PASSWORD: '${DB_PASSWORD}'
+      WORDPRESS_DB_NAME: '${DB_NAME}'
+      XDEBUG_CONFIG: '${XDEBUG_CONFIG}'
+    volumes:
+      # - ./.htaccess:/var/www/html/.htaccess
+      # - ./docker-ini.ini:/usr/local/etc/php/conf.d/docker-ini.ini
+      - './vendor:/var/www/html/vendor'
+      - './.env:/var/www/html/.env'
+      - './wp-config.php:/var/www/html/wp-config.php'
+      - './wp-content/themes/tema-de-integracao:/var/www/html/wp-content/themes/tema-de-integracao'
+      - './wp-content/plugins:/var/www/html/wp-content/plugins'
+      - './wp-content/uploads:/var/www/html/wp-content/uploads'
+    depends_on:
+      plugins:
+        condition: service_completed_successfully
+  themebackend:
+    container_name: tema_de_integracao_theme_backend
+    image: composer
+    volumes_from:
+      - wordpress
+    working_dir: /var/www/html/wp-content/themes/tema-de-integracao
+    command: composer install --ignore-platform-reqs
+    depends_on:
+      - wordpress
+  themefrontend:
+    container_name: tema_de_integracao_theme_frontend
+    image: node:lts
+    depends_on:
+      - db
+      - themebackend
+      - plugins
+      - wordpress
+    working_dir: /var/www/html/wp-content/themes/tema-de-integracao
+    command: bash -c "yarn && yarn start"
+    ports:
+      - '3000:3000'
+      - '3001:3001'
+    volumes_from:
+      - wordpress
+  phpmyadmin:
+    container_name: tema_de_integracao_phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    env_file:
+      - .env
+    ports:
+      - '8080:80'
+    depends_on:
+      - db

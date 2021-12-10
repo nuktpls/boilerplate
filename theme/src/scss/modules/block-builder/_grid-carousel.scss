@@ -1,0 +1,61 @@
+.grid-carousel {
+	overflow: hidden;
+
+	ul.grid-carousel-list {
+		display: flex;
+		overflow: hidden;
+		// overflow-x: scroll;
+		white-space: nowrap;
+		transition: all 0.2s;
+		transform: scale(1);
+		will-change: transform;
+		user-select: none;
+		cursor: move;
+
+		&.active {
+			cursor: grabbing;
+			transform: scale(1.02);
+		}
+
+		&::-webkit-scrollbar {
+			width: 0px;
+		}
+		&::-webkit-scrollbar-track {
+			background: tranparent;
+		}
+		&::-webkit-scrollbar-thumb {
+			background: transparent;
+		}
+		li.grid-carousel-item {
+			display: flex;
+			flex-direction: column;
+			padding: 0 10px;
+
+			div.grid-carousel-description {
+				p {
+					font-size: 20px;
+					white-space: normal;
+				}
+			}
+		}
+		@media (max-width: $tablet__size) {
+			display: flex;
+			overflow: hidden;
+			overflow-x: scroll;
+
+			li.grid-carousel-item {
+				img.grid-carousel-img {
+					min-width: 350px;
+				}
+			}
+		}
+		@media (max-width: $small__size) {
+			li.grid-carousel-item {
+				img.grid-carousel-img {
+					min-width: 250px;
+					width: 250px;
+				}
+			}
+		}
+	}
+}

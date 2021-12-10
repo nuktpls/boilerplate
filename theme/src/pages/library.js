@@ -1,5 +1,13 @@
-import React from "react";
+import React from 'react'
+import { graphql } from 'gatsby'
 
-export default function ThemePage(props) {
-  return <h1>Hello, from the theme!</h1>;
+// import Layout from 'gatsby-layout-builder'
+
+const LibraryPage = ({ data }) => {
+	return (
+		<div>
+			<h1>library</h1>
+		</div>
+	)
 }
+export default LibraryPage

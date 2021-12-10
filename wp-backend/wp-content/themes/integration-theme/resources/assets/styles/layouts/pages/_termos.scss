@@ -1,0 +1,28 @@
+.login {
+  &__access {
+    .termos-login {
+      display: none;
+      background: rgba(37, 37, 37, 0.98);
+      padding: rem-calc(24 32);
+
+      @include media-breakpoint-down(md) {
+        padding: rem-calc(14 8);
+      }
+
+      &__paragrafo {
+        a {
+          transition: $transition-base;
+
+          &:hover {
+            color: $primary !important;
+          }
+        }
+      }
+
+      &__button {
+        font-size: rem-calc(12);
+        line-height: rem-calc(16);
+      }
+    }
+  }
+}

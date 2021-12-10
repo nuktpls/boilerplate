@@ -1,0 +1,14 @@
+.logout-link {
+  path {
+    fill: currentColor;
+    transition: $transition-base;
+  }
+
+  &:hover {
+    color: $primary !important;
+
+    path {
+      fill: $primary !important;
+    }
+  }
+}

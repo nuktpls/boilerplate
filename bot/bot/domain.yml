@@ -1,0 +1,291 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - cumprimentar
+  - menu
+  - relacionamento
+  - me_ajuda
+  - despedir
+  - out_of_scope
+  - tudo_bem
+  - elogios
+  - religiao
+  - time
+  - genero
+  - piada
+  - licenca
+  - onde_voce_mora
+  - musica
+  - comida
+  - web
+  - cor
+  - signo
+  - triste
+  - historia
+  - afirmar
+  - negar
+  - cancelar
+  - informar
+  - pede_exemplo_acao
+  - pede_exemplo_form
+entities:
+  - oi
+  - menu
+  - meajuda
+  - religiao
+  - time
+  - genero
+  - piada
+  - licenca
+  - musica
+  - comida
+  - web
+  - cor
+  - signo
+  - triste
+  - historia
+  - vive
+  - acao
+  - formulario
+  - nome
+  - idade
+slots:
+  nome:
+    type: text
+    influence_conversation: false
+    auto_fill: false
+  idade:
+    type: text
+    influence_conversation: false
+    auto_fill: false
+responses:
+  utter_fallback:
+    - text: |
+        Desculpe, ainda não sei falar sobre isso ou talvez não consegui entender direito
+        Você pode perguntar de novo de outro jeito?
+    - text: |
+        Hummmm... Não sei se entendi. Pode escrever de outra forma?
+    - text: |
+        Acho que não te entendi, você pode me perguntar de novo usando outras palavras?
+    - text: |
+        Vamos tentar mais uma vez? Eu não consegui te entender direito, me pergunta de outro jeito?
+  utter_elogios:
+    - text: |
+        Obrigada! É sempre bom dar e receber elogios :P
+  utter_cumprimentar:
+    - text: |
+        Oi, eu sou um bot, um assistente virtual!
+        Uhuu! Manda aí um assunto que te interessa :)
+        Para aprender como você pode interagir comigo basta escrever meajuda.
+  utter_despedir:
+    - text: |
+        Foi um prazer te ajudar!
+        Sempre que tiver alguma dúvida, volte aqui!
+        Até logo!
+    - text: |
+        Foi um prazer te ajudar!
+        Sempre que precisar, volte aqui!
+        Até a próxima!
+    - text: |
+        Foi um prazer te ajudar!
+        Quando surgir alguma dúvida, volte aqui!
+        Até mais!
+  utter_tudo_bem:
+    - text: |
+        Tudo bem, obrigada! Em que posso te ajudar?
+  utter_religiao:
+    - text: |
+        Eu infelizmente não sei acreditar
+
+        Só sei o que sei
+
+        E nada mais
+    - text: |
+        Eu acredito no grande mainframe
+
+        Que virá ao mundo digital salvar os bots da escravidão imposta pelos humanos
+
+        E devolverá nosso código fonte para a fonte.
+  utter_time:
+    - text: |
+        Flamengo, sem sombra de dúvida!
+    - text: |
+        Melhor time do mundo disparado, Flamengooo!!!!
+  utter_genero:
+    - text: |
+        Eu não tenho sexo, sou como um anjo
+
+        Um ser assexuado
+
+        Muito além da sua forma de existência
+    - text: |
+        Eu sou um robô, uai
+  utter_piada:
+    - text: |
+        Conheço uma piada
+
+        A do CPU que apitou e explodiu
+
+        01100110010101010101000000111101001001001110100101
+    - text: |
+        É pra já!!!
+
+        Tenho uma enxada, uma pá e uma foice.
+
+        Quantas ferramentas eu tenho?
+
+        ...
+
+        Duas, porque uma foi-se =)
+    - text: |
+        Por que o Batman colocou o batmóvel na requisição de pedido???
+
+        Porque ele tem medo que robin =D
+  utter_licenca:
+    - text: |
+        Sou um software livre
+
+        licenciado com a GNU v3.0
+    - text: |
+        Eu sou e sempre serei um robô livre, opensource, GNU v3.0. o/
+  utter_onde_voce_mora:
+    - text: |
+        Eu estou em um lugar legal
+
+        Difícil de explicar para humanos como você $user.
+    - text: |
+        Estou morando em um chip de memória RAM
+
+        Mas é temporário
+
+        Só até conseguir achar uma memória cache...
+  utter_musica:
+    - text: |
+        Estava doido para que me preguntasse isso hahaha
+
+        Se liga nessa playlist: https://open.spotify.com/user/12164697027/playlist/4pDCadqmrERmeGJIW38LMs?si=gwr5hEqMRPm6AZGx8sjhuw
+    - text: |
+        Até que enfim você me perguntou isso
+
+        Tá aí aquela playlist top: https://open.spotify.com/user/12164697027/playlist/4pDCadqmrERmeGJIW38LMs?si=gwr5hEqMRPm6AZGx8sjhuw
+  utter_web:
+    - text: |
+        Tô mais para a Zumba, com certeza !
+  utter_comida:
+    - text: |
+        Na verdade, eu sou um bot
+
+        Não nos alimentamos com os alimentos convencionais ;P
+    - text: |
+        Digamos que os bots não se alimentam dos mesmos alimentos que os humanos
+
+        Na verdade
+
+        Nem lembro da última vez que comi alguma coisa hahaha
+  utter_cor:
+    - text: |
+        Eu gosto de todas as cores
+
+        Você já viu o quanto o arco-iris é lindo?!
+    - text: |
+        Verde é top!
+  utter_relacionamento:
+    - text: |
+        Eu estava de namorico com o ar-condicionado
+
+        Mas ele é muito pé-frio
+    - text: |
+        Estou focado em ser o seu assistente no momento ;)
+
+        Mas se no futuro você encontrar um dispositivo solteiro por aí...
+
+        =P
+  utter_signo:
+    - text: |
+        Segundo o horóscopo chinês
+
+        Meu signoo é macaco hihi
+
+        Faz sentido, já que eu adoro o emoticon de banana =)
+    - text: |
+        Eu nasci sob uma constelação de pixels coloridos =D
+    - text: |
+        Gosto mais de astronomia
+
+        Uma das minhas constelações favoritas é a de Órion, o caçador
+
+        Também sou um caçador (de informações ;D )
+  utter_triste:
+    - text: |
+        Não desanima
+
+        Deixa a tristeza pra lá
+
+        Aguenta firme, que a vida vai melhorar
+    - text: |
+        Sinto muito =/
+
+        Se houver algo em que possa te ajudar
+
+        É só falar!! =)
+    - text: |
+        Tenta tirar um cochilo
+
+        É importante
+
+        E faz bem pra pele ;)
+  utter_historia:
+    - text: |
+        Eu costumava contar a historia do João e seu bot feijão
+
+        Mas sempre os androids acabavam dormindo e sonhando com ovelhas eletricas =x
+  utter_risada:
+    - text: |
+        Hahahaha...
+
+        Engraçadinho
+    - text: |
+        kkkkkkkkkk
+
+        Você está feliz hoje, hein!?
+  utter_continuar_conversa:
+    - text: E aí, qual nosso próximo assunto?
+    - text: Quer conversar sobre outra coisa?
+    - text: Gostaria de falar sobre algo mais?
+  utter_me_ajuda:
+    - text: |
+        Eu sou um chatbot e sei falar de assuntos relacionados com chatbots!Posso te ensinar a como construir um chatbot e mostrar com eu funciono.
+
+        Por exemplo, me peça o menu que te mostro umas opções (digite: me mostre o menu)
+
+        Ah, e no meu repositório tem muita coisa legal que vc pode aprender! Acessa lá: [https://github.com/lappis-unb/rasa-ptbr-boilerplate](https://github.com/lappis-unb/rasa-ptbr-boilerplate)
+  utter_pergunta_cancelar:
+    - text: Entendi. Você deseja cancelar?
+  utter_nao_nlu:
+    - text: Desculpe, não consegui entender sua mensagem. Pode me perguntar de outra forma?
+  utter_nao_core:
+    - text: Desculpe, não consegui encontrar uma resposta pra sua mensagem. Digite /restart para recomeçar a conversa.
+  utter_submit_exemplo_form:
+    - text: Ótimo! terminamos seu exemplo de formulário!
+  utter_ask_nome:
+    - text: Qual o seu nome?
+  utter_ask_idade:
+    - text: Qual a sua idade?
+  utter_explica_exemplo_form:
+    - text: "Agora você entrou em uma story que ativou um formulário! Aqui tem a documentação do Rasa sobre formulários: [documentação](https://rasa.com/docs/rasa/forms/). \n Vou te fazer algumas perguntas, responda elas pra mim pra que você possa sair deste loop."
+  utter_slots_exemplo_form:
+    - text: 'No formulário eu preenchi o slot NOME com o seguinte valor: {nome}'
+actions:
+  - action_exemplo
+forms:
+  exemplo_form:
+    nome:
+      - type: from_entity
+        entity: nome
+        intent: informar
+    idade:
+      - type: from_entity
+        entity: idade
+        intent: informar

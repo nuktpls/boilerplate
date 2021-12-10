@@ -1,0 +1,153 @@
+.gform {
+  &_wrapper {
+    @extend .row;
+
+    legend.gfield_label {
+      margin-bottom: rem-calc(13) !important;
+
+      .gfield_required {
+        @extend .d-none;
+      }
+    }
+
+    .ginput {
+      &_container_radio {
+        .form-check-label {
+          @extend .fs-4;
+        }
+      }
+
+      &_complex {
+        @extend .row;
+      }
+
+      &_preview {
+        align-items: center;
+        display: flex;
+        font-size: rem-calc(14);
+        margin-bottom: rem-calc(8);
+
+        strong {
+          @include text-crop;
+        }
+      }
+    }
+
+    .gsection {
+      &:not(:first-of-type) {
+        &::before {
+          @extend .border-top;
+
+          content: "";
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &:first-of-type {
+        .gsection_title {
+          margin: 0 !important;
+        }
+      }
+    }
+
+    .validation_message {
+      @extend .invalid-feedback;
+
+      display: block;
+      text-align: left;
+    }
+
+    label:not(.form-check-label) {
+      .gfield_required {
+        @extend .d-none;
+      }
+    }
+  }
+
+  &_heading {
+    @extend .mb-4;
+    @extend .pb-4;
+
+    position: relative;
+
+    &::after {
+      @extend .rounded;
+
+      background-color: $gray-100;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 4px;
+      left: calc($grid-gutter-width / 2);
+      position: absolute;
+      right: calc($grid-gutter-width / 2);
+    }
+  }
+
+  &_title {
+    font-weight: 800;
+    line-height: rem-calc(32);
+  }
+
+  &_description {
+    @extend .fs-4;
+    @extend .lead;
+  }
+
+  &_footer {
+    @extend .border-top;
+    @extend .mt-0;
+    @extend .pt-4;
+  }
+
+  &_delete_file {
+    @extend .btn;
+    @extend .btn-danger;
+
+    background-image: url("../images/trash-alt.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin-right: rem-calc(8);
+  }
+
+  &_confirmation_message {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0 !important;
+    }
+
+    hr {
+      margin: 0 !important;
+    }
+
+    a {
+      align-items: center;
+      display: inline-flex;
+
+      > * {
+        @include text-crop;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &_button {
+    @include media-breakpoint-down(md) {
+      width: 100%;
+    }
+  }
+
+  &_button_select_files {
+    padding-bottom: rem-calc(10.5);
+    padding-top: rem-calc(10.5);
+  }
+}

@@ -1,0 +1,79 @@
+// Colors
+$system__color: #eb412c;
+$brand__color: #eb412c;
+$bodyColor__bgColor: #fff;
+
+$cta__color: #0c0c0c;
+$additional__color: #fff;
+$link__color: #2e2e2e;
+$additionalDark__color: $brand__color;
+
+$brand_black__color: #0c0c0c;
+$brand_white__color: #fff;
+$black__color: #1b1b1b;
+
+// $grayscale_100__color: #fcfcfc;
+$grayscale_200__color: #ececec;
+$grayscale_300__color: #e3e3e3;
+$grayscale_600__color: #a3a3a3;
+
+$secondary_pink__color: #ff4d59;
+
+$btn_brown__active: #e0c6ac;
+$btn_brown__not_active: $brand__color;
+
+$ribbon_top__color: $brand__color;
+
+$brown__shadowBox: 0px 10px 40px rgba(22, 22, 22, 0.25);
+$border_tick: rgb(235 65 44 / 30%);
+$color__light-grey: #999999;
+
+.row_color__Additional {
+	background-color: $additional__color;
+}
+
+// SPACES
+
+// Breakpoints
+// screen vars
+$header__height: 121px;
+$widescreen__size: 1170px;
+$tablet__size: 768px;
+$tabletHack__size: 769px;
+$tabletHackMinimal__size: 425px;
+$boxed__tabletHackMaxWidth: 730px;
+$small__size: 375px;
+$boxed__maxWidth: 375px;
+$boxedDesktop__maxWidth: 960px;
+$boxedMobile__maxWidth: 375px;
+$desktopIndexButtons__maxWidth: 520px;
+$mobileIndexButtons__maxWidth: 280px;
+$tabletIndexButtons__maxWidth: 350px;
+
+//Spaces
+$s__space: 16pt;
+$m__space: 24pt;
+$heading__top-padding: 14pt;
+
+//Borders
+// $xs__radius: 3px;
+// $s__radius: 5px;
+// $m__radius: 8px;
+// $l__radius: 10px;
+// $xl__radius: 15px;
+// $xxl__radius: 50%;
+
+// typograph
+$main__font: 'Mulish', Arial, sans-serif;
+$second__font: 'Alegreya Sans', Arial, sans-serif;
+$third__font: 'Roboto', Arial, sans-serif;
+$alternative__font: 'Arial';
+
+$xs__fontSize: 12px;
+$s__fontSize: 14px;
+
+$h1__fontSize: 30pt;
+$h2__fontSize: 24pt;
+$h3__fontSize: 22pt;
+$h4__fontSize: 20pt;
+$h5__fontSize: 18pt;
