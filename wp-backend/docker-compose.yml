@@ -62,8 +62,8 @@ services:
     working_dir: /var/www/html/wp-content/themes/tema-de-integracao
     command: bash -c "yarn && yarn start"
     ports:
-      - '3000:3000'
-      - '3001:3001'
+      - '4000:4000'
+      - '4001:4001'
     volumes_from:
       - wordpress
   phpmyadmin:

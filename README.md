@@ -18,6 +18,7 @@ theme, website e wp-backend.
 
 Na raiz do projeto o package.json indico a estrutura:
 
+```json
 {
 "name": "myworkspace",
 "private": true,
@@ -56,30 +57,35 @@ Dentro de website, em um package.json fica a minha instalação das engines do g
 "theme": "1.0.0"
 }
 }
+```
 
 No diretório da engine do website a chamada do tema é feita por meio de um arquivo de configurações na seção de plugins. O arquivo é o gatsby-config.js:
 
+```js
 module.exports = {
-plugins: ["theme"],
-};
+	plugins: ['theme'],
+}
+```
 
 A pasta theme leva também um package.json dessa maneira:
 
+```json
 {
-"name": "theme",
-"version": "1.0.0",
-"main": "gatsby-config.js",
-"license": "MIT",
-"dependencies": {
-"gatsby-atomic-block": "^0.2.5",
-"gatsby-layout-builder": "^0.2.6"
-},
-"peerDependencies": {
-"gatsby": "^4.3.0",
-"react": "^17.0.2",
-"react-dom": "^17.0.2"
+	"name": "theme",
+	"version": "1.0.0",
+	"main": "gatsby-config.js",
+	"license": "MIT",
+	"dependencies": {
+		"gatsby-atomic-block": "^0.2.5",
+		"gatsby-layout-builder": "^0.2.6"
+	},
+	"peerDependencies": {
+		"gatsby": "^4.3.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2"
+	}
 }
-}
+```
 
 Note as dependências chamadas peer, o tema usará as dependências centralizadas e não criará multiplos diretórios de módulos nodes.
 

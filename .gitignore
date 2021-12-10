@@ -15,3 +15,6 @@ public
 .idea
 !.vscode/*
 !*.code-workspace
+
+wp-backend/wp-content/plugins
+wp-backend/wp-content/uploads

@@ -90,13 +90,11 @@
 	"require": {
 		"composer/installers": "dev-main",
 		"golchha21/resmushit": "^1.2",
-		"timber/timber": "^1.18",
 		"wpackagist-plugin/post-smtp": "^2",
 		"wpackagist-plugin/enable-media-replace": "^3",
 		"wpackagist-plugin/regenerate-thumbnails": "*",
 		"wpackagist-plugin/safe-svg": "^1",
 		"wpackagist-plugin/wp-super-cache": "*",
-		"soberwp/intervention": "*",
 		"vlucas/phpdotenv": "4.1",
 		"wp-plugins/advanced-custom-fields-pro": "5.10.2",
 		"wp-plugins/svg-support": "2.3.19",
