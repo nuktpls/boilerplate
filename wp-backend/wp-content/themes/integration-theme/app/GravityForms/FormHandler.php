@@ -20,9 +20,9 @@ class FormHandler {
             return;
 
         global $post;
-        $formRequestInsurance = get_field('form_request_insurance', 'option');
+        $formRequestOrder = get_field('form_request_order', 'option');
 
-        if(empty($formRequestInsurance) || $formRequestInsurance != $form['id'])
+        if(empty($formRequestOrder) || $formRequestOrder != $form['id'])
             return;
 
         // Create policy with 'pending' status
@@ -36,7 +36,7 @@ class FormHandler {
         if(empty($policyID = wp_insert_post($data)))
             return;
 
-        update_post_meta($policyID, 'insurance', $post->ID); // Set insurance ID
+        update_post_meta($policyID, 'order', $post->ID); // Set order ID
         update_post_meta($policyID, 'entry', $entry['id']); // Set entry ID
         update_post_meta($policyID, 'form', $form['id']); // Set form ID
     }

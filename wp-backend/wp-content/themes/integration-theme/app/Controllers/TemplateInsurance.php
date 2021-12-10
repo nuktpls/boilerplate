@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-class TemplateInsurance extends Controller {
+class TemplateOrder extends Controller {
 
     public function segments(): array {
         $segments = get_terms([
@@ -19,21 +19,21 @@ class TemplateInsurance extends Controller {
             $segments[$key] = get_object_vars($segment);
 
             $segments[$key]['thumbnail'] = get_field('thumbnail', $segment);
-            $segments[$key]['insurances'] = $this->getInsurances($segment->term_id);
+            $segments[$key]['order'] = $this->getOrder($segment->term_id);
 
             if(array_key_last($segments) === $key)
-                $segments[$key]['more_insurances'] = $this->getInsurances();
+                $segments[$key]['more_orders'] = $this->getOrder();
         endforeach;
 
-        $this->getInsurances();
+        $this->getOrder();
 
         return $segments;
     }
 
-    private function getInsurances(int $segmentID = 0): array {
-        $insurances = [];
+    private function getOrder(int $segmentID = 0): array {
+        $orders = [];
         $args = [
-            'post_type'   => 'insurance',
+            'post_type'   => 'order',
             'numberposts' => -1,
             'fields'      => 'ids',
         ];
@@ -59,17 +59,17 @@ class TemplateInsurance extends Controller {
         $posts = get_posts($args);
 
         if(empty($posts))
-            return $insurances;
+            return $orders;
 
         foreach($posts as $post):
-            $insurances[] = [
+            $orders[] = [
                 'id'        => $post,
                 'name'      => get_the_title($post),
                 'permalink' => get_the_permalink($post),
             ];
         endforeach;
 
-        return $insurances;
+        return $orders;
     }
 
 }

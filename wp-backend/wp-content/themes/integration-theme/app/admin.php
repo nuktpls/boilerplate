@@ -27,13 +27,13 @@ add_filter('show_admin_bar', '__return_false');
 
 add_filter('display_post_states', function($post_states, $post) {
     $profile_page = get_field('profile_page', 'option');
-    $request_insurance_page = get_field('request_insurance_page', 'option');
+    $request_order_page = get_field('request_order_page', 'option');
     $policies_page = get_field('policies_page', 'option');
 
     if(!empty($profile_page) && $profile_page === $post->ID)
         $post_states['profile-page'] = 'Perfil de usuário';
-    elseif(!empty($request_insurance_page) && $request_insurance_page === $post->ID)
-        $post_states['request-insurance-page'] = 'Listagem de requisições';
+    elseif(!empty($request_order_page) && $request_order_page === $post->ID)
+        $post_states['request-order-page'] = 'Listagem de requisições';
     elseif(!empty($policies_page) && $policies_page === $post->ID)
         $post_states['policies-page'] = 'Listagem de apólices';
 

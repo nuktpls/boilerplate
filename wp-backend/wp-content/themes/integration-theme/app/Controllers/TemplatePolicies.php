@@ -26,7 +26,7 @@ class TemplatePolicies extends Controller {
                 'id'        => $policy,
                 'policy_id' => get_the_title($policy),
                 'permalink' => get_the_permalink($policy),
-                'insurance' => get_the_title(get_post_meta($policy, 'insurance', true)),
+                'order' => get_the_title(get_post_meta($policy, 'order', true)),
             ];
         endforeach;
 

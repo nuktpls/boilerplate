@@ -9,7 +9,7 @@ use WordPlate\Acf\Fields\Repeater;
 use WordPlate\Acf\Fields\Text;
 use WordPlate\Acf\Fields\Textarea;
 
-class PostInsurance {
+class PostOrder {
 
     public function __construct() {
         $this->createSettings();
@@ -17,23 +17,23 @@ class PostInsurance {
 
     protected function createSettings() {
         register_extended_field_group([
-            'key'      => 'insurance_info',
+            'key'      => 'order_info',
             'title'    => 'Adicional',
             'fields'   => $this->createFields(),
             'style'    => 'seamless',
             'position' => 'side',
             'location' => [
-                Location::if('post_type', 'insurance')
+                Location::if('post_type', 'order')
             ],
         ]);
 
         register_extended_field_group([
-            'key'      => 'insurance_files',
+            'key'      => 'order_files',
             'title'    => 'Documentos',
             'fields'   => $this->createFilesFields(),
             'style'    => 'seamless',
             'location' => [
-                Location::if('post_type', 'insurance')
+                Location::if('post_type', 'order')
             ],
         ]);
     }

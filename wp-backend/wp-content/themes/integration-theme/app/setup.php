@@ -150,7 +150,7 @@ add_action('after_setup_theme', function () {
 add_action('init', function() {
     define('ICONS_COLOR', '#EBBA1F');
 
-    new \App\PostTypes\Insurance;
+    new \App\PostTypes\Order;
     new \App\PostTypes\Policy;
     new \App\Taxonomies\Segment;
 });
@@ -159,7 +159,7 @@ add_action('after_setup_theme', function() {
     new \App\Admin\Menus;
     new \App\Admin\Page;
     new \App\Admin\PageServiceChannel;
-    new \App\Admin\PostInsurance;
+    new \App\Admin\PostOrder;
     new \App\Admin\PostPolicy;
     new \App\Admin\TaxonomySegment;
     new \App\Admin\User;

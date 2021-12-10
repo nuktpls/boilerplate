@@ -1,61 +1,56 @@
-# name:
-# on:
-#   push:
-#     branches:
-#       - develop
-# env:
-#   REGISTRY:
-#   IMAGE_NAME:
+name: Ambiente de testes - boilerplate
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  release:
+    name: Obtém o código-fonte e realiza a construção da aplicação.
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v2
 
-# jobs:
-#   build:
-#     name:
-#     runs-on:
-#     steps:
-#       - name:
-#         uses:
+      - name: Verificando o cache dos pacotes do Composer
+        uses: actions/cache@v2
+        with:
+          path: /tmp/composer-cache
+          key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
 
-#       - name:
-#         id:
-#         run:
+      - name: Executando composer install para dependências do Wordpress
+        env:
+          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+        uses: php-actions/composer@v5
+        with:
+          php_version: 7.4
+          version: 1
+          dev: no
+          ## aqui ele vai executar as tarefas
+          args: -o --ignore-platform-reqs -d ./wp-content/themes/integration-theme
 
-#       - name:
-#         run:
+      - name: Setup do NodeJS para o tema
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-#       - name:
-#         run:
+      ## baixando::yarn install
+      - name: Executando yarn install
+        working-directory: ./wp-content/themes/integration-theme
+        run: yarn
 
-#       - name:
-#         uses:
-#         with:
-#           token:
+      ## construindo::yarnbuild
+      - name: Executando a construção dos assets
+        working-directory: ./wp-content/themes/integration-theme
+        run: yarn build:production
 
-#       - name:
-#         run:
-
-#       - name:
-#         run:
-
-#   release:
-#     name:
-#     needs:
-#     runs-on:
-#     steps:
-#       - name:
-#         uses:
-
-#       - name:
-#         id:
-#         run:
-
-#       - name:
-#         run:
-
-#       - name:
-#         uses:
-#         with:
-#           host:
-#           username:
-#           key:
-#           port:
-#           script:
+      - name: Copiando arquivos dos plugins para ambiente de testes
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: --no-perms -O --exclude=.git/ --exclude=.env --exclude=node_modules --delete -Prltvz
+          path: ./wp-content/themes/integration-theme/
+          ## config aqui
+          remote_path: /mnt/hipocavalo/public/wp-content/themes/integration-theme
+          remote_host: ${{ secrets.SSH_DEV_DEPLOY_HOST }}
+          remote_port: 22
+          remote_user: ${{ secrets.SSH_DEV_DEPLOY_USER }}
+          remote_key: ${{ secrets.SSH_DEV_DEPLOY_KEY }}

@@ -6,8 +6,8 @@ use Sober\Controller\Controller;
 
 class SinglePolicy extends Controller {
 
-    public function insurance() {
-        return get_post_meta(get_the_ID(), 'insurance', true);
+    public function order() {
+        return get_post_meta(get_the_ID(), 'order', true);
     }
 
     public function financial() {

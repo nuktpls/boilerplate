@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use Sober\Controller\Controller;
 
-class SingleInsurance extends Controller {
+class SingleOrder extends Controller {
 
     public function subtitle() {
         return get_field('subtitle');
@@ -15,7 +15,7 @@ class SingleInsurance extends Controller {
     }
 
     public function form() {
-        return get_field('form_request_insurance', 'option');
+        return get_field('form_request_order', 'option');
     }
 
 }

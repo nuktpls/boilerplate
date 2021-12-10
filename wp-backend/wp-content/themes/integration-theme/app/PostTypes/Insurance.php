@@ -24,7 +24,7 @@ class Insurance extends PostTypes {
         return [
             'singular' => 'Solicitação',
             'plural'   => 'Solicitações',
-            'slug'     => 'request'
+            'slug'     => 'order'
         ];
     }
 
