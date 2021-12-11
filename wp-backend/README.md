@@ -67,7 +67,8 @@ Após ter instalado todas as dependências globais em sua máquina, já podemos 
 Para importar o banco de dados utilize o comando a seguir na raiz do projeto já com todos os containers rodando:
 
 ```sh
-cat dump.sql | docker exec -i integration-theme_db mysql -u root --password=INTegrapassword321 integration-theme
+cat dump.sql | docker exec -i tema_de_integracao_db mysql -u root --password=root wordpressdatabase
+
 ```
 
 ## Exportando banco de dados

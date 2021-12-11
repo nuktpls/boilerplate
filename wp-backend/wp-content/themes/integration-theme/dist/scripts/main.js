@@ -22116,15 +22116,15 @@ var configSignupRequest = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var config = {
-  ajax_url: "/wp-admin/admin-ajax.php",
-  termsRibbonId: "termos-login",
-  modalTermsId: "termos-modal",
-  acceptBtns: "termos-login__button termos-modal__button wp-submit sign-up-btn",
-  acceptBtnsException: "wp-submit sign-up-btn",
-  acceptCheckbox: "sign-up-termos modal-terms",
-  statusCookieAction: "status_term_cookies",
-  setCookieAction: "terms_cookies",
-  termsOnLoad: false
+  ajax_url: '/wp-admin/admin-ajax.php',
+  termsRibbonId: 'termos-login',
+  modalTermsId: 'termos-modal',
+  acceptBtns: 'termos-login__button termos-modal__button wp-submit sign-up-btn',
+  acceptBtnsException: 'wp-submit sign-up-btn',
+  acceptCheckbox: 'sign-up-termos modal-terms',
+  statusCookieAction: 'status_term_cookies',
+  setCookieAction: 'terms_cookies',
+  termsOnLoad: true
 }; // resetCookieAction: "reset_term_cookies",
 
 /* harmony default export */ __webpack_exports__["default"] = (config);
