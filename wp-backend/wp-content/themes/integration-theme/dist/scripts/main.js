@@ -23497,8 +23497,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/main.js */"./resources/assets/scripts/main.js");
-module.exports = __webpack_require__(/*! /var/www/html/wp-content/themes/integration-theme/resources/assets/styles/main.scss */"./resources/assets/styles/main.scss");
+__webpack_require__(/*! /home/milton/softwares/gatsby/boilerplate4dev/wp-backend/wp-content/themes/integration-theme/resources/assets/scripts/main.js */"./resources/assets/scripts/main.js");
+module.exports = __webpack_require__(/*! /home/milton/softwares/gatsby/boilerplate4dev/wp-backend/wp-content/themes/integration-theme/resources/assets/styles/main.scss */"./resources/assets/styles/main.scss");
 
 
 /***/ })
