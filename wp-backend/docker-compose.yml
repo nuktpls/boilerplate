@@ -1,8 +1,8 @@
-version: "3.9"
+version: "3.5"
 services:
   db:
     container_name: tema_de_integracao_db
-    image: mariadb:latest
+    image: 'mariadb:10.5.9'
     ports:
       - '3306:3306'
     volumes:
