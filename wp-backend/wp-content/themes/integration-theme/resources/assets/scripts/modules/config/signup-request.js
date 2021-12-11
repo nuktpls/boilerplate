@@ -2,7 +2,7 @@ const configSignupRequest = {
 	configTo: 'mbolonha@deletar.com.br',
 	configSubject: 'Pedido de Cadastro',
 	configBody: 'Email enviado por meio do site',
-	configHeadersFrom: 'From: Número 1 Seguros Teste <mbolonha@deletar.com.br>',
+	configHeadersFrom: 'From: Tema de Integração Teste <mbolonha@deletar.com.br>',
 	configHeadersCC: 'Cc: The Bolonha <miltonbolonha@gmail.com>',
 	ajax_url: '/wp-admin/admin-ajax.php',
 	redirect: '/',
