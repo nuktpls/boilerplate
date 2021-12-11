@@ -1,108 +1,130 @@
 import React, { useEffect, setState, useState } from 'react'
 import LoginAjaxRequest from '../login-ajax'
 import config from '../config/login-form'
-
-const successHTMLstyle = {
-	color: 'green',
-	fontWeight: 900,
-	marginBottom: 0,
-}
-const errorHTMLstyle = {
-	color: 'red',
-	marginBottom: 0,
-	fontWeight: 900,
-}
-
-const listItemStyles = {
-	fontWeight: 300,
-	fontSize: 18,
-	maxWidth: 760,
-	marginBottom: 10,
-}
-const inputzim = {
-	background: '#ddd',
-	border: '#89f',
-	padding: '15px 15px',
-	maxWidth: 250,
-	fontSize: 14,
-	fontWeight: 500,
-	borderRadius: 5,
-	outline: 0,
-	marginBottom: 5,
-}
-const inputzimButton = {
-	background: '#89f',
-	border: 0,
-	borderRadius: 5,
-	color: '#fff',
-	cursor: 'pointer',
-	padding: '15px 30px',
-	boxShadow: '5px 5px 0 0 #dee3ff',
-	outline: 0,
-	fontWeight: 900,
-	fontSize: 18,
-}
-
-const labelStyle = {
-	color: '#89f',
-	fontWeight: 'bold',
-	fontSize: 14,
-	verticalAlign: '5%',
-}
-
-const smallzim = {
-	...labelStyle,
-	// fontSize: 11,
-	fontStyle: 'italic',
-}
+import handles from './container/handles'
 const GatsbyLoginForm = () => {
-	const [pwd, setPwd] = useState('')
-	const [email, setEmail] = useState('')
-	const [honey, setHoney] = useState('')
-	const [mcRes, setMcRes] = useState('')
-	const [msg, setMsg] = useState('')
-	const [success, setSuccess] = useState('')
-	const handleMcRes = (msgReceived, resReceived) => {
-		setMcRes(resReceived)
-		handleMsg(msgReceived, resReceived)
-		handleSuccess(resReceived)
-	}
-	const handleMsg = (msgNow, resReceived) => {
-		let msgNull = null
-		if (resReceived === 'error') {
-			msgNull = 'E-mail inválido ou já cadastrado.'
-		}
-		if (resReceived === 'success') {
-			msgNull = 'Lembrete definido. Até logo!'
-		}
-		setMsg(msgNull)
-	}
-	const handleSuccess = (successNow) => {
-		setSuccess(successNow)
-	}
+	const msg = handles('msg')
+	const success = handles('success')
+	const email = handles('email')
+	const honey = handles('honey')
+	const handleSubmit = (e) => handles('handleSubmit', e, email, honey)
+	const handlePwdChange = (e) => handles('handlePwdChange', e, e.target.value)
 
-	const handleEmailChange = (emailTyping) => {
-		setEmail(emailTyping)
-	}
-	const handlePwdChange = (pwdTyping) => {
-		setPwd(pwdTyping)
-	}
-	const handleHoneypotChange = (honeyTyping) => {
-		setHoney(honeyTyping)
-	}
-	const handleSubmit = async (e, email, honey) => {
-		e.preventDefault()
-		honey ||
-			// (await addToMailchimp(email).then(({ msg, result }) => {
-			// 	handleMcRes(msg, result)
-			// }))
-			console.log({
-				email,
-				pwd,
-				honey,
-			})
-	}
+	const handleEmailChange = (e) =>
+		handles('handleEmailChange', e, e.target.value)
+	const handleHoneypotChange = (e) =>
+		handles('handleHoneypotChange', e, e.target.value)
+	const pwd = handles('pwd')
+	return (
+		<>
+			<h2>Acesse sua conta</h2>
+			{msg ? (
+				<p
+					style={success === 'success' ? 'successHTMLstyle' : 'errorHTMLstyle'}
+				>
+					{msg}
+				</p>
+			) : null}
+			{success !== 'success' ? (
+				<>
+					<form
+						method="post"
+						id="mc-embedded-subscribe-form"
+						name="mc-embedded-subscribe-form"
+						className="validate"
+						target="_blank"
+						onSubmit={(e) => handleSubmit(e)}
+						noValidate
+						// id="login-form-ajax" method="post" onSubmit={(e) => something(e)}
+					>
+						<p className="hidden">
+							<label>
+								Don’t fill this out if you’re human:{' '}
+								<input
+									name="bot-field"
+									onChange={(e) => handleHoneypotChange(e)}
+									value={honey}
+								/>
+							</label>
+						</p>
+						<br />
 
+						<input
+							type="email"
+							name="EMAIL"
+							id="mce-EMAIL"
+							placeholder="seu@email.com (avise-me por e-mail)"
+							required
+							size="28"
+							onChange={(e) => handleEmailChange(e)}
+							value={email}
+							// id="email-input"
+							// type="text"
+							// placeholder="Digite seu e-mail"
+							// name="email"
+							// autoComplete="on"
+							// required
+							// id="password-input"
+							// type="password"
+							// placeholder="Digite sua senha"
+							// name="password"
+							// autoComplete="on"
+							// required
+						/>
+						<input
+							id="password-input"
+							required
+							size="28"
+							onChange={(e) => handlePwdChange(e)}
+							value={pwd}
+							type="password"
+							placeholder="Digite sua senha"
+							name="password"
+							autoComplete="off"
+							required
+						/>
+						<br />
+						<label htmlFor="mce-EMAIL">
+							<small>Não enviamos spam :)</small>
+						</label>
+						<br />
+						<br />
+						{honey || email === '' ? null : (
+							<>
+								<button
+									type="submit"
+									name="subscribe"
+									disabled={email ? false : true}
+									id="wp-submit"
+								>
+									Acessar
+								</button>
+							</>
+						)}
+					</form>
+					<button href="#wp_lostpassword_url" alt="Esqueceu sua senha?">
+						Esqueceu sua senha?
+					</button>
+					<button className="login__access-registration border-bottom d-block fw-bolder fs-4 mb-4 pb-3">
+						Não sou cliente
+					</button>
+					Problemas com seu acesso?{' '}
+					<button
+						className="fw-bolder text-decoration-underline"
+						target="_blank"
+						rel="noopener noreferrer"
+						href=""
+					>
+						Fale conosco
+					</button>
+				</>
+			) : (
+				<>
+					<br />
+				</>
+			)}
+		</>
+	)
 	new LoginAjaxRequest(config)
 
 	// const credentials = {
@@ -152,118 +174,6 @@ const GatsbyLoginForm = () => {
 	// useEffect(() => {
 	// 	easyAjax(config, data, 'POST')
 	// })
-	return (
-		<>
-			<h2>Acesse sua conta</h2>
-			{msg ? (
-				<p style={success === 'success' ? successHTMLstyle : errorHTMLstyle}>
-					{msg}
-				</p>
-			) : null}
-			{success !== 'success' ? (
-				<form
-					style={listItemStyles}
-					method="post"
-					id="mc-embedded-subscribe-form"
-					name="mc-embedded-subscribe-form"
-					className="validate"
-					target="_blank"
-					onSubmit={(e) => handleSubmit(e, email, honey)}
-					noValidate
-					// id="login-form-ajax" method="post" onSubmit={(e) => something(e)}
-				>
-					<p className="hidden">
-						<label>
-							Don’t fill this out if you’re human:{' '}
-							<input
-								name="bot-field"
-								onChange={(e) => handleHoneypotChange(e.target.value)}
-								value={honey}
-							/>
-						</label>
-					</p>
-					<br />
-
-					<input
-						type="email"
-						name="EMAIL"
-						id="mce-EMAIL"
-						placeholder="seu@email.com (avise-me por e-mail)"
-						required
-						style={inputzim}
-						size="28"
-						onChange={(e) => handleEmailChange(e.target.value)}
-						value={email}
-						// id="email-input"
-						// type="text"
-						// placeholder="Digite seu e-mail"
-						// name="email"
-						// autoComplete="on"
-						// required
-						// id="password-input"
-						// type="password"
-						// placeholder="Digite sua senha"
-						// name="password"
-						// autoComplete="on"
-						// required
-					/>
-					<input
-						id="password-input"
-						required
-						style={inputzim}
-						size="28"
-						onChange={(e) => handlePwdChange(e.target.value)}
-						value={pwd}
-						type="password"
-						placeholder="Digite sua senha"
-						name="password"
-						autoComplete="off"
-						required
-					/>
-					<br />
-					<label htmlFor="mce-EMAIL">
-						<span style={smallzim}>Não enviamos spam :)</span>
-					</label>
-					<br />
-					<br />
-					{honey || email === '' ? null : (
-						<>
-							<button
-								type="submit"
-								style={inputzimButton}
-								name="subscribe"
-								disabled={email ? false : true}
-								id="wp-submit"
-							>
-								Acessar
-							</button>
-						</>
-					)}
-				</form>
-			) : (
-				<>
-					<br />
-				</>
-			)}
-			<button
-				href="<?php echo esc_url( wp_lostpassword_url() ); ?>"
-				alt="Esqueceu sua senha?"
-			>
-				Esqueceu sua senha?
-			</button>
-			<button className="login__access-registration border-bottom d-block fw-bolder fs-4 mb-4 pb-3">
-				Não sou cliente
-			</button>
-			Problemas com seu acesso?{' '}
-			<button
-				className="fw-bolder text-decoration-underline"
-				target="_blank"
-				rel="noopener noreferrer"
-				href=""
-			>
-				Fale conosco
-			</button>
-		</>
-	)
+	return <></>
 }
 export default GatsbyLoginForm
