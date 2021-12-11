@@ -11006,7 +11006,7 @@ wp.customize('blogname', function (value) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/milton/softwares/gatsby/boilerplate4dev/wp-backend/wp-content/themes/integration-theme/resources/assets/scripts/customizer.js */"./resources/assets/scripts/customizer.js");
+module.exports = __webpack_require__(/*! /var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/customizer.js */"./resources/assets/scripts/customizer.js");
 
 
 /***/ })

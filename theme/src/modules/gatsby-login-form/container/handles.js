@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useEffect, setState, useState } from 'react'
 import submitChooser from './handle-submit-chooser'
 import handleMessages from './handle-messages'
 import handleEmailChange from './handle-input-email'
@@ -6,13 +6,6 @@ import handlePwdChange from './handle-input-pwd'
 import handleHoneypotChange from './handle-input-honeypot'
 import handleSuccess from './handle-success'
 const handles = (key, e, value, usefulEmail, usefulHoney) => {
-	const [pwd, setPwd] = useState('')
-	const [email, setEmail] = useState('')
-	const [honey, setHoney] = useState('')
-	const [mcRes, setMcRes] = useState('')
-	const [msg, setMsg] = useState('')
-	const [success, setSuccess] = useState('')
-
 	// const handleMcRes = (msgReceived, resReceived) => {
 	// 	setMcRes(resReceived)
 	// 	handleMsg(msgReceived, resReceived)
@@ -45,9 +38,9 @@ const handles = (key, e, value, usefulEmail, usefulHoney) => {
 		case 'handleSubmit':
 			return submitChooser(email, pwd, honey)
 		case 'handleMsg':
-			return handleMsg
+			return 'handleMsg'
 		case 'handleEmailChange':
-			return handleEmailChange(setEmail(value))
+			return setEmail(value)
 		case 'handlePwdChange':
 			return handlePwdChange
 		case 'handleHoneypotChange':

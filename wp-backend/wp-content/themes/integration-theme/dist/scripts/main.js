@@ -22706,23 +22706,22 @@ var onLoadResponse = function onLoadResponse(submitHandler, config, errorElement
     var successElement = document.getElementById(config.successElement);
     var responseRequest = submitHandler.response && submitHandler.response.data && submitHandler.response.data.type ? submitHandler.response.data.type : null; //is response error || null || other = success
 
-    if (responseRequest === "error") {
+    if (responseRequest === 'error') {
       errorElement.innerText = config.errorMsg;
       Object(_fade_in_container__WEBPACK_IMPORTED_MODULE_0__["default"])(errorElement, 600);
     } else if (!responseRequest) {
       errorElement.innerText = config.errorMsg;
       Object(_fade_in_container__WEBPACK_IMPORTED_MODULE_0__["default"])(errorElement, 600);
-    } else if (responseRequest === "success") {
+    } else if (responseRequest === 'success') {
       Object(_fade_out_container__WEBPACK_IMPORTED_MODULE_1__["default"])(errorElement, 600);
-      errorElement.style.display = "none";
+      errorElement.style.display = 'none';
       successElement.innerText = config.successMsg;
       Object(_fade_in_container__WEBPACK_IMPORTED_MODULE_0__["default"])(successElement, 600);
       setTimeout(function () {
-        console.log("tentando redirect");
-        document.location.href = "/";
+        console.log('tentando redirect'); // document.location.href = "/";
       }, 500);
     } else {
-      return console.log("unknow request");
+      return console.log('unknow request');
     }
   };
 };
@@ -23479,26 +23478,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/assets/styles/main.scss":
-/*!*******************************************!*\
-  !*** ./resources/assets/styles/main.scss ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!************************************************************************************!*\
-  !*** multi ./resources/assets/scripts/main.js ./resources/assets/styles/main.scss ***!
-  \************************************************************************************/
+/*!************************************************!*\
+  !*** multi ./resources/assets/scripts/main.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/milton/softwares/gatsby/boilerplate4dev/wp-backend/wp-content/themes/integration-theme/resources/assets/scripts/main.js */"./resources/assets/scripts/main.js");
-module.exports = __webpack_require__(/*! /home/milton/softwares/gatsby/boilerplate4dev/wp-backend/wp-content/themes/integration-theme/resources/assets/styles/main.scss */"./resources/assets/styles/main.scss");
+module.exports = __webpack_require__(/*! /var/www/html/wp-content/themes/integration-theme/resources/assets/scripts/main.js */"./resources/assets/scripts/main.js");
 
 
 /***/ })

@@ -3,15 +3,19 @@ import LoginAjaxRequest from '../login-ajax'
 import config from '../config/login-form'
 import handles from './container/handles'
 const GatsbyLoginForm = () => {
-	const msg = handles('msg')
-	const success = handles('success')
-	const email = handles('email')
-	const honey = handles('honey')
+	const [pwd, setPwd] = useState('')
+	const [email, setEmail] = useState('')
+	const [honey, setHoney] = useState('')
+	const [mcRes, setMcRes] = useState('')
+	const [msg, setMsg] = useState('')
+	const [success, setSuccess] = useState('')
+
 	const handleSubmit = (e) => handles('handleSubmit', e, email, honey)
 	const handlePwdChange = (e) => handles('handlePwdChange', e, e.target.value)
 
 	const handleEmailChange = (e) =>
 		handles('handleEmailChange', e, e.target.value)
+	console.log(handleEmailChange)
 	const handleHoneypotChange = (e) =>
 		handles('handleHoneypotChange', e, e.target.value)
 	const pwd = handles('pwd')

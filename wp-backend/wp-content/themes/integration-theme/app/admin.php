@@ -24,30 +24,30 @@ add_action('customize_preview_init', function () {
 });
 
 add_action('init', function() {
-    new \App\Admin\Menus;
-    new \App\Admin\Page;
-    new \App\Admin\PageServiceChannel;
-    new \App\Admin\PostOrder;
-    new \App\Admin\TaxonomySegment;
-    new \App\Admin\User;
+    // new \App\Admin\Menus;
+    // new \App\Admin\Page;
+    // new \App\Admin\PageServiceChannel;
+    // new \App\Admin\PostInsurance;
+    // new \App\Admin\TaxonomySegment;
+    // new \App\Admin\User;
 
-    new \App\Options\General;
-    new \App\Options\Dashboard;
-    new \App\Options\Terms;
-    new \App\Options\LoginContact;
-    new \App\Options\Footer;
+    // new \App\Options\General;
+    // new \App\Options\Dashboard;
+    // new \App\Options\Terms;
+    // new \App\Options\LoginContact;
+    // new \App\Options\Footer;
 });
 
 add_filter('show_admin_bar', '__return_false');
 
 add_filter('display_post_states', function($post_states, $post) {
     $profile_page = get_field('profile_page', 'option');
-    $request_order_page = get_field('request_order_page', 'option');
+    $request_insurance_page = get_field('request_insurance_page', 'option');
 
     if(!empty($profile_page) && $profile_page === $post->ID)
         $post_states['profile-page'] = 'Perfil de usuário';
-    if(!empty($request_order_page) && $request_order_page === $post->ID)
-        $post_states['request-order-page'] = 'Solicitação de pedido';
+    if(!empty($request_insurance_page) && $request_insurance_page === $post->ID)
+        $post_states['request-insurance-page'] = 'Solicitação de seguro';
 
     return $post_states;
 }, 10, 2);

@@ -1,7 +1,4 @@
-const mix = require('laravel-mix');
-require('@tinypixelco/laravel-mix-wp-blocks');
-require('laravel-mix-purgecss');
-require('laravel-mix-copy-watched');
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -14,50 +11,22 @@ require('laravel-mix-copy-watched');
  |
  */
 
-mix.setPublicPath('./dist')
-  .browserSync({
-    proxy: 'wordpress',
-    tunnel: true,
-    open: false,
-  });
+mix.setPublicPath('./dist').browserSync({
+	proxy: 'localhost',
+	tunnel: true,
+	open: false,
+})
 
-mix.webpackConfig({
-  module: {
-    rules: [
-      {
-        test: /.scss/,
-        enforce: 'pre',
-        loader: 'import-glob-loader',
-      },
-    ],
-  },
-});
-
-mix.sass('resources/assets/styles/main.scss', 'styles')
-  .purgeCss({
-    extend: {
-      whitelist: require('purgecss-with-wordpress').whitelist,
-      whitelistPatterns: [
-        ...require('purgecss-with-wordpress').whitelistPatterns,
-        /^template/,
-      ],
-      whitelistPatternsChildren: [/^gfield/, /^gform/, /^ginput/, /^gform_title/, /^fieldset/],
-    },
-  });
-
-mix.js('resources/assets/scripts/main.js', 'scripts')
-   .js('resources/assets/scripts/customizer.js', 'scripts');
-
-mix.copyWatched('resources/assets/images/**', 'dist/images')
-   .copyWatched('resources/assets/fonts/**', 'dist/fonts');
+mix
+	.js('resources/assets/scripts/main.js', 'scripts')
+	.js('resources/assets/scripts/customizer.js', 'scripts')
 
 mix.autoload({
-  jquery: ['$', 'window.jQuery'],
-});
+	jquery: ['$', 'window.jQuery'],
+})
 
 mix.options({
-  processCssUrls: false,
-});
+	processCssUrls: false,
+})
 
-mix.sourceMaps(false, 'source-map')
-   .version();
+mix.sourceMaps(false, 'source-map').version()

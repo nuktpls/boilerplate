@@ -40,7 +40,7 @@
   "settings": {
     "editor.fontFamily": "VCR OSD Mono",
     "editor.fontLigatures": true,
-    "editor.fontSize": 10,
+    "editor.fontSize": 13,
     "workbench.iconTheme": "material-icon-theme",
     "editor.rulers": [
       80,
@@ -81,7 +81,7 @@
     },
     "prettier.jsxSingleQuote": true,
     "prettier.arrowParens": "avoid",
-    "window.zoomLevel": 4,
+    "window.zoomLevel": 2,
     "workbench.colorTheme": "Edu4Dev Dark"
   }
 }
