@@ -7,7 +7,7 @@ services:
   #   volumes:
   #       - ./:/var/www
   #   networks:
-  #       - app-network
+  #       - app-networks
   meli:
     image: getmeli/meli:beta
     ports:
