@@ -2,7 +2,7 @@
 
 Edu4Dev boilerplate
 
-![room boilerplate](https://i.imgur.com/nSdXirg.png)
+![room boilerplate](https://i.imgur.com/v6n0GWF.png)
 
 Para rodar o website junto com o tema, agora o comando da CLI do Gatsbyjs muda para algo como:
 
