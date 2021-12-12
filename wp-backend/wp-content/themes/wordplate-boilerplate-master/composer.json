@@ -1,0 +1,70 @@
+{
+  "name": "wordplate/wordplate",
+  "description": "A modern WordPress stack built with Composer",
+  "keywords": [
+    "wordplate",
+    "wordpress",
+    "boilerplate"
+  ],
+  "license": "MIT",
+  "require": {
+    "php": "^7.3 || ^8.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.0.0",
+    "fiskhandlarn/blade": "^0.6",
+    "laravel/helpers": "^1.4.1",
+    "pixelstudio/wp-sync-db": "^1.7",
+    "roots/soil": "^4.0",
+    "tightenco/collect": "^7.10",
+    "wordplate/acf": "^8.2",
+    "wordplate/framework": "^9.5"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "installer-paths": {
+      "public/mu-plugins/{$name}": [
+        "type:wordpress-muplugin"
+      ],
+      "public/plugins/{$name}": [
+        "type:wordpress-plugin"
+      ],
+      "public/themes/{$name}": [
+        "type:wordpress-theme"
+      ]
+    },
+    "wordpress-install-dir": "public/wordpress"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.9.5",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k={%ACF_PRO_KEY}&t={%version}"
+        },
+        "require": {
+          "ffraenz/private-composer-installer": "^5.0"
+        }
+      }
+    }
+  ],
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ]
+  }
+}

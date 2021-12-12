@@ -190,7 +190,7 @@ $signup_request = (function(){
     <p>Mensagem: <strong>$mensagemEmpresa</strong></p>
     EOT;
     $headers = array('Content-Type: text/html; charset=UTF-8');
-    $headers[] = "From: Teste <mbolonha@deletar.com.br>";
+    $headers[] = "From: Número 1 Seguros Teste <mbolonha@studiovisual.com.br>";
     $headers[] = "Cc: The Bolonha <miltonbolonha@gmail.com>";
     $response['to'] = $to;
     $response['subject'] = $subject;
@@ -228,14 +228,14 @@ add_action('wp_ajax_nopriv_signup_request', $signup_request);
 
 /* Change WordPress Login Logo Url */
 $alter_login_logo_url = (function() {
-    return 'http://localhost/wp-content/themes/integration-theme/dist/images/logo.png';
+    return 'http://localhost/wp-content/themes/numero1seguros/dist/images/n1seguros-1-logo.png';
 });
 add_filter( 'login_headerurl', $alter_login_logo_url );
 
 
 /* Change WordPress Login Logo Url */
 $alter_login_logo_text = (function() {
-    return '<img src="'. get_theme_file_uri() . '/dist/images/logo.png" alt="" />';
+    return '<img src="'. get_theme_file_uri() . '/dist/images/n1seguros-1-logo.png" alt="" />';
 });
 add_filter( 'login_headertext', $alter_login_logo_text );
 
@@ -250,7 +250,7 @@ $my_login_logo = (function() { ?>
     <style type="text/css">
         html body.login{
             background-color: white;
-            background-image: url(<?php echo get_theme_file_uri(  ); ?>/dist/images/login.jpg);
+            background-image: url(<?php echo get_theme_file_uri(  ); ?>/dist/images/n1-seguros-login.jpg);
             background-size: cover;
         }
 
@@ -261,7 +261,7 @@ $my_login_logo = (function() { ?>
             margin: 0 auto;
          }
         #login h1 a, .login h1 a {
-            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/logo.png);
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/dist/images/n1seguros-1-logo.png);
             height:65px;
             width:320px;
             background-size: 320px 65px;

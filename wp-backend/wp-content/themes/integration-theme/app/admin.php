@@ -24,18 +24,18 @@ add_action('customize_preview_init', function () {
 });
 
 add_action('init', function() {
-    // new \App\Admin\Menus;
-    // new \App\Admin\Page;
-    // new \App\Admin\PageServiceChannel;
-    // new \App\Admin\PostInsurance;
-    // new \App\Admin\TaxonomySegment;
-    // new \App\Admin\User;
+    new \App\Admin\Menus;
+    new \App\Admin\Page;
+    new \App\Admin\PageServiceChannel;
+    new \App\Admin\PostInsurance;
+    new \App\Admin\TaxonomySegment;
+    new \App\Admin\User;
 
-    // new \App\Options\General;
-    // new \App\Options\Dashboard;
-    // new \App\Options\Terms;
-    // new \App\Options\LoginContact;
-    // new \App\Options\Footer;
+    new \App\Options\General;
+    new \App\Options\Dashboard;
+    new \App\Options\Terms;
+    new \App\Options\LoginContact;
+    new \App\Options\Footer;
 });
 
 add_filter('show_admin_bar', '__return_false');

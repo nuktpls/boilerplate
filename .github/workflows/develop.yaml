@@ -26,7 +26,7 @@ jobs:
           version: 1
           dev: no
           ## aqui ele vai executar as tarefas
-          args: -o --ignore-platform-reqs -d ./wp-content/themes/integration-theme
+          args: -o --ignore-platform-reqs -d ./wp-content/themes/wordplate-boilerplate-master
 
       - name: Setup do NodeJS para o tema
         uses: actions/setup-node@v2
@@ -35,21 +35,21 @@ jobs:
 
       ## baixando::yarn install
       - name: Executando yarn install
-        working-directory: ./wp-content/themes/integration-theme
+        working-directory: ./wp-content/themes/wordplate-boilerplate-master
         run: yarn
 
       ## construindo::yarnbuild
       - name: Executando a construção dos assets
-        working-directory: ./wp-content/themes/integration-theme
+        working-directory: ./wp-content/themes/wordplate-boilerplate-master
         run: yarn build:production
 
       - name: Copiando arquivos dos plugins para ambiente de testes
         uses: burnett01/rsync-deployments@4.1
         with:
           switches: --no-perms -O --exclude=.git/ --exclude=.env --exclude=node_modules --delete -Prltvz
-          path: ./wp-content/themes/integration-theme/
+          path: ./wp-content/themes/wordplate-boilerplate-master/
           ## config aqui
-          remote_path: /mnt/hipocavalo/public/wp-content/themes/integration-theme
+          remote_path: /mnt/hipocavalo/public/wp-content/themes/wordplate-boilerplate-master
           remote_host: ${{ secrets.SSH_DEV_DEPLOY_HOST }}
           remote_port: 22
           remote_user: ${{ secrets.SSH_DEV_DEPLOY_USER }}

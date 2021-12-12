@@ -4,8 +4,8 @@ namespace App;
 
 /**
  * @snippet       Gravity Form Bootstrap 5 Markup
- * @author        Deletar
- * @website       https://deletar.com.br
+ * @author        Studio Visual
+ * @website       https://studiovisual.com.br
  */
 
 function formErrors($errors) {

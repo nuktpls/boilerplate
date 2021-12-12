@@ -1,5 +1,5 @@
 {
-	"name": "nuktpls/integration-theme",
+	"name": "nuktpls/wordplate-boilerplate-master",
 	"type": "wordpress-plugin",
 	"license": "proprietary",
 	"description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
@@ -119,8 +119,8 @@
 			"wp-content/themes/{$name}/": [
 				"type:wordpress-theme"
 			],
-			"wp-content/themes/integration-theme/{$name}/": [
-				"type:integration-theme-script"
+			"wp-content/themes/wordplate-boilerplate-master/{$name}/": [
+				"type:wordplate-boilerplate-master-script"
 			]
 		}
 	}
