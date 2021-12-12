@@ -26,13 +26,8 @@
     "build": "npm run build -w website"
   },
   "workspaces": [
-    "content",
     "theme",
     "website",
-    "wp-backend",
-    "bot",
-    "diagram",
-    "nuktpls-cli",
-    "brand"
+    "headlessCMS"
   ]
 }

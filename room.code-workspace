@@ -1,32 +1,20 @@
 {
   "folders": [
     {
-      "name": "Poupa Luz ",
-      "path": "poupaluz"
+      "name": "HeadlessCMS",
+      "path": "headlessCMS"
+    },
+		{
+      "name": "Wordplate",
+      "path": "headlessCMS/public/themes/wordplate"
     },
     {
-      "name": "Brand",
-      "path": "brand"
-    },
-    {
-      "name": "WP Integration",
-      "path": "wp-backend/wp-content/themes/wordplate-boilerplate-master"
-    },
-    {
-      "name": "WP Plugin",
-      "path": "wp-backend/wp-content/plugins"
+      "name": "WP Plugins",
+      "path": "headlessCMS/public/plugins"
     },
     {
       "name": "Website Engine",
       "path": "website"
-    },
-    {
-      "name": "RÖÖM Maker (diagram)",
-      "path": "diagram"
-    },
-    {
-      "name": "Content i18n",
-      "path": "content"
     },
     {
       "name": "Theme",
