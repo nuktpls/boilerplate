@@ -1,0 +1,127 @@
+{
+	"name": "nuktpls/wordplate-boilerplate-master",
+	"type": "wordpress-plugin",
+	"license": "proprietary",
+	"description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+	"keywords": [
+		"composer",
+		"wordpress",
+		"wp",
+		"wp-config"
+	],
+	"homepage": "https://example.com",
+	"authors": [
+		{
+			"name": "Milton Bolonha",
+			"email": "miltonbolonha@gmail.com",
+			"homepage": "https://bolonha.dev"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wp-plugins/advanced-custom-fields-pro",
+				"type": "wordpress-plugin",
+				"version": "5.10.2",
+				"dist": {
+					"url": "https://connect.advancedcustomfields.com/v2/plugins/download?p=pro&k=b3JkZXJfaWQ9NzgwNDN8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE2LTAzLTIzIDE3OjE2OjI2&t=5.10.2",
+					"type": "zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wp-plugins/svg-support",
+				"type": "wordpress-plugin",
+				"version": "2.3.19",
+				"dist": {
+					"url": "https://downloads.wordpress.org/plugin/svg-support.2.3.19.zip",
+					"type": "zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "gravityforms/gravityforms",
+				"version": "2.5.14.1",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://www.gravityhelp.com/wp-content/plugins/gravitymanager/api.php?op=get_plugin&slug=gravityforms&key=50ad5f8a910b0c684beda9e6f5eae491"
+				},
+				"require": {
+					"composer/installers": "^1.4",
+					"gotoandplay/gravityforms-composer-installer": "^2.3"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wp-plugins/acf-gravityforms-add-on",
+				"version": "1.2.9",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/acf-gravityforms-add-on.1.2.9.zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "wp-plugins/tinymce-advanced",
+				"version": "5.6.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://downloads.wordpress.org/plugin/tinymce-advanced.5.6.0.zip"
+				}
+			}
+		}
+	],
+	"require": {
+		"composer/installers": "dev-main",
+		"golchha21/resmushit": "^1.2",
+		"wpackagist-plugin/post-smtp": "^2",
+		"wpackagist-plugin/enable-media-replace": "^3",
+		"wpackagist-plugin/regenerate-thumbnails": "*",
+		"wpackagist-plugin/safe-svg": "^1",
+		"wpackagist-plugin/wp-super-cache": "*",
+		"vlucas/phpdotenv": "4.1",
+		"wp-plugins/advanced-custom-fields-pro": "5.10.2",
+		"wp-plugins/svg-support": "2.3.19",
+		"gotoandplay/gravityforms-composer-installer": "^2.3",
+		"wp-plugins/acf-gravityforms-add-on": "1.2.9",
+		"wp-plugins/tinymce-advanced": "5.6.0"
+	},
+	"require-dev": {
+		"brain/monkey": "^2.2.0",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+		"phpunit/phpunit": "^7.5.1",
+		"roave/security-advisories": "dev-master",
+		"squizlabs/php_codesniffer": "^3.4.0",
+		"wp-coding-standards/wpcs": "^1.2.1"
+	},
+	"extra": {
+		"wordpress-install-dir": "web/wp",
+		"installer-paths": {
+			"wp-content/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"wp-content/themes/{$name}/": [
+				"type:wordpress-theme"
+			],
+			"wp-content/themes/wordplate-boilerplate-master/{$name}/": [
+				"type:wordplate-boilerplate-master-script"
+			]
+		}
+	}
+}

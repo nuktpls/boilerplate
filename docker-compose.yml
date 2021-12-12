@@ -1,0 +1,79 @@
+version: '3.5'
+services:
+  # app:
+  #   build: .
+  #   container_name: php-app
+  #   working_dir: /var/www/html/website
+  #   volumes:
+  #       - ./:/var/www
+  #   networks:
+  #       - app-network
+  meli:
+    image: getmeli/meli:beta
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      # no trailing slash !
+      MELI_URL: https://meli.company.com
+      MELI_MONGO_URI: mongodb://mongo:27017/meli
+      # openssl rand -hex 32
+      MELI_JWT_SECRET: changeMe
+      # https://docs.meli.sh/authentication
+      MELI_USER: user
+      MELI_PASSWORD: changeMe
+    volumes:
+      - ./data/sites:/sites
+      - ./data/files:/files
+      - ./data/caddy/data:/data
+      - ./data/caddy/config:/config
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.2-bionic
+    restart: unless-stopped
+    volumes:
+      - ./data/mongo:/data/db
+      #  xxxxx
+  db:
+    container_name: tema_de_integracao_db
+    image: 'mariadb:10.5.9'
+    ports:
+      - '3306:3306'
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    # restart: always
+    environment:
+      MYSQL_ROOT_USER: '${DB_USER}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      MYSQL_DATABASE: '${DB_NAME}'
+  php:
+    image: mlalbuquerque/php:7.1
+    volumes:
+        - ".:/var/www/html"
+        - "./dockerfiles/config/php.ini:/usr/local/etc/php/php.ini"
+    environment:
+        PATH: "/root/.composer/vendor/bin:${PATH}"
+  wordplate_install:
+    container_name: ti_wordplate_init
+    image: composer
+    working_dir: /var/www/html/
+    command: composer create-project --prefer-dist wordplate/wordplate headlessCMS
+  themebackend:
+    container_name: tema_de_integracao_theme_backend
+    image: composer
+    working_dir: /var/www/html/headlessCMS
+    command: php -S localhost:3000 -t public/
+    depends_on:
+      - wordplate_install
+      - php
+  phpmyadmin:
+    container_name: tema_de_integracao_phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    env_file:
+      - .env
+    ports:
+      - '8080:80'
+    depends_on:
+      - db
