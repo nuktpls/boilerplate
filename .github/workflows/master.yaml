@@ -48,7 +48,8 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-          extensions: xdebug-beta
+          extensions: mbstring, dom, fileinfo, mysql, libxml, xml, xmlwriter, dom, tokenizer, filter, json, phar, pcre, openssl, pdo, intl, curl
+          coverage: xdebug
 
       - name: Get Composer Cache Directory 2
         id: composer-cache
