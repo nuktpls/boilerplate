@@ -13,7 +13,6 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Executando a construção dos assetsS
-        uses: actions/checkout@v2
         uses: php-actions/composer@v6
         with:
           command: composer create-project --prefer-dist wordplate/wordplate headlessCMS
