@@ -45,10 +45,6 @@ jobs:
           extensions: mbstring, dom, fileinfo, mysql, libxml, xml, xmlwriter, dom, tokenizer, filter, json, phar, pcre, openssl, pdo, intl, curl
           coverage: xdebug #optional
 
-      - name: Get composer cache directory
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
 			- name: Verificando o cache dos pacotes do Composer
 			uses: actions/cache@v2
 			with:
