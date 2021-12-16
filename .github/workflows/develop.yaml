@@ -12,7 +12,7 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      ## construindo::composer
+      ## construindo::composers
       - name: Executando a construção dos assetsS
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
