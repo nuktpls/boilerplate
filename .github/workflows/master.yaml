@@ -28,7 +28,6 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: [ '8.0' ]
         dependency-stability: [ 'prefer-stable' ]
 
     steps:
@@ -48,7 +47,8 @@ jobs:
       - name: Install PHP versions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: '7.4'
+          extensions: xdebug-beta
 
       - name: Get Composer Cache Directory 2
         id: composer-cache
