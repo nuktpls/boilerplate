@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    name: Obtém o código-fonte e realiza a construção da aplicação.
+    name: Obtém o código-fonte e realiza a construção da aplicaçãos.
     runs-on: [self-hosted]
     services:
       mysql:
