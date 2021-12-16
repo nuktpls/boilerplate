@@ -8,17 +8,59 @@ jobs:
   release:
     name: Obtém o código-fonte e realiza a construção da aplicação.
     runs-on: self-hosted
+
+    env:
+      DB_DATABASE: wordplate
+      DB_USERNAME: root
+      DB_PASSWORD: root
+      DB_HOST: 127.0.0.1
+      DB_PORT: 32574
+      BROADCAST_DRIVER: log
+      MYSQL_ALLOW_EMPTY_PASSWORD: false
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: wordplate
+    services:
+      mariadb:
+        image: mariadb:10.4
+        env:
+          MYSQL_ALLOW_EMPTY_PASSWORD: false
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordplate
+        ports:
+          - 32574:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+    strategy:
+      fail-fast: false
+      matrix:
+        php-versions: ['8']
+
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      - name: Executando composer install para dependências do Wordpress
-        uses: php-actions/composer@v6
+      - name: Setup PHP, with composer and extensions
+        uses: shivammathur/setup-php@v2 #https://github.com/shivammathur/setup-php
         with:
-          php_version: 8
-          version: 1
-          dev: no
-          args: -o --ignore-platform-reqs -d ./headlessCMS
+          php-version: ${{ matrix.php-versions }}
+          extensions: mbstring, dom, fileinfo, mysql, libxml, xml, xmlwriter, dom, tokenizer, filter, json, phar, pcre, openssl, pdo, intl, curl
+          coverage: xdebug #optional
 
-      - name: Vai Gatsby
-        run: npm run develop -w website
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+			- name: Verificando o cache dos pacotes do Composer
+			uses: actions/cache@v2
+			with:
+				path: /tmp/composer-cache
+				key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Install
+        run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
+
+      - name: Install
+        run: php -S localhost:3000 -t public/ --working-dir ./headlessCMS
+
+
+
+
