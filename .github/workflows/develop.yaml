@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - develop
+
 jobs:
   release:
     name: Obtém o código-fonte e realiza a construção da aplicação.
@@ -17,40 +18,80 @@ jobs:
           path: /tmp/composer-cache
           key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
 
-      - name: Executando composer install para dependências do Wordpress
-        env:
-          COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
-        uses: php-actions/composer@v5
-        with:
-          php_version: 7.4
-          version: 1
-          dev: no
-          ## aqui ele vai executar as tarefas
-          args: -o --ignore-platform-reqs -d ./wp-content/themes/wordplate-boilerplate-master
+
+
+
+      ## construindo::yarnbuild
+      - name: Executando a construção dos assets
+			- uses: php-actions/composer@v6
+        working-directory: ./
+        run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
+
+
+
+
+
+      ## construindo::yarnbuild
+      - name: Executando a construção dos assets
+			- uses: php-actions/composer@v6
+        working-directory: ./headlessCMS
+        run: php -S localhost:3000 -t public/
+
+
+				# - uses: actions/checkout@v1
+				# - name: Build the docker-compose stack
+				# run: docker-compose up -d
+				# - name: Sleep
+				# uses: jakejarvis/wait-action@master
+				# with:
+				# time: '60s'
+				# - name: Check running containers
+				# run: docker ps
+				# - name: Run test suite
+				# run: docker exec backend pytest --skip-auth
+
+
+
+
+      # - name: Executando composer install para dependências do Wordpress
+      #   env:
+      #     COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.GITHUB_TOKEN }}"}}'
+      #   uses: php-actions/composer@v5
+      #   with:
+      #     php_version: 7.4
+      #     version: 1
+      #     dev: no
+      #     ## aqui ele vai executar as tarefas
+      #     args: -o --ignore-platform-reqs -d ./wp-content/themes/wordplate-boilerplate-master
 
       - name: Setup do NodeJS para o tema
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
+				working-directory: ./website
+        run: npm run develop -w website
+      # ## baixando::yarn install
+      # - name: Executando yarn install
+      #   working-directory: ./wp-content/themes/wordplate-boilerplate-master
+      #   run: yarn
 
-      ## baixando::yarn install
-      - name: Executando yarn install
-        working-directory: ./wp-content/themes/wordplate-boilerplate-master
-        run: yarn
+      # ## construindo::yarnbuild
+      # - name: Executando a construção dos assets
+      #   working-directory: ./wp-content/themes/wordplate-boilerplate-master
+      #   run: yarn build:production
 
-      ## construindo::yarnbuild
-      - name: Executando a construção dos assets
-        working-directory: ./wp-content/themes/wordplate-boilerplate-master
-        run: yarn build:production
+      # - name: Copiando arquivos dos plugins para ambiente de testes
+      #   uses: burnett01/rsync-deployments@4.1
+      #   with:
+      #     switches: --no-perms -O --exclude=.git/ --exclude=.env --exclude=node_modules --delete -Prltvz
+      #     path: ./wp-content/themes/wordplate-boilerplate-master/
+      #     ## config aqui
+      #     remote_path: /mnt/hipocavalo/public/wp-content/themes/wordplate-boilerplate-master
+      #     remote_host: ${{ secrets.SSH_DEV_DEPLOY_HOST }}
+      #     remote_port: 22
+      #     remote_user: ${{ secrets.SSH_DEV_DEPLOY_USER }}
+      #     remote_key: ${{ secrets.SSH_DEV_DEPLOY_KEY }}
 
-      - name: Copiando arquivos dos plugins para ambiente de testes
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: --no-perms -O --exclude=.git/ --exclude=.env --exclude=node_modules --delete -Prltvz
-          path: ./wp-content/themes/wordplate-boilerplate-master/
-          ## config aqui
-          remote_path: /mnt/hipocavalo/public/wp-content/themes/wordplate-boilerplate-master
-          remote_host: ${{ secrets.SSH_DEV_DEPLOY_HOST }}
-          remote_port: 22
-          remote_user: ${{ secrets.SSH_DEV_DEPLOY_USER }}
-          remote_key: ${{ secrets.SSH_DEV_DEPLOY_KEY }}
+steps:
+
+
