@@ -2,7 +2,7 @@ name: Ambiente de testes - boilerplate
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   release:
