@@ -12,7 +12,10 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      - name: Executando a construção dos assetsS
+      - name: Executando composer install para dependências do Wordpress
         uses: php-actions/composer@v6
         with:
-          command: composer create-project --prefer-dist wordplate/wordplate headlessCMS
+          php_version: 8
+          version: 1
+          dev: no
+          args: -o --ignore-platform-reqs -d ./headlessCMS
