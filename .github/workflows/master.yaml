@@ -19,3 +19,6 @@ jobs:
           version: 1
           dev: no
           args: -o --ignore-platform-reqs -d ./headlessCMS
+
+      - name: Vai Gatsby
+        run: npm run develop -w website
