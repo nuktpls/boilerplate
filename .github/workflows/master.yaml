@@ -2,7 +2,7 @@ name: Ambiente de testes - boilerplate
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   release:
@@ -12,9 +12,9 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v2
 
-      ## construindo::composer
+      ## construindo::composers
       - name: Executando a construção dos assetsS
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v6
+        uses: actions/checkout@v2
+        uses: php-actions/composer@v6
         with:
           command: composer create-project --prefer-dist wordplate/wordplate headlessCMS
