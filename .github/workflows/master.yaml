@@ -7,33 +7,57 @@ on:
 jobs:
   release:
     name: Obtém o código-fonte e realiza a construção da aplicação.
-    runs-on: self-hosted
-
-    env:
-      DB_DATABASE: wordplate
-      DB_USERNAME: root
-      DB_PASSWORD: root
-      DB_HOST: 127.0.0.1
-      DB_PORT: 32574
-      BROADCAST_DRIVER: log
-      MYSQL_ALLOW_EMPTY_PASSWORD: false
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wordplate
+    runs-on: [self-hosted]
     services:
-      mariadb:
-        image: mariadb:10.4
+      mysql:
+        image: mysql:latest
         env:
-          MYSQL_ALLOW_EMPTY_PASSWORD: false
-          MYSQL_ROOT_PASSWORD: root
-          MYSQL_DATABASE: wordplate
+          MYSQL_DATABASE: test_database
+          MYSQL_HOST: 127.0.0.1
+          MYSQL_USER: admin
+          MYSQL_PASSWORD: rootpass
+          MYSQL_ROOT_PASSWORD: rootpass
         ports:
-          - 32574:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
     strategy:
-      fail-fast: false
       matrix:
-        php-versions: ['8']
+        operating-system: [ubuntu-latest]
+        php-versions: [ '8.0' ]
+        dependency-stability: [ 'prefer-stable' ]
 
     steps:
-      - name: Checkout do repositório
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.13.1'
+
+      - name: Cache node_modules directory
+        uses: actions/cache@v2
+        id: node_modules-cache
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install PHP versions
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+
+      - name: Get Composer Cache Directory 2
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - uses: actions/cache@v2
+        id: actions-cache
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
