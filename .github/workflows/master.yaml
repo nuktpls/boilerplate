@@ -2,7 +2,7 @@ name: Ambiente de testes - boilerplate
 on:
   push:
     branches:
-      - develop
+      - master
 
 jobs:
   release:
@@ -18,18 +18,3 @@ jobs:
       - uses: php-actions/composer@v6
         with:
           command: composer create-project --prefer-dist wordplate/wordplate headlessCMS
-
-      ## construindo::localhost:3000/headlessCMS/public
-      # - name: Executando a construção dos assets
-      # - uses: actions/checkout@v2
-      # - uses: php-actions/composer@v6
-      #   with:
-      #     command:  php -S localhost:3000 -t public/
-      #   working-directory: ./headlessCMS
-
-      # - name: Build do tema
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '16'
-      #     command:  npm run build -w website
-      #   working-directory: ./website
