@@ -46,10 +46,10 @@ jobs:
           coverage: xdebug #optional
 
 			- name: Verificando o cache dos pacotes do Composer
-			uses: actions/cache@v2
-			with:
-				path: /tmp/composer-cache
-				key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+				uses: actions/cache@v2
+				with:
+					path: /tmp/composer-cache
+					key: ${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
 
       - name: Install
         run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
