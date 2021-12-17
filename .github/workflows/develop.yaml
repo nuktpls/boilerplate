@@ -52,6 +52,19 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-composer-
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16.13.1'
+
+      - name: Cache node_modules directory
+        uses: actions/cache@v2
+        id: node_modules-cache
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
+
+
   apontar:
     needs: preparar
     runs-on: [self-hosted]
