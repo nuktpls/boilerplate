@@ -53,6 +53,7 @@ jobs:
             ${{ runner.os }}-composer-
 
   apontar:
+    needs: preparar
     runs-on: [self-hosted]
     steps:
       - name: Install headlessCMS
