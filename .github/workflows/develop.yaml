@@ -67,7 +67,19 @@ jobs:
 
   apontar:
     needs: preparar
+    name: Instala tecnologias e constrõe aplicações.
     runs-on: [self-hosted]
     steps:
       - name: Install headlessCMS
         run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
+
+      - name: Copiando arquivos dos plugins para ambiente de testes
+        uses: burnett01/rsync-deployments@4.1
+        with:
+          switches: -avz --delete
+          path: ./mnt/
+          remote_path: ./headlessCMS
+          remote_host: ${{ secrets.SSH_DEV_DEPLOY_HOST }}
+          remote_port: ${{ secrets.DEPLOY_PORT }}
+          remote_user: ${{ secrets.SSH_DEV_DEPLOY_USER }}
+          remote_key: ${{ secrets.SSH_DEV_DEPLOY_KEY }}
