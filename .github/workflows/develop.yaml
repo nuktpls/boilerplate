@@ -79,3 +79,4 @@ jobs:
           switches: -avz --delete
           path: ./mnt/
           remote_path: ./headlessCMS
+          remote_host: self-hosted
