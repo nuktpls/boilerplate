@@ -5,7 +5,7 @@ on:
       - develop
 
 jobs:
-  release:
+  preparar:
     name: Obtém o código-fonte e realiza a construção dos pré-requisitos.
     runs-on: [self-hosted]
     services:
@@ -51,3 +51,9 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-composer-
+
+  apontar:
+    runs-on: [self-hosted]
+    steps:
+      - name: Install headlessCMS
+        run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
