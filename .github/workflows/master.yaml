@@ -67,4 +67,4 @@ jobs:
         run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
 
       - name: Run headlessCMS
-        run: php -S localhost:3000 -t public/ --working-dir ./headlessCMS
+        run: php -S localhost:3000 -t public/ --working-dir=./headlessCMS
