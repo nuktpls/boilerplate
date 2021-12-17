@@ -6,7 +6,7 @@ on:
 
 jobs:
   preparar:
-    name: Obtém o código-fonte e realiza a construção dos pré-requisitos.
+    name: Init Pré-Requisitos
     runs-on: [self-hosted]
     services:
       mysql:
@@ -67,7 +67,7 @@ jobs:
 
   apontar:
     needs: preparar
-    name: Instala tecnologias e constrõe aplicações.
+    name: Init stacks n build
     runs-on: [self-hosted]
     steps:
       - name: Install headlessCMS
@@ -79,7 +79,3 @@ jobs:
           switches: -avz --delete
           path: ./mnt/
           remote_path: ./headlessCMS
-          remote_host: ${{ secrets.SSH_DEV_DEPLOY_HOST }}
-          remote_port: ${{ secrets.DEPLOY_PORT }}
-          remote_user: ${{ secrets.SSH_DEV_DEPLOY_USER }}
-          remote_key: ${{ secrets.SSH_DEV_DEPLOY_KEY }}
