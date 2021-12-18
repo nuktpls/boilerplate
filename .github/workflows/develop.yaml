@@ -12,11 +12,11 @@ jobs:
       mysql:
         image: mariadb:latest
         env:
-          MYSQL_DATABASE: test_database
+          MYSQL_DATABASE: wordplate
           MYSQL_HOST: 127.0.0.1
           MYSQL_USER: admin
-          MYSQL_PASSWORD: rootpass
-          MYSQL_ROOT_PASSWORD: rootpass
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: root
         ports:
           - 3306:3306
         options: >-
@@ -41,8 +41,10 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '7.4'
-          extensions: fileinfo, libxml, tokenizer, filter, json, phar, pcre, openssl, pdo
+          extensions: fileinfo, libxml, tokenizer, filter, json, phar, pcre, openssl, pdo, mysql
           coverage: xdebug
+          ini-values: post_max_size=256M, short_open_tag=On
+          tools: php-cs-fixer, phpunit
 
       - name: Get Composer Cache Directory 2
         id: composer-cache
@@ -83,3 +85,7 @@ jobs:
       - name: Build docker images
         working-directory: ./headlessCMS
         run: php -S localhost:3000 -t public/
+
+      - name: Run NPM Gatsby
+        working-directory: ./
+        run: npm run develop -w website
