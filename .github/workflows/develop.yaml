@@ -40,7 +40,7 @@ jobs:
       - name: Install PHP versions
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: '8.0'
           extensions: fileinfo, libxml, tokenizer, filter, json, phar, pcre, openssl, pdo
           coverage: xdebug
 
@@ -71,7 +71,17 @@ jobs:
           path: node_modules
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
-
+      - name: Comment on a Issue
+      - uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for reporting!',
+              labels: ['Triage']
+            })
   apontar:
     needs: preparar
     name: Init stacks n build
