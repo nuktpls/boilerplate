@@ -74,9 +74,5 @@ jobs:
         run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
 
       - name: Copiando arquivos dos plugins para ambiente de testes
-        uses: burnett01/rsync-deployments@4.1
-        with:
-          switches: -avz --delete
-          path: ./mnt/
-          remote_path: ./headlessCMS
-          remote_host: self-hosted
+        run: |
+          cp ./mnt/* ./headlessCMS
