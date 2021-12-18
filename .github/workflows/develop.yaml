@@ -33,6 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Echo PHP Versions
         run: |
          echo 'Install PHP versionss'
 
