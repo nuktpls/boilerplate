@@ -76,3 +76,6 @@ jobs:
       - name: Copiando arquivos dos plugins para ambiente de testes
         run: |
           cp ./mnt/* ./headlessCMS
+
+      - name: Exec Dockerfile
+        run: ./headlessCMS/Dockerfile
