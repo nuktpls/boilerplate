@@ -76,8 +76,6 @@ jobs:
       - name: Copiando arquivos dos plugins para ambiente de testes
         run: |
           cp ./mnt/* ./headlessCMS
-          git update-index --chmod=+x ./headlessCMS
-          git commit -m "Make headlessCMS executable"
 
-      - name: Exec Dockerfile
-        run: ./headlessCMS/Dockerfile
+      - name: Build docker images
+        run: docker build -t local < ./headlessCMS/Dockerfile
