@@ -78,4 +78,4 @@ jobs:
           cp ./mnt/* ./headlessCMS
 
       - name: Build docker images
-        run: docker build -t local < ./headlessCMS/Dockerfile
+        run: docker build -t local ./headlessCMS/Dockerfile
