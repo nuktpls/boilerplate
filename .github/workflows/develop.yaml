@@ -72,7 +72,7 @@ jobs:
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Comment on a Issue
-      - uses: actions/github-script@v5
+        uses: actions/github-script@v5
         with:
           script: |
             github.rest.issues.createComment({
