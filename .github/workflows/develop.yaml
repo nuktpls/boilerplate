@@ -57,9 +57,7 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install headlessCMS
-      - uses: php-actions/composer@v6
-        with:
-          command: composer create-project --prefer-dist wordplate/wordplate headlessCMS
+        run: composer create-project --prefer-dist wordplate/wordplate headlessCMS
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
