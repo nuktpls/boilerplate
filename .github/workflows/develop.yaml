@@ -71,12 +71,6 @@ jobs:
           path: node_modules
           key: ${{ runner.OS }}-build-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
 
-
-  apontar:
-    needs: preparar
-    name: Init stacks n build
-    runs-on: [self-hosted]
-    steps:
       - name: Copiando arquivos dos plugins para ambiente de testes
         run: |
           rsync -avz ./mnt/* ./headlessCMS
