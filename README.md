@@ -1,6 +1,6 @@
 - **`[v.0.2.x:next]`**: Code instantly persistent dark mode, remove menus and styles fixes.
 - **`[v.0.x.0:warning]`**: The first grand finale release will be publish at v1.0.0.
-- **`[v.0.2.0:update]`**: Very first release atempt; package core system stable.
+- **`[v.0.2.0:update]`**: Background image repeat component.
 
 ---
 
