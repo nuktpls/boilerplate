@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../../../../'
+import MainMenuContainer from '../containers/MainMenuContainer'
 import MainMenuMobile from './MainMenuMobile'
 import MainMenuList from './MainMenuList'
 import layoutYAML from '@Content/configs/layout.yaml'
@@ -14,8 +15,8 @@ const Header = ({
   logoSvg,
   logoUrl,
   menuActive,
-  NavMobile,
-  Logo,
+  logo,
+  wrapperRef,
 }) => {
   const mainMenuItems = mainMenuYAML.menu.items
   const mainMenuStatus = mainMenuYAML.menu.status
@@ -31,27 +32,18 @@ const Header = ({
           classes: 'mobile-header mobile-only',
         }}
       >
-        <Logo />
+        {logo}
         {mainMenuStatus === 'active' ? (
           <div
             className={'main-header main-header-' + menuActive}
             role="menubar"
           >
-            <nav
-              ref={wrapperRef}
-              className={'main-nav menu-state-' + isVisibleClass}
-              itemScope="itemScope"
-              itemType="http://schema.org/SiteNavigationElement"
-            >
-              <ul
-                className=""
-                id="mainmenu"
-                role="menu"
-                aria-labelledby="check-toggle-icon"
-              >
-                <NavMobile isMobile={true} />
-              </ul>
-            </nav>
+            <MainMenuContainer
+              wrapperRef={wrapperRef}
+              refState={refState}
+              mainMenuStatus={mainMenuStatus}
+              isMobile={true}
+            />
           </div>
         ) : null}
       </Layout>
@@ -78,17 +70,13 @@ const Header = ({
         }}
       >
         <Layout type="ROW" opt={{ isBoxed: true, classes: 'header-logo' }}>
-          <Logo />
-          <nav
-            className="main-nav desktop-only"
-            id="site-navigation"
-            itemScope="itemScope"
-            itemType="http://schema.org/SiteNavigationElement"
-          >
-            <ul className="main-ul">
-              <NavMobile isMobile={false} />
-            </ul>
-          </nav>
+          {logo}
+          <MainMenuContainer
+            wrapperRef={wrapperRef}
+            refState={refState}
+            mainMenuStatus={mainMenuStatus}
+            isMobile={false}
+          />
         </Layout>
       </Layout>
     </header>
