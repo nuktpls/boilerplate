@@ -1,12 +1,22 @@
 import React from 'react'
 
+// import LayoutContext, { LayoutProvider } from '../services/LayoutContext'
 import Row from '../components/Row'
+// import { Page__Settings } from '../config/'
+// import useSetLocation from '@tools/useSetLocation'
 
-const RowContainer = ({ subAgent, opt }) => {
+const RowContainer = ({
+	children,
+	opt,
+	// querySelector,
+	sectionTitle,
+	setLocation,
+}) => {
 	const data = {
 		wrapperRef: null,
 		handleRefState: null,
 		refState: null,
+		// application configs
 		scroll: true,
 		resize: true,
 		outsideClick: true,
@@ -26,7 +36,7 @@ const RowContainer = ({ subAgent, opt }) => {
 		numberOfColumns: null,
 	}
 
-	// const defaulHeading = sectionTitle || 'sEM tÍTUlo'
+	const defaulHeading = sectionTitle || 'sEM tÍTUlo'
 	let rowHeading = null
 	let defaultBgColor = 'white'
 	let theme__color = false
@@ -61,8 +71,10 @@ const RowContainer = ({ subAgent, opt }) => {
 		boxed: opt.isBoxed || false,
 		bgColor: theme__color,
 		numColumns: opt.numColumns || 1,
+		widthColumns: opt.widthColumns || '1fr',
 		alignTo: opt.alignTo || 'left',
 		title: opt.title || opt.classes,
+		role: opt.role || null,
 	}
 
 	const bgOpt = {
@@ -70,11 +82,12 @@ const RowContainer = ({ subAgent, opt }) => {
 		value_bgColor: opt.bgColor,
 		background: opt.bgImg,
 	}
-
+	// console.log('paramsparamsparams')
+	// console.log(opt)
 	return (
 		<>
 			<Row
-				subAgent={subAgent}
+				children={children}
 				params={params}
 				opt={optNormatize}
 				bgOpt={bgOpt}

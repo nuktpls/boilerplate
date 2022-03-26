@@ -1,67 +1,36 @@
 // Colors
-$brand__color: #eb412c;
-$cta__color: #0c0c0c;
+$cta__color: #fc4303;
+$cta_dark__color: #db3b06;
 $link__color: #2e2e2e;
+
 $brand_black__color: #0c0c0c;
-$brand_white__color: #fff;
-$bodyColor__bgColor: $brand_white__color;
-$system__color: $brand__color;
-$additionalDark__color: $brand__color;
-$btn_brown__not_active: $brand__color;
-$ribbon_top__color: $brand__color;
-$secondary_pink__color: #ff4d59;
-
-$btn_brown__active: #e0c6ac;
-
-$brown__shadowBox: 0px 10px 40px rgba(22, 22, 22, 0.25);
-$border_tick: rgb(235 65 44 / 30%);
-$color__light-grey: #999999;
-
-$grayscale_100__color: #fcfcfc;
-$grayscale_200__color: #ececec;
+$paragrahp_black__color: #212529;
 $grayscale_300__color: #e3e3e3;
 $grayscale_600__color: #a3a3a3;
-
-// SPACES
-
+$color__light-grey: #999999;
+$selection_bg__color: rgb(252 67 3 / 70%);
 // Breakpoints
 // screen vars
-$header__height: 121px;
-$widescreen__size: 1170px;
+$widescreen__size: 1165px;
 $tablet__size: 768px;
-$tabletHack__size: 769px;
+$tabletHack__size: 1025px;
 $tabletHackMinimal__size: 425px;
 $boxed__tabletHackMaxWidth: 730px;
 $small__size: 375px;
-$boxed__maxWidth: 375px;
-$boxedDesktop__maxWidth: 960px;
-$boxedMobile__maxWidth: 375px;
 $desktopIndexButtons__maxWidth: 520px;
 $mobileIndexButtons__maxWidth: 280px;
 $tabletIndexButtons__maxWidth: 350px;
-
+$boxed__maxWidth: 375px;
+$boxedDesktop__maxWidth: 1024px;
+$boxedMobile__maxWidth: 375px;
 //Spaces
 $s__space: 16pt;
-$m__space: 24pt;
-$heading__top-padding: 14pt;
-
-//Borders Radius
-$xs__radius: 3px;
-$s__radius: 5px;
-$m__radius: 8px;
-$l__radius: 10px;
-$xl__radius: 15px;
-$xxl__radius: 50%;
-
+$heading__top-padding: 0;
 // typograph
-$main__font: 'Mulish', Arial, sans-serif;
-$second__font: 'Alegreya Sans', Arial, sans-serif;
-$third__font: 'Roboto', Arial, sans-serif;
+$main__font: 'Roboto Slab', Arial, sans-serif;
+$second__font: 'Montserrat', Arial, sans-serif;
 $alternative__font: 'Arial';
-
-$xs__fontSize: 12px;
-$s__fontSize: 14px;
-
+$m__fontSize: 17px;
 $h1__fontSize: 30pt;
 $h2__fontSize: 24pt;
 $h3__fontSize: 22pt;

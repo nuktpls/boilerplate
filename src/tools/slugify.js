@@ -1,5 +1,8 @@
 /* eslint-disable */
 export default function slugify(string) {
+	if (!string) {
+		return null
+	}
 	const a =
 		'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
 	const b =

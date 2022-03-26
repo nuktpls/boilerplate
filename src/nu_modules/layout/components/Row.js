@@ -1,14 +1,16 @@
 import React from 'react'
 import InsertHTML from '../../../tools/InsertHTML'
-const Row = ({ subAgent, params, opt, bgOpt, bgImg }) => (
-	<InsertHTML
-		type="row"
-		subAgent={subAgent}
-		params={params}
-		opt={opt}
-		bgOpt={bgOpt}
-		bgImg={bgImg}
-	/>
+const Row = ({ children, params, opt, bgOpt, bgImg, bugInfo }) => (
+	<>
+		<InsertHTML
+			type="row"
+			params={params}
+			opt={opt}
+			children={children}
+			bgOpt={bgOpt}
+			bgImg={bgImg}
+		/>
+	</>
 )
 
 export default Row

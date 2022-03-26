@@ -41,3 +41,17 @@
 		}
 	}
 }
+
+
+@media(max-width: 960px){
+	.footer-infos{order:1}
+	.tag-list-wrapper{order:3}
+	.footer-column-blog{order:4}
+	.footer-column-nav{order:2}
+}
+
+
+.menu-state-not-visible {
+	opacity: 0;
+	visibility: hidden;
+}

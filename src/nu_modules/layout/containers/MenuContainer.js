@@ -1,12 +1,12 @@
 import React, { useRef } from 'react'
-import useListenOutsideEvents from '../../../tools/useListenOutsideEvents'
+// import useListenOutsideEvents from '../../../tools/useListenOutsideEvents'
 
-import MainMenu from '../components/MainMenu'
-import arrayMenus from '../configs/main-menu-config.js'
+import Menu from '../components/Menu'
 
-const FooterMainMenuContainer = ({ refState, handleRefState }) => {
+const MenuContainer = (props) => {
+	const { refState } = props
+	const { handleRefState } = props
 	const wrapperRef = useRef(null)
-
 	const toggleConfig = {
 		wrapperRef: wrapperRef,
 		refState: refState,
@@ -21,15 +21,18 @@ const FooterMainMenuContainer = ({ refState, handleRefState }) => {
 			clickElement: '.menu-wrapper',
 		},
 	}
-	useListenOutsideEvents(toggleConfig)
+	// useListenOutsideEvents(toggleConfig)
 	const isVisibleClass = toggleConfig.refState ? 'visible' : 'not-visible'
+	const isHiddenState = toggleConfig.refState ? false : true
+	// const ariaVisible = toggleConfig.refState ? 'true' : 'false'
 	return (
-		<MainMenu
+		<Menu
 			wrapperRef={toggleConfig.wrapperRef}
 			isVisibleClass={isVisibleClass}
-			arrayMenus={arrayMenus}
+			isHiddenState={isHiddenState}
+			link_01={props.link_01}
 		/>
 	)
 }
 
-export default FooterMainMenuContainer
+export default MenuContainer

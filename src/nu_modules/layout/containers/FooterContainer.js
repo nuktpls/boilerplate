@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+// import { useStaticQuery, graphql } from 'gatsby'
 
 import Footer from '../components/Footer'
 
-const FooterContainer = ({ subAgent, opt }) => {
+const FooterContainer = ({ children, opt }) => {
 	const [refState, setRefState] = useState(false)
 	function handleRefState() {
 		setRefState(!refState)
@@ -11,7 +12,7 @@ const FooterContainer = ({ subAgent, opt }) => {
 		<Footer
 			refState={refState}
 			handleRefState={handleRefState}
-			subAgent={subAgent}
+			children={children}
 			opt={opt}
 		/>
 	)

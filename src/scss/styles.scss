@@ -1,31 +1,16 @@
 /*
-/*>>>-----------------------------------------------------------
- LAYOUT BUILDER by Edu4Dev
-----------------------------------------------------------------
-Engine Agent: Gatsby - Javascript Framework
-Engine SubAgent: Gatsby Plugin
-Gatsby Plugin Name: Gatsby Atomic Block
-----------------------------------------------------------------
-----------------------------------------------------------------
-Author: Edu4Dev - Milton Bolonha
-Description: Gatsby Atomic Block is the platform web creators
-						 choose to build professional GatsbyJS HTML, plus
-						 CSS basic structure, such as rows, number of columns,
-						 background color, header, responsive main menu,
-						 modals and much more.
-----------------------------------------------------------------
-----------------------------------------------------------------
-Plugin URI: https://www.npmjs.com/package/gatsby-atomic-block
-Plugin Install: ```npm i gatsby-atomic-block```
-Version: 0.2.0
-Year: 2021
------------------------------------------------------------<<<*/
+Theme Name: Boilerplate
+Theme URI: https://
+Description: Blog feito em GatsbyJS.
+Author: Milton Bolonha
+Template: NÜktpls Boilerplate
+Version: 1.0.0
+*/
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 1.0 Basic global settings
-2.0 Pages & Templates
 3.0 Modules
 4.0 Helpers & Fixes
 --------------------------------------------------------------*/
@@ -43,8 +28,23 @@ Year: 2021
 3.1 Modules / Layout
 --------------------------------------------------------------*/
 
-@import 'nu_modules/layout/menus';
-@import 'nu_modules/layout/header';
-@import 'nu_modules/layout/footer';
-@import 'nu_modules/layout/row';
-@import 'nu_modules/layout/row-bgColors';
+// @import 'modules/layout/menus';
+@import 'modules/layout/header';
+@import 'modules/layout/footer';
+@import 'modules/layout/row';
+// @import 'modules/layout/row-bgColors';
+
+
+/*--------------------------------------------------------------
+3.1 Modules / Block Builder
+--------------------------------------------------------------*/
+
+@import 'modules/block-builder/single-post';
+@import 'modules/block-builder/main-container-blog';
+
+/*--------------------------------------------------------------
+4.0 Helpers & Fixes
+--------------------------------------------------------------*/
+
+@import 'helpers/responsive';
+@import 'helpers/helpers';

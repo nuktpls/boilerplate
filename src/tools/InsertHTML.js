@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import slugify from './slugify'
 
-const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
+const InsertHTML = ({ type, params, opt, children, bgOpt, bgImg }) => {
 	let elementClass = opt ? opt.elementClass : type
 
 	switch (type) {
@@ -51,7 +51,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 			}
 		case 'row':
 			const SubRow = ({
-				subAgent,
+				children,
 				element,
 				numColumns,
 				rowWidth,
@@ -59,27 +59,32 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 				themeColor,
 				bgImg,
 			}) => {
+				// const basis = 100 / params.numColumns
+
 				switch (element) {
 					case 'list':
-						return <li className={rowWidth + '-child'}>{subAgent}</li>
+						return <li className={rowWidth + '-child'}>{children}</li>
 					default:
 						return (
 							<div
-								className={rowWidth + '-child ' + opt.title}
+								className={rowWidth + '-child ' + opt.elementClass}
+								role={opt.role || null}
 								style={{
 									backgroundColor:
 										bgOpt.theme_color && opt.boxed === true
 											? bgOpt.value_bgColor
 											: null,
 									backgroundImage: bgImg,
+									display: 'grid',
+									gridTemplateColumns: `repeat(${opt.numColumns}, ${opt.widthColumns})`,
 								}}
 							>
-								{subAgent}
+								{children}
 							</div>
 						)
 				}
 			}
-			if (params.element && subAgent) {
+			if (params.element && children) {
 				const rowWidth = opt.boxed ? 'boxed-column' : 'full-width-row'
 
 				const heading = params.rowHeading ? (
@@ -111,7 +116,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 							>
 								{heading}
 								<SubRow
-									subAgent={subAgent}
+									children={children}
 									element={params.element}
 									numColumns={opt.numColumns}
 									rowWidth={rowWidth}
@@ -160,7 +165,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 
 								{heading}
 								<SubRow
-									subAgent={subAgent}
+									children={children}
 									element={params.element}
 									numColumns={opt.numColumns}
 									rowWidth={rowWidth}
@@ -185,7 +190,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 										: bgOpt.value_bgColor,
 								}}
 							>
-								{subAgent}
+								{children}
 							</div>
 						)
 				}
@@ -193,7 +198,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 				return null
 			}
 		case 'carousel':
-			if (subAgent && params.wrapperRef) {
+			if (children && params.wrapperRef) {
 				return (
 					<div className={'grid-' + params.gridType + ' ' + elementClass}>
 						<ul
@@ -206,7 +211,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 								'-list no-pdd-mrg-first-last-child'
 							}
 						>
-							{subAgent}
+							{children}
 						</ul>
 					</div>
 				)
@@ -215,21 +220,21 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 			}
 		case 'content-item':
 			if (params.gridType && params.gridClass) {
-				const basis = 100 / params.numColumns
+				const basis = 100 / opt.numColumns
 				const elementTag =
 					params.gridType === 'carousel' ? (
 						<li
 							className={params.gridClass}
 							style={{ flexBasis: basis + '%', minWidth: basis + '%' }}
 						>
-							{subAgent}
+							{children}
 						</li>
 					) : (
 						<div
 							className={params.gridClass}
 							// style={{ flexBasis: basis + '%' }}
 						>
-							{subAgent}
+							{children}
 						</div>
 					)
 				return <>{elementTag}</>
@@ -237,7 +242,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 				return null
 			}
 		case 'columns':
-			if (subAgent) {
+			if (children) {
 				return (
 					<div
 						className={'grid-' + params.gridType + '-list'}
@@ -247,7 +252,7 @@ const InsertHTML = ({ type, params, opt, subAgent, bgOpt, bgImg }) => {
 							justifyContent: params.alignTo,
 						}}
 					>
-						{subAgent}
+						{children}
 					</div>
 				)
 			} else {
