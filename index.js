@@ -3,10 +3,10 @@
 */
 
 import React from 'react'
-import AgentResolver from './src/nu_modules/layout/containers'
+import LayoutResolver from './src/nu_modules/layout/containers'
 
 const Layout = ({ type, opt, children }) => {
-	return <AgentResolver type={type} opt={opt} subAgent={children} />
+  return <LayoutResolver type={type} opt={opt} subAgent={children} />
 }
 
 export default Layout

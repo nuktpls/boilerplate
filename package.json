@@ -1,8 +1,8 @@
 {
   "name": "gatsby-layout-builder",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "index.js",
-  "description": "Gatsby Atomic Block is the platform web creators choose to build professional GatsbyJS HTML, plus CSS basic structure, such as rows, number of columns, background color, header, responsive main menu, modals and much more.",
+  "description": "Gatsby more.",
   "author": "Milton Bolonha <miltonbolonha@gmail.com>",
   "keywords": [
     "gatsby",
