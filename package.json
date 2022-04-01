@@ -1,7 +1,7 @@
 {
   "name": "gatsby-layout-builder",
   "version": "0.4.3",
-  "private": "false",
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "description": "Gatsby more.",
