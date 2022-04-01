@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _containers = _interopRequireDefault(require("./src/nu_modules/layout/containers"));
+var _containers = _interopRequireDefault(require("./nu_modules/layout/containers"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
