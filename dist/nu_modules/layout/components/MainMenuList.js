@@ -9,9 +9,13 @@ var _react = _interopRequireDefault(require("react"));
 
 var _gatsby = require("gatsby");
 
-var _ = _interopRequireDefault(require("../../../../"));
+var _ = _interopRequireDefault(require("../../../"));
+
+var _fi = require("react-icons/fi");
 
 var _ri = require("react-icons/ri");
+
+var _gi = require("react-icons/gi");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19,7 +23,9 @@ const MainMenuList = _ref => {
   let {
     list,
     indx,
-    isMobile
+    isMobile,
+    handleRefState,
+    refState
   } = _ref;
 
   if (list.item.href) {
@@ -74,7 +80,7 @@ const MainMenuList = _ref => {
       className: "header-columns toggle-menu"
     }, /*#__PURE__*/_react.default.createElement("p", {
       className: "menu-shop-bag-mobile"
-    }, /*#__PURE__*/_react.default.createElement(FiUser, null)), /*#__PURE__*/_react.default.createElement("p", {
+    }, /*#__PURE__*/_react.default.createElement(_fi.FiUser, null)), /*#__PURE__*/_react.default.createElement("p", {
       className: "menu-shop-bag-mobile",
       tabIndex: "-1"
     }, /*#__PURE__*/_react.default.createElement(_ri.RiShoppingBag3Line, null)), /*#__PURE__*/_react.default.createElement("button", {
@@ -86,7 +92,7 @@ const MainMenuList = _ref => {
       "aria-expanded": refState,
       "aria-label": "Alternar visibilidade do menu",
       className: "menu-wrapper menu-bar-icon mobile-only ".concat(refState ? 'active' : 'not-active')
-    }, /*#__PURE__*/_react.default.createElement(GiHamburgerMenu, null)));
+    }, /*#__PURE__*/_react.default.createElement(_gi.GiHamburgerMenu, null)));
   }
 
   return null;

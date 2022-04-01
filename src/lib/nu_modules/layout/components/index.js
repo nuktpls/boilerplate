@@ -6,14 +6,14 @@ import GlobalContext from '../services/context'
 
 import Body from '../components/Body'
 
-export default LayoutResolver = ({ children, data }) => {
-	return (
-		<GlobalContext.Consumer>
-			{(value) => <Body>{children}</Body>}
-		</GlobalContext.Consumer>
-	)
+const LayoutResolver = ({ children, data }) => {
+  return (
+    <GlobalContext.Consumer>
+      {(value) => <Body>{children}</Body>}
+    </GlobalContext.Consumer>
+  )
 }
-
+export default LayoutResolver
 LayoutResolver.propTypes = {
-	children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 }

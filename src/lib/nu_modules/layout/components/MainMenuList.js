@@ -1,10 +1,19 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Layout from '../../../../'
+import Layout from '../../../'
+import { FiUser } from 'react-icons/fi'
 
 import { RiShoppingBag3Line } from 'react-icons/ri'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
-const MainMenuList = ({ list, indx, isMobile }) => {
+const MainMenuList = ({
+  list,
+  indx,
+  isMobile,
+  handleRefState,
+
+  refState,
+}) => {
   if (list.item.href) {
     return (
       <li key={indx} role="none">

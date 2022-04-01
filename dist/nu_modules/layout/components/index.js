@@ -16,7 +16,7 @@ var _Body = _interopRequireDefault(require("../components/Body"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // eslint-disable-next-line
-var _default = LayoutResolver = _ref => {
+const LayoutResolver = _ref => {
   let {
     children,
     data
@@ -24,6 +24,7 @@ var _default = LayoutResolver = _ref => {
   return /*#__PURE__*/_react.default.createElement(_context.default.Consumer, null, value => /*#__PURE__*/_react.default.createElement(_Body.default, null, children));
 };
 
+var _default = LayoutResolver;
 exports.default = _default;
 LayoutResolver.propTypes = {
   children: _propTypes.default.node.isRequired

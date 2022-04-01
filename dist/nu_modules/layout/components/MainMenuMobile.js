@@ -7,21 +7,26 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _MenuContainer = _interopRequireDefault(require("../containers/MenuContainer"));
-
 var _fi = require("react-icons/fi");
 
 var _gi = require("react-icons/gi");
 
+var _ri = require("react-icons/ri");
+
+var _gatsby = require("gatsby");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import MenuContainer from '../containers/MenuContainer'
 const MainMenuMobile = _ref => {
   let {
     menuActive,
     refState,
     handleRefState,
     mainMenuItems,
-    link_01
+    link_01,
+    wrapperRef,
+    isVisibleClass
   } = _ref;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: 'main-header main-header-' + menuActive,
@@ -64,7 +69,7 @@ const MainMenuMobile = _ref => {
     "aria-label": "Acesso a p\xE1gina: Para empresas, no webs\xEDtio da Descola"
   }, "Para empresas")), /*#__PURE__*/_react.default.createElement("li", {
     role: "none"
-  }, /*#__PURE__*/_react.default.createElement(Link, {
+  }, /*#__PURE__*/_react.default.createElement(_gatsby.Link, {
     to: "/",
     role: "menuitem",
     itemProp: "url",
@@ -77,7 +82,7 @@ const MainMenuMobile = _ref => {
   }, /*#__PURE__*/_react.default.createElement(_fi.FiUser, null)), /*#__PURE__*/_react.default.createElement("p", {
     className: "menu-shop-bag-mobile",
     tabIndex: "-1"
-  }, /*#__PURE__*/_react.default.createElement(RiShoppingBag3Line, null)), /*#__PURE__*/_react.default.createElement("button", {
+  }, /*#__PURE__*/_react.default.createElement(_ri.RiShoppingBag3Line, null)), /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     id: "check-toggle-icon",
     onClick: handleRefState,

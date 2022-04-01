@@ -7,12 +7,11 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _gatsby = require("gatsby");
-
-var _ = _interopRequireDefault(require("../../../../"));
+var _ = _interopRequireDefault(require("../../../"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { Link } from 'gatsby'
 // import MainMenuContainer from '../containers/MainMenuContainer'
 // import MainMenuMobile from './MainMenuMobile'
 // import MainMenuList from './MainMenuList'

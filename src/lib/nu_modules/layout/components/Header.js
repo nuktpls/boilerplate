@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../../../../'
+// import { Link } from 'gatsby'
+import Layout from '../../../'
 // import MainMenuContainer from '../containers/MainMenuContainer'
 // import MainMenuMobile from './MainMenuMobile'
 // import MainMenuList from './MainMenuList'
