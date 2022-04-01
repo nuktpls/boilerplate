@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../../../../'
-import MainMenuContainer from '../containers/MainMenuContainer'
-import MainMenuMobile from './MainMenuMobile'
-import MainMenuList from './MainMenuList'
-import layoutYAML from '@Content/configs/layout.yaml'
-import mainMenuYAML from '@Content/menus/main-menu.yaml'
+// import MainMenuContainer from '../containers/MainMenuContainer'
+// import MainMenuMobile from './MainMenuMobile'
+// import MainMenuList from './MainMenuList'
+// import layoutYAML from '@Content/configs/layout.yaml'
+// import mainMenuYAML from '../../../../c'
 
 const Header = ({
   refState,
@@ -18,9 +18,9 @@ const Header = ({
   logo,
   wrapperRef,
 }) => {
-  const mainMenuItems = mainMenuYAML.menu.items
-  const mainMenuStatus = mainMenuYAML.menu.status
-  const { logo_url, link_01 } = layoutYAML.layout02
+  // const mainMenuItems = mainMenuYAML.menu.items
+  // const mainMenuStatus = mainMenuYAML.menu.status
+  // const { logo_url, link_01 } = layoutYAML.layout02
 
   return (
     <header>
@@ -33,7 +33,7 @@ const Header = ({
         }}
       >
         {logo}
-        {mainMenuStatus === 'active' ? (
+        {/* {mainMenuStatus === 'active' ? (
           <div
             className={'main-header main-header-' + menuActive}
             role="menubar"
@@ -45,7 +45,7 @@ const Header = ({
               isMobile={true}
             />
           </div>
-        ) : null}
+        ) : null} */}
       </Layout>
       <Layout type="ROW" opt={{ bgColor: '#e9e9ed', isBoxed: false }}>
         <Layout
@@ -57,7 +57,7 @@ const Header = ({
           }}
         >
           <p>
-            <a href={link_01}>Login / Registre-se</a>
+            <a href={'#'}>Login / Registre-se</a>
           </p>
         </Layout>
       </Layout>
@@ -71,12 +71,12 @@ const Header = ({
       >
         <Layout type="ROW" opt={{ isBoxed: true, classes: 'header-logo' }}>
           {logo}
-          <MainMenuContainer
+          {/* <MainMenuContainer
             wrapperRef={wrapperRef}
             refState={refState}
             mainMenuStatus={mainMenuStatus}
             isMobile={false}
-          />
+          /> */}
         </Layout>
       </Layout>
     </header>

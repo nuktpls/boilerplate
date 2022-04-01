@@ -5,8 +5,8 @@
 import React from 'react'
 import LayoutResolver from './src/nu_modules/layout/containers'
 
-const Layout = ({ type, opt, children }) => {
+export const Layout = ({ type, opt, children }) => {
   return <LayoutResolver type={type} opt={opt} subAgent={children} />
 }
 
-export default Layout
+// export default Layout

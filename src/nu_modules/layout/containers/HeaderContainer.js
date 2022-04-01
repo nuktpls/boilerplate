@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import layoutYAML from '@Content/configs/layout.yaml'
+// import layoutYAML from '@Content/configs/layout.yaml'
 import { Link } from 'gatsby'
 import Header from '../components/Header'
 
@@ -16,7 +16,7 @@ const HeaderContainer = ({ logo, opt }) => {
 
   const menuActive = refState ? 'visible' : 'not-visible'
   // const mainMenuItems = mainMenuYAML.menu.items
-  const { logo_url } = layoutYAML.layout02
+  const { logo_url } = null
 
   const logotype = logo_url ? (
     <a href={logo_url} className="logo-link">

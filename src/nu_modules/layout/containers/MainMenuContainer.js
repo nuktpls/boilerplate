@@ -2,7 +2,7 @@ import React from 'react'
 // import useListenOutsideEvents from "../../../tools/useListenOutsideEvents";
 // import { mainMenuEventsSettings } from '../config/'
 import MainMenuList from '../components/MainMenuList'
-import mainMenuYAML from '@Content/menus/main-menu.yaml'
+// import mainMenuYAML from '@Content/menus/main-menu.yaml'
 
 const MainMenuContainer = ({
   refState,
@@ -10,7 +10,7 @@ const MainMenuContainer = ({
   isMobile,
   wrapperRef,
 }) => {
-  const mainMenuItems = mainMenuYAML.menu.items
+  const mainMenuItems = null
   const isVisibleClass = refState ? 'visible' : 'not-visible'
   const navClasses = isMobile
     ? 'main-nav menu-state-' + isVisibleClass
