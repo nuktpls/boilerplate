@@ -1,6 +1,6 @@
 {
   "name": "gatsby-layout-builder",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "workspaces": [
     "demo",
     "gatsby-layout-builder"
