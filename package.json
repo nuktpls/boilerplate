@@ -1,10 +1,12 @@
 {
   "name": "gatsby-layout-builder",
-  "version": "0.4.6",
-  "private": false,
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "description": "Gatsby more.",
+  "version": "0.4.2",
+  "workspaces": [
+    "demo",
+    "gatsby-layout-builder"
+  ],
+  "private": true,
+  "description": "Gatsby Layout Builder - SEO.",
   "author": "Milton Bolonha <miltonbolonha@gmail.com>",
   "keywords": [
     "gatsby",
@@ -12,51 +14,75 @@
     "gatsby-layout",
     "gatsby-builder",
     "gatsby-layout-builder",
+    "gatsby-layout-builder",
     "layout-builder",
+    "seo",
     "builder"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
+    "test": "echo \"No test specified\"",
+    "build": "npm run build -w gatsby-layout-builder",
+    "clean": "npm run clean -w demo",
+    "develop": "npm run develop -w demo",
+    "version": "./build-docs && git add docs",
+    "coverage": "nyc --reporter=text npm run test"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
+  "nyc": {
+    "include": "./gatsby-layout-builder/**/*.js",
+    "exclude": [
+      "./gatsby-layout-builder/node_modules/**/*.js",
+      "./demo",
+      "./node_modules/**/*.js"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuktpls/gatsby-layout-builder.git"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
-    "react-scripts": "^5.0.0"
-  },
-  "dependencies": {
-    "gatsby": "^4.11.1",
-    "gatsby-plugin-image": "^2.11.1",
-    "node-sass": "^7.0.1",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.3.1",
-    "web-vitals": "^2.1.4"
-  },
   "publishConfig": {
     "access": "public",
     "@nuktpls:registry": "https://npm.pkg.github.com"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "pkgRoot": "gatsby-layout-builder",
+          "npmPublish": true,
+          "tarballDir": "gatsby-layout-builder/dist"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "verifyConditions": [
+    {
+      "path": "semantic-release-verify-deps",
+      "dependencies": true,
+      "devDependencies": false,
+      "regExps": [
+        "\\D$"
+      ]
+    }
+  ],
+  "dependencies": {
+    "@changesets/cli": "^2.22.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@semantic-release/npm": "^9.0.1",
+    "babel-jest": "^27.5.1",
+    "babel-preset-gatsby": "^2.11.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.5.1",
+    "nyc": "^15.1.0",
+    "react-test-renderer": "^18.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/nuktpls/gatsby-layout-builder/issues"
   }
 }

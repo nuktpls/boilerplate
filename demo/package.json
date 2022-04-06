@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "1.0.0",
+  "main": "gatsby-config.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "dev": "gatsby develop"
+  },
+  "dependencies": {
+    "gatsby": "4.11.1",
+    "gatsby-layout-builder": "*",
+    "gatsby-plugin-image": "^2.11.1",
+    "gatsby-plugin-sharp": "4.11.1",
+    "gatsby-transformer-sharp": "4.11.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
+  }
+}
