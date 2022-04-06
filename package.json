@@ -5,7 +5,7 @@
     "demo",
     "gatsby-layout-builder"
   ],
-  "private": true,
+  "private": false,
   "description": "Gatsby Layout Builder - SEO.",
   "author": "Milton Bolonha <miltonbolonha@gmail.com>",
   "keywords": [
