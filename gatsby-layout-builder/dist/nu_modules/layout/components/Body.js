@@ -16,11 +16,14 @@ const Body = _ref => {
     customClasses,
     bgImage
   } = _ref;
+  const bgStyle = bgImage !== null && bgImage !== void 0 && bgImage.src ? {
+    backgroundImage: "url(".concat((bgImage === null || bgImage === void 0 ? void 0 : bgImage.src) || ' ', ")")
+  } : {
+    backgroundImage: 'unset'
+  };
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "descola-tema ".concat(customClasses),
-    style: {
-      backgroundImage: "url(".concat(bgImage ? bgImage.src : ' ', ")")
-    }
+    className: "boilerplate ".concat(customClasses),
+    style: bgStyle
   }, children);
 };
 
