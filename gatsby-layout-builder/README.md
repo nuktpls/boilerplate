@@ -73,10 +73,7 @@ Otherwise, you should [create a new gatsby-config.js file](https://www.gatsbyjs.
 ```javascript
 module.exports = {
   plugins: [`gatsby-layout-builder`],
-  // if you just have the plugins array
-  // you may need to place the plugin string name
-  // between the right objects and arrays
-  //
+  // gatsby-config.js
 }
 ```
 
@@ -87,17 +84,17 @@ Inside a page or component invoke <Layout type="COMPONENT" />.
 Take a look inside the follow Layout components:
 
 ```javascript
-// BODY type
+// type="BODY"
 <BodyContainer subAgent={children} opt={opt} />
-// FOOTER type
+// type="FOOTER"
 <FooterContainer subAgent={children} opt={opt} />
-// HEADER type
+// type="HEADER"
 <HeaderContainer opt={opt} />
-// ROW type
+// type="ROW"
 <RowContainer opt={opt} subAgent={children} />
-// SIDEBAR type
+// type="SIDEBAR"
 <SidebarContainer opt={opt} subAgent={children} />
-// MAIN type
+// type="MAIN"
 <MainContainer opt={opt} subAgent={children} />
 ```
 
@@ -122,28 +119,11 @@ Those types who accept subAgent parameter may be used as wrapper of some childre
     	"prettier": "^2.4.1"
   }}
 	```
-
-## 🧐 What's inside?
-
-```text
-/nu-module
-├── element_structure
-├── element_logics
-├── element_styles
-├── configs
-├── persistent_vars
-├── tools
-├── root_files
-├── wrapper_gatsby
-├── room.code-workspace
-└── README.md
 ````
 
 ## Keep in touch
 
 Don't mail me yet. Unless you want to do some kind of friendship.
-
-Poupa Luz <poupaluz@edu4.dev>
 
 Milton Bolonha <miltonbolonha@gmail.com>
 
