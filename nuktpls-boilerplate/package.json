@@ -1,0 +1,54 @@
+{
+  "name": "nuktpls-boilerplate",
+  "version": "0.0.1",
+  "private": false,
+  "module": "index.js",
+  "description": "Gatsby more.",
+  "author": "Milton Bolonha <miltonbolonha@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-layout",
+    "gatsby-builder",
+    "nuktpls-boilerplate",
+    "layout-builder",
+    "builder"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gatsby build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "react-scripts": "^5.0.0"
+  },
+  "dependencies": {
+    "gatsby-layout-builder": "^0.7.2",
+    "gatsby-plugin-sass": "^5.11.1",
+    "sass": "^1.49.11"
+  },
+  "peerDependencies": {
+    "gatsby": "^4.11.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "publishConfig": {
+    "access": "public",
+    "@nuktpls:registry": "https://npm.pkg.github.com"
+  }
+}

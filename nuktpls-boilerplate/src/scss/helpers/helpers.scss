@@ -1,0 +1,53 @@
+.no-pdd-mrg-first-last-child {
+	& > :first-of-type {
+		padding-left: 0 !important;
+		margin-left: 0 !important;
+	}
+	& > :last-of-type {
+		padding-right: 0 !important;
+		margin-right: 0 !important;
+	}
+}
+
+.align-to-right{
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+	max-height: 50px;
+	margin: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #ededed;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border-radius: 30px;
+	background: $cta__color;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.non-layout{
+	z-index: 100;
+	position: absolute;
+	top: 1em;
+	left: -9999px;
+	padding: 0.5em 1em;
+	background: black;
+	color: #fff;
+}
