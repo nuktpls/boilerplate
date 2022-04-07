@@ -11,8 +11,6 @@ require("core-js/modules/es.string.search.js");
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ri = require("react-icons/ri");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Form(_ref) {
@@ -34,7 +32,8 @@ function Form(_ref) {
     noSPAM,
     warnME,
     placeholder,
-    size
+    size,
+    searchIcon
   } = _ref;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: form_class
@@ -71,5 +70,7 @@ function Form(_ref) {
     name: "subscribe",
     id: "mc-embedded-subscribe",
     disabled: search ? false : true
-  }, warnME || /*#__PURE__*/_react.default.createElement(_ri.RiSearchLine, null))))));
+  }, warnME || {
+    searchIcon
+  })))));
 }

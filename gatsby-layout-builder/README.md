@@ -1,6 +1,5 @@
-- **`[v.0.2.x:next]`**: Code instantly persistent dark mode, remove menus and styles fixes.
+- **`[v.0.6.x:next]`**: More <Layout /> types.
 - **`[v.0.x.0:warning]`**: The first grand finale release will be publish at v1.0.0.
-- **`[v.0.2.0:update]`**: Background image repeat component.
 
 ---
 
@@ -10,15 +9,11 @@
 
 #### LAYOUT BUILDER _by [Edu4Dev](https://edu4.dev)_
 
----
-
 **Engine Agent:** Gatsby - Javascript Framework
 
 **Engine SubAgent:** Gatsby Plugin
 
 **Gatsby Plugin Name:** Gatsby Layout Builder
-
----
 
 **Author:** Edu4Dev - Milton Bolonha
 
@@ -32,13 +27,13 @@ modals and simple stuffs.
 
 ---
 
-**Plugin URI:** https://www.npmjs.com/package/gatsby-atomic-block
+**Plugin URI:** https://www.npmjs.com/package/gatsby-layout-builder
 
-**Plugin Install:** `npm i gatsby-atomic-block`
+**Plugin Install:** `npm i gatsby-layout-builder`
 
-**Version:** 0.2.0
+**Version:** 0.6.0
 
-**Year:** 2021
+**Year:** 2022
 
 ---
 
@@ -67,7 +62,7 @@ standard structure on your theme, you can follow these steps:
 1. Install Gatsby Layout Builder plugin with:
 
 ```shell
-npm i gatsby-atomic-block
+npm i gatsby-layout-builder
 ```
 
 If you already have customize your gatsby-config.js, you can use it.
@@ -77,7 +72,7 @@ Otherwise, you should [create a new gatsby-config.js file](https://www.gatsbyjs.
 
 ```javascript
 module.exports = {
-  plugins: [`gatsby-atomic-block`],
+  plugins: [`gatsby-layout-builder`],
   // if you just have the plugins array
   // you may need to place the plugin string name
   // between the right objects and arrays
@@ -85,44 +80,25 @@ module.exports = {
 }
 ```
 
-The Gatsby Layout Builder can you be used in your normal Gatsby ambient.
-Something like this:
-
-```
-/in-your-gatsby-website
-├── ./src/components
-├──── ComponentX.js
-├── ./src/pages
-├──── index.js
-└── Gatsby-config.js
-
-/gatsby-layout-builder
-├── index.js
-├── package.json
-└── README.md
-
-```
-
 3. Add the plugin correctly
 
-The plugin will be added by the starter implements
-of a <Layout type="COMPONENT" /> tag.React.Element.
+Inside a page or component invoke <Layout type="COMPONENT" />.
 
-You can verify Layout component library to added to your site in next:
+Take a look inside the follow Layout components:
 
 ```javascript
 // BODY type
-<BodyContainer subAgent={subAgent} opt={opt} />
+<BodyContainer subAgent={children} opt={opt} />
 // FOOTER type
-<FooterContainer subAgent={subAgent} opt={opt} />
+<FooterContainer subAgent={children} opt={opt} />
 // HEADER type
 <HeaderContainer opt={opt} />
 // ROW type
-<RowContainer opt={opt} subAgent={subAgent} />
+<RowContainer opt={opt} subAgent={children} />
 // SIDEBAR type
-<SidebarContainer opt={opt} subAgent={subAgent} />
+<SidebarContainer opt={opt} subAgent={children} />
 // MAIN type
-<MainContainer opt={opt} subAgent={subAgent} />
+<MainContainer opt={opt} subAgent={children} />
 ```
 
 Those types who accept subAgent parameter may be used as wrapper of some children element.
@@ -132,13 +108,15 @@ Those types who accept subAgent parameter may be used as wrapper of some childre
 ````json
 	{
 		"dependencies":{
-			"gatsby": "^4.1.0",
+			"gatsby": "^4.11.1",
+			"gatsby-plugin-image": "^2.11.1",
+			"gatsby-plugin-sass": "^5.11.1",
+			"node-sass": "^7.0.1",
+			"prop-types": "^15.8.1",
 			"react": "^17.0.2",
 			"react-dom": "^17.0.2",
-			"react-icons": "^4.3.1",
-			"sass": "^1.43.4",
-			"react-helmet": "^6.1.0",
-			"react-helmet-async": "^1.1.2"
+			"sass": "^1.49.11",
+			"web-vitals": "^2.1.4"
 	},
   	"devDependencies": {
     	"prettier": "^2.4.1"

@@ -11,12 +11,6 @@ var _gatsby = require("gatsby");
 
 var _ = _interopRequireDefault(require("../../../"));
 
-var _fi = require("react-icons/fi");
-
-var _ri = require("react-icons/ri");
-
-var _gi = require("react-icons/gi");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const MainMenuList = _ref => {
@@ -25,7 +19,10 @@ const MainMenuList = _ref => {
     indx,
     isMobile,
     handleRefState,
-    refState
+    userIcon,
+    refState,
+    bagIcon,
+    hanburguerIcon
   } = _ref;
 
   if (list.item.href) {
@@ -59,7 +56,7 @@ const MainMenuList = _ref => {
       className: "menu-shop-bag",
       key: indx,
       role: "none"
-    }, /*#__PURE__*/_react.default.createElement(_ri.RiShoppingBag3Line, null));
+    }, bagIcon);
   }
 
   if (list.item.search_widget) {
@@ -80,10 +77,10 @@ const MainMenuList = _ref => {
       className: "header-columns toggle-menu"
     }, /*#__PURE__*/_react.default.createElement("p", {
       className: "menu-shop-bag-mobile"
-    }, /*#__PURE__*/_react.default.createElement(_fi.FiUser, null)), /*#__PURE__*/_react.default.createElement("p", {
+    }, userIcon), /*#__PURE__*/_react.default.createElement("p", {
       className: "menu-shop-bag-mobile",
       tabIndex: "-1"
-    }, /*#__PURE__*/_react.default.createElement(_ri.RiShoppingBag3Line, null)), /*#__PURE__*/_react.default.createElement("button", {
+    }, /*#__PURE__*/_react.default.createElement(RiShoppingBag3Line, null)), /*#__PURE__*/_react.default.createElement("button", {
       type: "button",
       id: "check-toggle-icon",
       onClick: handleRefState,
@@ -92,7 +89,7 @@ const MainMenuList = _ref => {
       "aria-expanded": refState,
       "aria-label": "Alternar visibilidade do menu",
       className: "menu-wrapper menu-bar-icon mobile-only ".concat(refState ? 'active' : 'not-active')
-    }, /*#__PURE__*/_react.default.createElement(_gi.GiHamburgerMenu, null)));
+    }, hanburguerIcon));
   }
 
   return null;

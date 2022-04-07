@@ -1,8 +1,4 @@
 import React from 'react'
-// import MenuContainer from '../containers/MenuContainer'
-import { FiUser } from 'react-icons/fi'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { RiShoppingBag3Line } from 'react-icons/ri'
 import { Link } from 'gatsby'
 const MainMenuMobile = ({
   menuActive,
@@ -12,6 +8,9 @@ const MainMenuMobile = ({
   link_01,
   wrapperRef,
   isVisibleClass,
+  userIcon,
+  hanburguerIcon,
+  bagIcon,
 }) => (
   <div className={'main-header main-header-' + menuActive} role="menubar">
     <nav
@@ -76,11 +75,9 @@ const MainMenuMobile = ({
       </ul>
     </nav>
     <div className="header-columns toggle-menu">
-      <p className="menu-shop-bag-mobile">
-        <FiUser />
-      </p>
+      <p className="menu-shop-bag-mobile">{userIcon}</p>
       <p className="menu-shop-bag-mobile" tabIndex="-1">
-        <RiShoppingBag3Line />
+        {bagIcon}
       </p>
       <button
         type="button"
@@ -94,7 +91,7 @@ const MainMenuMobile = ({
           refState ? 'active' : 'not-active'
         }`}
       >
-        <GiHamburgerMenu />
+        {hanburguerIcon}
       </button>
     </div>
   </div>

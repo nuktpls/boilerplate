@@ -1,18 +1,10 @@
 import React from 'react'
 
-// import SocialInfos from './SocialInfos'
-// import {
-// 	RiInstagramFill,
-// 	RiYoutubeFill,
-// 	RiTwitterFill,
-// 	RiFacebookCircleFill,
-// } from 'react-icons/ri'
-
 const Footer = ({ children, opt }) => (
-	<footer>
-		<div className="container footer-container">
-			<div className="text-center">
-				{/* <SocialInfos
+  <footer>
+    <div className="container footer-container">
+      <div className="text-center">
+        {/* <SocialInfos
 					facebook={opt.social.facebook}
 					twitter={opt.social.twitter}
 					instagram={opt.social.instagram}
@@ -22,10 +14,10 @@ const Footer = ({ children, opt }) => (
 					iconInsta={<RiInstagramFill />}
 					iconUTube={<RiYoutubeFill />}
 				/> */}
-				{children}
-			</div>
-		</div>
-	</footer>
+        {children}
+      </div>
+    </div>
+  </footer>
 )
 
 export default Footer

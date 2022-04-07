@@ -9,13 +9,6 @@ var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import SocialInfos from './SocialInfos'
-// import {
-// 	RiInstagramFill,
-// 	RiYoutubeFill,
-// 	RiTwitterFill,
-// 	RiFacebookCircleFill,
-// } from 'react-icons/ri'
 const Footer = _ref => {
   let {
     children,

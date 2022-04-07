@@ -1,18 +1,16 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Layout from '../../../'
-import { FiUser } from 'react-icons/fi'
-
-import { RiShoppingBag3Line } from 'react-icons/ri'
-import { GiHamburgerMenu } from 'react-icons/gi'
 
 const MainMenuList = ({
   list,
   indx,
   isMobile,
   handleRefState,
-
+  userIcon,
   refState,
+  bagIcon,
+  hanburguerIcon,
 }) => {
   if (list.item.href) {
     return (
@@ -47,7 +45,7 @@ const MainMenuList = ({
   if (list.item.icon) {
     return (
       <li className="menu-shop-bag" key={indx} role="none">
-        <RiShoppingBag3Line />
+        {bagIcon}
       </li>
     )
   }
@@ -67,9 +65,7 @@ const MainMenuList = ({
   if (isMobile) {
     return (
       <div className="header-columns toggle-menu">
-        <p className="menu-shop-bag-mobile">
-          <FiUser />
-        </p>
+        <p className="menu-shop-bag-mobile">{userIcon}</p>
         <p className="menu-shop-bag-mobile" tabIndex="-1">
           <RiShoppingBag3Line />
         </p>
@@ -85,7 +81,7 @@ const MainMenuList = ({
             refState ? 'active' : 'not-active'
           }`}
         >
-          <GiHamburgerMenu />
+          {hanburguerIcon}
         </button>
       </div>
     )
