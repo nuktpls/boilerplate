@@ -76,7 +76,7 @@
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.1.1",
     "gatsby-layout-builder": "^0.7.4",
     "gatsby-layout-builder-seo": "^0.3.7",
     "gatsby-plugin-alias-imports": "^1.0.5",
