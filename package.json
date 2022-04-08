@@ -1,9 +1,9 @@
 {
-  "name": "nuktpls-boilerplate-workspace",
+  "name": "gatsby-theme-descola-workspace",
   "version": "0.6.5",
   "workspaces": [
-    "gatsby",
-    "nuktpls-boilerplate"
+    "catsby",
+    "gatsby-theme-descola"
   ],
   "private": true,
   "description": "Gatsby Layout Builder - SEO.",
@@ -13,22 +13,22 @@
     "gatsby-plugin",
     "gatsby-layout",
     "gatsby-builder",
-    "nuktpls-boilerplate",
-    "nuktpls-boilerplate",
+    "gatsby-theme-descola",
+    "gatsby-theme-descola",
     "layout-builder",
     "seo",
     "builder"
   ],
   "scripts": {
     "test": "echo \"No test specified\"",
-    "build": "npm run build -w nuktpls-boilerplate",
+    "build": "npm run build -w gatsby-theme-descola",
     "clean": "npm run clean -w gatsby",
     "develop": "npm run develop -w gatsby",
     "version": "./build-docs && git add docs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuktpls/nuktpls-boilerplate.git"
+    "url": "git+https://github.com/nuktpls/gatsby-theme-descola.git"
   },
   "license": "MIT",
   "publishConfig": {
@@ -44,6 +44,6 @@
     "identity-obj-proxy": "^3.0.0"
   },
   "bugs": {
-    "url": "https://github.com/nuktpls/nuktpls-boilerplate/issues"
+    "url": "https://github.com/nuktpls/gatsby-theme-descola/issues"
   }
 }
